@@ -1,0 +1,179 @@
+/* colors */
+:root {
+  --base-naturalgray: 0, 0%;
+  --base-naturalgray0: var(--base-naturalgray), 100%;
+  --base-naturalgray1: var(--base-naturalgray), 96%;
+  --base-naturalgray2: var(--base-naturalgray), 90%;
+  --base-naturalgray3: var(--base-naturalgray), 82%;
+  --base-naturalgray4: var(--base-naturalgray), 70%;
+  --base-naturalgray5: var(--base-naturalgray), 60%;
+  --base-naturalgray6: var(--base-naturalgray), 50%;
+  --base-naturalgray7: var(--base-naturalgray), 38%;
+  --base-naturalgray8: var(--base-naturalgray), 26%;
+  --base-naturalgray9: var(--base-naturalgray), 15%;
+
+  --color-naturalgray0: hsla(var(--base-naturalgray0), 1);
+  --color-naturalgray1: hsla(var(--base-naturalgray1), 1);
+  --color-naturalgray2: hsla(var(--base-naturalgray2), 1);
+  --color-naturalgray3: hsla(var(--base-naturalgray3), 1);
+  --color-naturalgray4: hsla(var(--base-naturalgray4), 1);
+  --color-naturalgray5: hsla(var(--base-naturalgray5), 1);
+  --color-naturalgray6: hsla(var(--base-naturalgray6), 1);
+  --color-naturalgray7: hsla(var(--base-naturalgray7), 1);
+  --color-naturalgray8: hsla(var(--base-naturalgray8), 1);
+  --color-naturalgray9: hsla(var(--base-naturalgray9), 1);
+
+  --base-bluegray: 220, 14%;
+  --base-bluegray0: var(--base-bluegray), 97%;
+  --base-bluegray1: var(--base-bluegray), 92%;
+  --base-bluegray2: var(--base-bluegray), 86%;
+  --base-bluegray3: var(--base-bluegray), 80%;
+  --base-bluegray4: var(--base-bluegray), 70%;
+  --base-bluegray5: var(--base-bluegray), 60%;
+  --base-bluegray6: var(--base-bluegray), 50%;
+  --base-bluegray7: var(--base-bluegray), 40%;
+  --base-bluegray8: var(--base-bluegray), 30%;
+  --base-bluegray9: var(--base-bluegray), 20%;
+
+  --color-bluegray0: hsla(var(--base-bluegray0), 1);
+  --color-bluegray0-opacity5: hsla(var(--base-bluegray0), 0.5);
+  --color-bluegray1: hsla(var(--base-bluegray1), 1);
+  --color-bluegray2: hsla(var(--base-bluegray2), 1);
+  --color-bluegray3: hsla(var(--base-bluegray3), 1);
+  --color-bluegray4: hsla(var(--base-bluegray4), 1);
+  --color-bluegray5: hsla(var(--base-bluegray5), 1);
+  --color-bluegray6: hsla(var(--base-bluegray6), 1);
+  --color-bluegray7: hsla(var(--base-bluegray7), 1);
+  --color-bluegray8: hsla(var(--base-bluegray8), 1);
+  --color-bluegray9: hsla(var(--base-bluegray9), 1);
+
+  --base-unicornblue: 215, 100%;
+  --base-unicornblue0: var(--base-unicornblue), 97%;
+  --base-unicornblue1: var(--base-unicornblue), 92%;
+  --base-unicornblue2: var(--base-unicornblue), 86%;
+  --base-unicornblue3: var(--base-unicornblue), 80%;
+  --base-unicornblue4: var(--base-unicornblue), 70%;
+  --base-unicornblue5: var(--base-unicornblue), 60%;
+  --base-unicornblue6: var(--base-unicornblue), 50%;
+  --base-unicornblue7: var(--base-unicornblue), 40%;
+  --base-unicornblue8: var(--base-unicornblue), 30%;
+  --base-unicornblue9: var(--base-unicornblue), 20%;
+
+  --color-unicornblue0: hsla(var(--base-unicornblue0), 1);
+  --color-unicornblue1: hsla(var(--base-unicornblue1), 1);
+  --color-unicornblue2: hsla(var(--base-unicornblue2), 1);
+  --color-unicornblue3: hsla(var(--base-unicornblue3), 1);
+  --color-unicornblue4: hsla(var(--base-unicornblue4), 1);
+  --color-unicornblue5: hsla(var(--base-unicornblue5), 1);
+  --color-unicornblue6: hsla(var(--base-unicornblue6), 1);
+  --color-unicornblue7: hsla(var(--base-unicornblue7), 1);
+  --color-unicornblue8: hsla(var(--base-unicornblue8), 1);
+  --color-unicornblue9: hsla(var(--base-unicornblue9), 1);
+
+  --base-coral: 360, 100%;
+  --base-coral0: var(--base-coral), 97%;
+  --base-coral1: var(--base-coral), 92%;
+  --base-coral2: var(--base-coral), 86%;
+  --base-coral3: var(--base-coral), 80%;
+  --base-coral4: var(--base-coral), 70%;
+  --base-coral5: var(--base-coral), 60%;
+  --base-coral6: var(--base-coral), 47%;
+  --base-coral7: var(--base-coral), 40%;
+  --base-coral8: var(--base-coral), 30%;
+  --base-coral9: var(--base-coral), 20%;
+
+  --color-coral0: hsla(var(--base-coral0), 1);
+  --color-coral1: hsla(var(--base-coral1), 1);
+  --color-coral2: hsla(var(--base-coral2), 1);
+  --color-coral3: hsla(var(--base-coral3), 1);
+  --color-coral4: hsla(var(--base-coral4), 1);
+  --color-coral5: hsla(var(--base-coral5), 1);
+  --color-coral6: hsla(var(--base-coral6), 1);
+  --color-coral7: hsla(var(--base-coral7), 1);
+  --color-coral8: hsla(var(--base-coral8), 1);
+  --color-coral9: hsla(var(--base-coral9), 1);
+
+  --base-yelloworange: 38, 100%;
+  --base-yelloworange0: var(--base-yelloworange), 95%;
+  --base-yelloworange1: var(--base-yelloworange), 90%;
+  --base-yelloworange2: var(--base-yelloworange), 84%;
+  --base-yelloworange3: var(--base-yelloworange), 78%;
+  --base-yelloworange4: var(--base-yelloworange), 70%;
+  --base-yelloworange5: var(--base-yelloworange), 60%;
+  --base-yelloworange6: var(--base-yelloworange), 47%;
+  --base-yelloworange7: var(--base-yelloworange), 40%;
+  --base-yelloworange8: var(--base-yelloworange), 30%;
+  --base-yelloworange9: var(--base-yelloworange), 20%;
+
+  --color-yelloworange0: hsla(var(--base-yelloworange0), 1);
+  --color-yelloworange1: hsla(var(--base-yelloworange1), 1);
+  --color-yelloworange2: hsla(var(--base-yelloworange2), 1);
+  --color-yelloworange3: hsla(var(--base-yelloworange3), 1);
+  --color-yelloworange4: hsla(var(--base-yelloworange4), 1);
+  --color-yelloworange5: hsla(var(--base-yelloworange5), 1);
+  --color-yelloworange6: hsla(var(--base-yelloworange6), 1);
+  --color-yelloworange7: hsla(var(--base-yelloworange7), 1);
+  --color-yelloworange8: hsla(var(--base-yelloworange8), 1);
+  --color-yelloworange9: hsla(var(--base-yelloworange9), 1);
+
+  --base-green: 115, 50%;
+  --base-green0: var(--base-green), 97%;
+  --base-green1: var(--base-green), 92%;
+  --base-green2: var(--base-green), 86%;
+  --base-green3: var(--base-green), 80%;
+  --base-green4: var(--base-green), 70%;
+  --base-green5: var(--base-green), 60%;
+  --base-green6: var(--base-green), 50%;
+  --base-green7: var(--base-green), 40%;
+  --base-green8: var(--base-green), 30%;
+  --base-green9: var(--base-green), 20%;
+
+  --color-green0: hsla(var(--base-green0), 1);
+  --color-green1: hsla(var(--base-green1), 1);
+  --color-green2: hsla(var(--base-green2), 1);
+  --color-green3: hsla(var(--base-green3), 1);
+  --color-green4: hsla(var(--base-green4), 1);
+  --color-green5: hsla(var(--base-green5), 1);
+  --color-green6: hsla(var(--base-green6), 1);
+  --color-green7: hsla(var(--base-green7), 1);
+  --color-green8: hsla(var(--base-green8), 1);
+  --color-green9: hsla(var(--base-green9), 1);
+
+  --color-arlet: var(--color-coral6);
+  --color-coral: hsla(360, 100%, 67%, 1);
+  --color-yellow: hsla(39, 100%, 64%, 1);
+  --color-green: hsla(113, 43%, 54%, 1);
+  --color-light-coral-pink: hsla(0,100%,98%, 1);
+  --color-light-yellow: hsla(38, 100%, 95%, 1);
+  --color-boxshadow: hsla(0, 0%, 0%, 0.2);
+
+  --color-overlay: hsla(0, 0%, 0%, 0.4);
+
+  --color-primary: var(--color-unicornblue6);
+}
+
+
+.dark-mode {
+  /*--color-gray0: hsla(215, 100%, 70%, 1);*/
+  /*--color-gray1: hsla(var(--base-gray), 96%, 100%);*/
+  /*--color-gray2: hsla(var(--base-gray), 90%, 100%);*/
+  /*--color-gray3: hsla(var(--base-gray), 82%, 100%);*/
+  /*--color-gray4: hsla(var(--base-gray), 71%, 100%);*/
+  /*--color-gray5: hsla(var(--base-gray), 60%, 100%);*/
+  /*--color-gray6: hsla(var(--base-gray), 45%, 100%);*/
+  /*--color-gray7: hsla(var(--base-gray), 35%, 100%);*/
+  /*--color-gray8: hsla(var(--base-gray), 23%, 100%);*/
+  /*--color-gray9: hsla(var(--base-gray), 13%, 100%);*/
+}
+
+
+/* variables */
+:root {
+  --header-height: 64px;
+}
+
+@media (max-width: 767px) {
+  :root {
+    --header-height: 44px;
+  }
+}

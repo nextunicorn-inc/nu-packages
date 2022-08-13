@@ -1,0 +1,90 @@
+{
+  "name": "@nextunicorn-inc/nu-ui",
+  "packageManager": "yarn@3.2.2",
+  "version": "0.0.12",
+  "type": "module",
+  "main": "./dist/nu-uis.umd.js",
+  "types": "./dist/src/index.d.ts",
+  "homepage": "https://github.com/nextunicorn-inc/nu-packages",
+  "bugs": "https://github.com/nextunicorn-inc/nu-packages/issues",
+  "repository": "git://github.com/nextunicorn-inc/nu-packages.git",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "files": [
+    "dist",
+    "variable.css"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/nu-ui.js",
+      "require": "./dist/nu-ui.umd.js"
+    },
+    "./dist/variable.css": {
+      "import": "./dist/variable.css",
+      "require": "./dist/variable.css"
+    }
+  },
+  "sideEffects": false,
+  "author": "Nextunicorn Inc",
+  "engines": {
+    "node": "^14.15.0 || >=16.10.0",
+    "yarn": ">=1.22.4 <2",
+    "npm": "Please use yarn instead of NPM to install dependencies"
+  },
+  "scripts": {
+    "dev": "start-storybook -p 4000",
+    "build":  "vite build && cp src/@styles/variables.css dist/variables.css && copyfiles -su 1 src/assets/**/*.svg dist/src/ && copyfiles -su 1 src/assets/**/*.png dist/src/",
+    "watch": "tsc --build -w",
+    "clean": "rimraf dist storybook-static",
+    "build:storybook": "build-storybook"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.18.9",
+    "@babel/plugin-proposal-class-properties": "^7.18.6",
+    "@babel/plugin-transform-runtime": "^7.18.9",
+    "@babel/preset-env": "^7.18.9",
+    "@babel/preset-react": "^7.18.6",
+    "@babel/preset-typescript": "^7.18.6",
+    "@babel/runtime": "^7.18.9",
+    "@emotion/babel-plugin": "^11.10.0",
+    "@emotion/react": "^11.10.0",
+    "@emotion/styled": "^11.10.0",
+    "@nextunicorn-inc/nu-types": "0.0.1",
+    "@storybook/addon-actions": "^6.5.9",
+    "@storybook/addon-docs": "^6.5.9",
+    "@storybook/addon-essentials": "^6.5.9",
+    "@storybook/addon-links": "^6.5.9",
+    "@storybook/builder-webpack5": "^6.5.9",
+    "@storybook/core-common": "^6.5.9",
+    "@storybook/manager-webpack5": "^6.5.9",
+    "@storybook/react": "^6.5.9",
+    "@svgr/webpack": "^6.3.1",
+    "@types/react": "^18.0.15",
+    "@types/react-dom": "^18.0.6",
+    "@vitejs/plugin-react": "^2.0.0",
+    "babel-loader": "^8.2.5",
+    "chromatic": "^6.7.2",
+    "classnames": "^2.3.1",
+    "copyfiles": "^2.4.1",
+    "css-loader": "^6.7.1",
+    "rc-checkbox": "^2.3.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.3.0",
+    "regenerator-runtime": "^0.13.9",
+    "rimraf": "^3.0.2",
+    "style-loader": "^3.3.1",
+    "typescript": "^4.7.4",
+    "typescript-styled-plugin": "^0.18.2",
+    "vite": "^3.0.4",
+    "vite-plugin-dts": "^1.4.1"
+  },
+  "peerDependencies": {
+    "@types/react": "^18.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "require-from-string": "*",
+    "webpack": "*"
+  }
+}

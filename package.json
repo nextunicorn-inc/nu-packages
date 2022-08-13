@@ -1,0 +1,23 @@
+{
+  "name": "@nextunicorn-inc/monorepo",
+  "packageManager": "yarn@3.2.2",
+  "workspaces": [
+    "packages/*"
+  ],
+  "private": true,
+  "homepage": "https://github.com/nextunicorn-inc/nu-packages",
+  "bugs": "https://github.com/nextunicorn-inc/nu-packages/issues",
+  "repository": "git://github.com/nextunicorn-inc/nu-packages.git",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "author": "Nextunicorn Inc",
+  "engines": {
+    "node": "^14.15.0 || >=16.10.0",
+    "yarn": ">=1.22.4 <2",
+    "npm": "Please use yarn instead of NPM to install dependencies"
+  },
+  "devDependencies": {
+    "typescript": "^4.7.4"
+  }
+}

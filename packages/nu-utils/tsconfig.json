@@ -1,0 +1,19 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "baseUrl": ".",
+    "outDir": "dist",
+    "composite": true,
+    "declaration": true,
+    "isolatedModules": false,
+    "types": ["jest", "node", "lodash", "next"],
+    "typeRoots": [
+      "./src/@types"
+    ]
+  },
+  "include": [
+    "src/**/*",
+    "src/**/*.json",
+  ]
+}

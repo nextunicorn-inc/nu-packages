@@ -1,0 +1,27 @@
+import React from 'react';
+import {
+  DisableProps,
+  IconProps,
+  LoadingProps,
+  SizeTypes,
+  StyleProps,
+} from '@nextunicorn-inc/nu-types';
+
+export type ButtonVariant = 'primary' | 'secondary' | 'tertiary';
+
+export type ButtonSize = SizeTypes;
+
+type ButtonOptions = {
+  text?: string;
+  variant?: ButtonVariant;
+  size?: ButtonSize;
+  isBlock?: boolean;
+};
+
+export interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+    DisableProps,
+    LoadingProps,
+    IconProps,
+    StyleProps,
+    ButtonOptions {}

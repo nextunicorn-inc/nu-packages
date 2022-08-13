@@ -1,0 +1,31 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "@emotion/react",
+    "strict": true,
+    "baseUrl": ".",
+    "outDir": "dist",
+    "composite": true,
+    "declaration": true,
+    "types": ["node"],
+    "plugins": [
+      {
+        "name": "typescript-styled-plugin",
+        "tags": [
+          "styled",
+          "css"
+        ]
+      }
+    ],
+    "typeRoots": [
+      "@types"
+    ]
+  },
+  "include": [
+    "@types/*",
+    "src/**/*",
+    "src/**/*.json",
+    ".storybook/*"
+  ],
+}
