@@ -1,11 +1,5 @@
 import React from 'react';
-import {
-  DisableProps,
-  IconProps,
-  LoadingProps,
-  SizeTypes,
-  StyleProps,
-} from '@nextunicorn-inc/nu-types';
+import { DisableProps, IconProps, LoadingProps, SizeTypes, StyleProps } from '@nextunicorn/types';
 
 export type ButtonVariant = 'primary' | 'secondary' | 'tertiary';
 

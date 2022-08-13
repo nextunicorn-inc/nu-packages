@@ -1,5 +1,5 @@
 import jwt, { JwtPayload } from 'jsonwebtoken';
-import { GenericObject } from '@nextunicorn-inc/nu-types';
+import { GenericObject } from '@nextunicorn/types';
 import { IMMEDIATELY_INVALIDATE_COOKIE, SECRET_KEY } from '../../constants';
 
 export const setCookie = (

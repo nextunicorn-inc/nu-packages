@@ -1,5 +1,5 @@
 import { IconContainer } from './Checkbox.styled';
-import { DisableProps } from '@nextunicorn-inc/nu-types';
+import { DisableProps } from '@nextunicorn/types';
 import { Color } from '../@foundations';
 
 export const DeselectedIcon = ({ disabled }: DisableProps) => (

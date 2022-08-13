@@ -1,5 +1,5 @@
 import React from 'react';
-import { IconProps } from '@nextunicorn-inc/nu-types';
+import { IconProps } from '@nextunicorn/types';
 
 export type TextButtonSize = 'large' | 'small';
 

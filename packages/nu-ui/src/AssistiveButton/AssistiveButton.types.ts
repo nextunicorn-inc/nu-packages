@@ -1,5 +1,5 @@
 import React from 'react';
-import { DisableProps, IconProps, LoadingProps } from '@nextunicorn-inc/nu-types';
+import { DisableProps, IconProps, LoadingProps } from '@nextunicorn/types';
 
 export type AssistiveButtonColor = 'blue' | 'coral' | 'gray';
 

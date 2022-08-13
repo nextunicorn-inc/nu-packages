@@ -1,4 +1,4 @@
-import { GenericObject } from '@nextunicorn-inc/nu-types';
+import { GenericObject } from '@nextunicorn/types';
 import objectAsArray from './objectAsArray';
 import toLowerCaseStart from './toLowerCaseStart';
 

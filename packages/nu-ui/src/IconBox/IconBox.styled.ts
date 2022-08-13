@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { SizeTypes } from '@nextunicorn-inc/nu-types';
+import { SizeTypes } from '@nextunicorn/types';
 import { css } from '@emotion/react';
 
 const sizeCSS = {

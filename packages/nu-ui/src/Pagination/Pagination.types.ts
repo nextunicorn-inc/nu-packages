@@ -1,4 +1,4 @@
-import { DisableProps, StyleProps } from '@nextunicorn-inc/nu-types';
+import { DisableProps, StyleProps } from '@nextunicorn/types';
 
 export type PaginationType = 'default' | 'extra';
 export type PaginationSize = 'large' | 'small';

@@ -1,5 +1,5 @@
 import objectAsArray from './objectAsArray';
-import type { GenericObject } from '@nextunicorn-inc/nu-types';
+import type { GenericObject } from '@nextunicorn/types';
 
 /**
  * 특정 key 로 시작하는 property 제외하고 반환

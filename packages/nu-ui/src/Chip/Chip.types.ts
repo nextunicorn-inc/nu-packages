@@ -1,4 +1,4 @@
-import { StyleProps } from '@nextunicorn-inc/nu-types';
+import { StyleProps } from '@nextunicorn/types';
 
 type ChipOptions = {
   text?: string;

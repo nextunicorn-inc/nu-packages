@@ -1,4 +1,4 @@
-import { DisableProps } from '@nextunicorn-inc/nu-types';
+import { DisableProps } from '@nextunicorn/types';
 import { Color } from '../@foundations';
 import { IconContainer } from './Radio.styled';
 

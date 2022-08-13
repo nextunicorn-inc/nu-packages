@@ -6,9 +6,9 @@
     "strict": true,
     "baseUrl": ".",
     "outDir": "dist",
-    "composite": true,
     "declaration": true,
-    "types": ["node"],
+    "declarationDir": ".",
+    "moduleResolution": "node",
     "plugins": [
       {
         "name": "typescript-styled-plugin",
@@ -28,4 +28,7 @@
     "src/**/*.json",
     ".storybook/*"
   ],
+  "exclude": [
+    "dist"
+  ]
 }

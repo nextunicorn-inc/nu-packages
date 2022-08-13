@@ -1,5 +1,5 @@
 import React from 'react';
-import { DisableProps } from '@nextunicorn-inc/nu-types';
+import { DisableProps } from '@nextunicorn/types';
 
 export type TextareaBorderProps = 'inactive' | 'focus' | 'active' | 'alert';
 

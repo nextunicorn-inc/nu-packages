@@ -1,7 +1,7 @@
 import { GetServerSidePropsContext } from 'next';
 import type { NextRouter } from 'next/router';
 import { DehydratedState, QueryClient } from 'react-query';
-import type { GenericObject } from '@nextunicorn-inc/nu-types';
+import type { GenericObject } from '@nextunicorn/types';
 import { UserRole } from './user';
 
 export type PageLoader = {

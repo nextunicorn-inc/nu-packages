@@ -1,4 +1,4 @@
-import { ChildrenProps, StyleProps } from '@nextunicorn-inc/nu-types';
+import { ChildrenProps, StyleProps } from '@nextunicorn/types';
 
 export type Color = 'light' | 'dark' | 'gray' | 'error';
 

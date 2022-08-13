@@ -1,10 +1,4 @@
-import {
-  USER_TYPE,
-  UserRole,
-  UserType,
-  UserMainRole,
-  USER_MAIN_ROLE,
-} from '@nextunicorn-inc/nu-types';
+import { USER_TYPE, UserRole, UserType, UserMainRole, USER_MAIN_ROLE } from '@nextunicorn/types';
 
 const hasMainRoleOf = (target: UserMainRole, candidates: UserRole[]): boolean =>
   candidates?.some((c) => c?.startsWith(target)) || false;

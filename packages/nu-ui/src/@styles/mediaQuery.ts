@@ -1,3 +1,3 @@
-import { BreakPoint } from '@nextunicorn-inc/nu-types';
+import { BreakPoint } from '@nextunicorn/types';
 
 export const mediaQuery = (breakPoint: BreakPoint) => `@media (max-width: ${breakPoint}px)`;

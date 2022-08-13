@@ -1,4 +1,4 @@
-import { GenericObject } from '@nextunicorn-inc/nu-types';
+import { GenericObject } from '@nextunicorn/types';
 
 export type Common =
   | 'surface'

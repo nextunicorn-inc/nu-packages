@@ -1,4 +1,4 @@
-import { GenericObject } from '@nextunicorn-inc/nu-types';
+import { GenericObject } from '@nextunicorn/types';
 
 const isEmptyObject = (object: GenericObject<unknown>) => {
   return Object.keys(object).length === 0;

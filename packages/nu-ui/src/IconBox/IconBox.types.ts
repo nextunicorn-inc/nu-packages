@@ -1,4 +1,4 @@
-import { IconProps, SizeTypes } from '@nextunicorn-inc/nu-types';
+import { IconProps, SizeTypes } from '@nextunicorn/types';
 
 interface IconBoxOptions {
   text?: string;

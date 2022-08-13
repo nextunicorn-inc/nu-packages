@@ -1,4 +1,4 @@
-import type { GenericObject } from '@nextunicorn-inc/nu-types';
+import type { GenericObject } from '@nextunicorn/types';
 
 /**
  * 오브젝트를 배열로 반환합니다.

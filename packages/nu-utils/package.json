@@ -1,5 +1,5 @@
 {
-  "name": "@nextunicorn-inc/nu-utils",
+  "name": "@nextunicorn/utils",
   "packageManager": "yarn@3.2.2",
   "version": "0.0.1",
   "type": "module",
@@ -9,7 +9,7 @@
   "bugs": "https://github.com/nextunicorn-inc/nu-packages/issues",
   "repository": "git://github.com/nextunicorn-inc/nu-packages.git",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+    "registry": "https://registry.npmjs.org/"
   },
   "files": [
     "dist"
@@ -38,8 +38,8 @@
     "@babel/runtime": "^7.18.9",
     "@emotion/react": "^11.10.0",
     "@emotion/styled": "^11.10.0",
-    "@nextunicorn-inc/nu-types": "^0.0.2",
-    "@nextunicorn-inc/nu-ui": "^0.0.12",
+    "@nextunicorn/types": "^0.0.1",
+    "@nextunicorn/ui": "^0.0.1",
     "@rollup/plugin-commonjs": "^22.0.2",
     "@rollup/plugin-node-resolve": "^13.3.0",
     "@sentry/nextjs": "^7.8.0",

@@ -1,5 +1,5 @@
 {
-  "name": "@nextunicorn-inc/nu-types",
+  "name": "@nextunicorn/types",
   "packageManager": "yarn@3.2.2",
   "version": "0.0.2",
   "type": "module",
@@ -9,7 +9,7 @@
   "bugs": "https://github.com/nextunicorn-inc/nu-packages/issues",
   "repository": "git://github.com/nextunicorn-inc/nu-packages.git",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+    "registry": "https://registry.npmjs.org/"
   },
   "files": [
     "dist"

@@ -1,5 +1,5 @@
 import objectAsArray from './objectAsArray';
-import type { GenericObject } from '@nextunicorn-inc/nu-types';
+import type { GenericObject } from '@nextunicorn/types';
 
 /**
  * 오브젝트를 키 기준으로 필터링합니다.

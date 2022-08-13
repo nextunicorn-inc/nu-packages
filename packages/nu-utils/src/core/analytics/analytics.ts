@@ -2,7 +2,7 @@ import { AmplitudeClient } from 'amplitude-js';
 import { NextRouter } from 'next/router';
 import throttle from 'lodash/throttle';
 import pick from 'lodash/pick';
-import { ParsedUrlQuery } from '@nextunicorn-inc/nu-types';
+import { ParsedUrlQuery } from '@nextunicorn/types';
 import { isBrowser } from '../../utils';
 import unicornEvent from './unicornEvent';
 

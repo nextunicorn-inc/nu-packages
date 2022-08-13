@@ -1,5 +1,4 @@
-import {BREAK_POINT} from '@nextunicorn-inc/nu-types';
-
+import { BREAK_POINT } from '@nextunicorn/types';
 
 import styled from '@emotion/styled';
 import {

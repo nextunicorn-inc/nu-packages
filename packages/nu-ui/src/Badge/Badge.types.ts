@@ -1,4 +1,4 @@
-import { IconProps, StyleProps } from '@nextunicorn-inc/nu-types';
+import { IconProps, StyleProps } from '@nextunicorn/types';
 
 export type BadgeKind = 'border';
 

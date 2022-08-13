@@ -1,5 +1,5 @@
 import { InputHTMLAttributes, FC, SVGProps } from 'react';
-import { StyleProps } from '@nextunicorn-inc/nu-types';
+import { StyleProps } from '@nextunicorn/types';
 
 export interface InputOptions extends InputHTMLAttributes<HTMLInputElement> {
   label?: string;

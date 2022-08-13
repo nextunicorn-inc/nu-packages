@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { BREAK_POINT, BREAK_POINT_KEY, BreakPointKey } from '@nextunicorn-inc/nu-types';
+import { BREAK_POINT, BREAK_POINT_KEY, BreakPointKey } from '@nextunicorn/types';
 
 const useCurrentBreakPoint = () => {
   const [currentBreakPoint, setCurrentBreakPoint] = useState<BreakPointKey>(BREAK_POINT_KEY.large);

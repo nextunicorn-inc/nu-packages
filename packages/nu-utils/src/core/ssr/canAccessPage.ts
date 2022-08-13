@@ -1,6 +1,6 @@
 import { UserInfo } from '../../@types/user';
 import { hasTargetRole } from '../../utils';
-import type { UserRole } from '@nextunicorn-inc/nu-types';
+import type { UserRole } from '@nextunicorn/types';
 
 const canAccessPage = (accessibleRoles: UserRole[], userMe?: UserInfo) => {
   if (!accessibleRoles.length) return true;

@@ -1,6 +1,6 @@
 import detachPrefixByKey from './detachPrefixByKey';
 import filterObjectByKey from './filterObjectByKey';
-import type { GenericObject } from '@nextunicorn-inc/nu-types';
+import type { GenericObject } from '@nextunicorn/types';
 
 /**
  * 특정 key 값의 prefix 를 가지고 있는 property 들만 prefix 제거 후 반환

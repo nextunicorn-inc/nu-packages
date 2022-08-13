@@ -1,4 +1,4 @@
-import { UserRole } from '@nextunicorn-inc/nu-types';
+import { UserRole } from '@nextunicorn/types';
 import { UserRoleType } from '../@types/user';
 
 const hasTargetRole = (userRoles: UserRoleType[], targetRole: UserRole) =>
