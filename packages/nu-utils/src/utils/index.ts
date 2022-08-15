@@ -17,3 +17,4 @@ export { default as parseQueryString } from './parseQueryString';
 export { default as toLowerCaseStart } from './toLowerCaseStart';
 export { default as toNumber } from './toNumber';
 export { default as toUpperCaseStart } from './toUpperCaseStart';
+export { default as isMobileOrTablet } from './isMobileOrTablet';

@@ -1,9 +1,10 @@
 import axios, { AxiosError, AxiosResponse } from 'axios';
 import { stringify } from 'query-string';
 import interceptor from './interceptor';
-import { getEnsureFingerprint, getSessionId, getCookie } from '../../auth';
+import { getEnsureFingerprint, getSessionId } from '../../auth';
 import { analytics } from '../../analytics';
-import { ApiProps, AxiosCallProps, BasicApiProps } from '../../../@types/auth';
+import { ApiProps, AxiosCallProps, BasicApiProps } from '../../../@types';
+import { getDocCookieOfKey } from '../../cookie';
 
 export const nuApi = async <Data = unknown>({
   method,
@@ -30,7 +31,7 @@ export const nuApi = async <Data = unknown>({
   const fingerprint = getEnsureFingerprint();
   if (fingerprint) axiosConfig.headers['x-nu-fp'] = fingerprint;
 
-  const webEnabled = getCookie('x-nu-wp');
+  const webEnabled = getDocCookieOfKey('x-nu-wp');
   if (webEnabled) axiosConfig.headers['x-nu-wp'] = '1';
 
   const url = path.startsWith('http') ? path : `localhost:3000/${path}`;
@@ -73,20 +74,33 @@ export const nuApi = async <Data = unknown>({
 export const nuGet = <Ret = unknown>({
   path,
   axiosConfig,
-}: BasicApiProps): Promise<Ret | undefined> => nuApi({ method: 'get', path, axiosConfig });
+}: BasicApiProps): Promise<Ret | undefined> =>
+  nuApi({
+    method: 'get',
+    path,
+    axiosConfig,
+  });
 
 export const nuPut = <Ret = unknown>({
   path,
   axiosConfig,
   data,
 }: ApiProps): Promise<Ret | undefined> =>
-  nuApi({ method: 'put', path, axiosConfig: { data, ...axiosConfig } });
+  nuApi({
+    method: 'put',
+    path,
+    axiosConfig: { data, ...axiosConfig },
+  });
 
 export const nuPost = <Ret = unknown>({
   path,
   axiosConfig,
   data,
 }: ApiProps): Promise<Ret | undefined> =>
-  nuApi({ method: 'post', path, axiosConfig: { data, ...axiosConfig } });
+  nuApi({
+    method: 'post',
+    path,
+    axiosConfig: { data, ...axiosConfig },
+  });
 
 export default nuApi;

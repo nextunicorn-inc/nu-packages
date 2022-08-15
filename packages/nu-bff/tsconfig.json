@@ -1,0 +1,31 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "target": "ESNext",
+    "strict": true,
+    "module": "esnext",
+    "noEmitOnError": true,
+    "lib": ["es2017"],
+    "esModuleInterop": false,
+    "baseUrl": ".",
+    "outDir": "dist",
+    "composite": true,
+    "declaration": true,
+    "isolatedModules": false,
+    "types": [
+      "node",
+      "@types/jest"
+    ],
+    "typeRoots": [
+      "./src/@types"
+    ]
+  },
+  "include": [
+    "src/**/*",
+    "src/**/*.json"
+  ],
+  "exclude": [
+    "src/**/*.test.ts"
+  ]
+}

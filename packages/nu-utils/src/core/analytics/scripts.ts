@@ -29,4 +29,4 @@ export const getAmplitudeScriptHTML =
     if(!Object.prototype.hasOwnProperty.call(n._iq,e)){n._iq[e]={_q:[]};v(n._iq[e])}
     return n._iq[e]};e.amplitude=n})(window,document);amplitude.getInstance().init('${
       process.env.AMP_ID as string
-    }')`;
+    }', null, {apiEndpoint: 'msgqvnloil.execute-api.ap-northeast-2.amazonaws.com/prod'});`;

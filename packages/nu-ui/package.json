@@ -36,7 +36,8 @@
     "build": "yarn clean && rollup -c && cp src/@styles/variables.css dist/variables.css && copyfiles -su 1 src/assets/**/*.svg dist/src/ && copyfiles -su 1 src/assets/**/*.png dist/src/",
     "watch": "tsc --build -w",
     "clean": "rimraf dist storybook-static",
-    "build:storybook": "build-storybook"
+    "build:storybook": "build-storybook",
+    "update": "yarn build && npm publish --access=public"
   },
   "devDependencies": {
     "@babel/core": "^7.18.10",

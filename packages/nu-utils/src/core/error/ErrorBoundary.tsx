@@ -1,6 +1,6 @@
 import { Component, ErrorInfo } from 'react';
 import ErrorPage from './ErrorPage';
-import { ErrorBoundaryProps, ErrorBoundaryState } from '../../@types/error';
+import { ErrorBoundaryProps, ErrorBoundaryState } from '../../@types';
 
 class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
   constructor(props: ErrorBoundaryProps) {
@@ -36,7 +36,7 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
           reset: resetErrorBoundary,
         });
       }
-      return <ErrorPage error={error} reset={resetErrorBoundary} />;
+      return <ErrorPage error={error} />;
     }
 
     return children;

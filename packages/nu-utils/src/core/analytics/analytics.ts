@@ -2,7 +2,7 @@ import { AmplitudeClient } from 'amplitude-js';
 import { NextRouter } from 'next/router';
 import throttle from 'lodash/throttle';
 import pick from 'lodash/pick';
-import { ParsedUrlQuery } from '@nextunicorn/types';
+import { GenericObject, ParsedUrlQuery } from '@nextunicorn/types';
 import { isBrowser } from '../../utils';
 import unicornEvent from './unicornEvent';
 
@@ -52,11 +52,7 @@ const amplitudeLogEvent = (template: string, properties?: Record<string, unknown
   // https://github.com/amplitude/Amplitude-JavaScript/blob/01b3900ba8e109989b0f7d7bc0b12b827ca6fc26/src/amplitude-client.js#L1150
   adBlockOn = !getAmp()?.getInstance().logEvent(template, properties);
   if (adBlockOn) {
-    unicornEvent({
-      category: 'ampFailed',
-      event: template,
-      ampProperties: properties,
-    });
+    // do noting
   }
 };
 
@@ -241,7 +237,10 @@ export class AnalyticsClient {
   }
 
   // eslint-disable-next-line class-methods-use-this
-  public setIdentity(userId: string | undefined, properties: any) {
+  public setIdentity(
+    userId: string | undefined,
+    properties?: GenericObject<string | boolean | number>,
+  ) {
     if (getAmp()) {
       // noinspection TypeScriptUnresolvedFunction
       /*
@@ -266,19 +265,6 @@ export class AnalyticsClient {
   }
 
   // eslint-disable-next-line class-methods-use-this
-  public Purchase({ value }: any) {
-    gtm('event', 'purchase', {
-      value,
-    });
-    amplitudeLogEvent('Purchase');
-    unicornEvent({
-      category: 'track',
-      event: 'Purchase',
-      value,
-    });
-  }
-
-  // eslint-disable-next-line class-methods-use-this
   public sessionStart() {
     unicornEvent({
       category: 'track',
@@ -287,7 +273,7 @@ export class AnalyticsClient {
   }
 
   // eslint-disable-next-line class-methods-use-this
-  public customGTM(...args: any[]) {
+  public customGTM(...args: unknown[]) {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
     gtm(...args);
   }

@@ -1,3 +1,4 @@
+import { decryptJson, encryptJson } from '@nextunicorn/bff-utils';
 import { decodeJwt } from 'jose';
 import { serialize } from 'cookie';
 import { dehydrate, QueryClient } from 'react-query';
@@ -5,12 +6,13 @@ import { cloneDeep, noop } from 'lodash';
 import { gql } from 'graphql-request';
 import { PrepareServerSidePropsFunc, AuthCookie, UserInfo, UserInfoGQL } from '../../@types';
 import canAccessPage from './canAccessPage';
-import { setAuthFromCookies, parseCookie, refreshAuth, encodeJson } from '../auth';
+import { setAuthFromCookies, refreshAuth } from '../auth';
 import { isInstanceOfAPIError } from '../error';
-import { MAX_AGE_LIMIT } from '../../constants';
-import { hasTargetRole, getCurrentTimeMS, isEmptyObject } from '../../utils';
+import { MAX_AGE_LIMIT, SECURITY_KEY_BYTES_32 } from '../../constants';
+import { hasTargetRole, getCurrentTimeMS } from '../../utils';
 import * as Sentry from '@sentry/nextjs';
 import { nuAuthGQL } from '../api';
+import { getCookie } from '../cookie';
 
 const redirectProps = (path: string) => ({
   redirect: {
@@ -76,8 +78,18 @@ const prepareServerSideProps: PrepareServerSidePropsFunc =
       return { props: { dehydratedState: cloneDeep(dehydrate(queryClient)) } };
     };
 
-    const authFromCookies = parseCookie(ctx.req.headers.cookie, 'nu-auth') as unknown as AuthCookie;
-    if (isEmptyObject(authFromCookies)) {
+    const authCookie = getCookie(ctx.req.headers.cookie, 'nu-auth');
+    const authFromCookies = (() => {
+      // 이미 jwt 형태로 발급된 쿠키가 잘못된 경우에 대한 예외처리
+      try {
+        return authCookie
+          ? (decryptJson(SECURITY_KEY_BYTES_32, authCookie) as unknown as AuthCookie)
+          : null;
+      } catch (e) {
+        return null;
+      }
+    })();
+    if (!authFromCookies) {
       if (!canAccessPage(accessibleRoles)) return redirectProps(path);
       return await defaultExecuteFunction();
     }
@@ -99,7 +111,7 @@ const prepareServerSideProps: PrepareServerSidePropsFunc =
 
         ctx.res.setHeader(
           'Set-Cookie',
-          serialize('nu-auth', encodeJson(response), {
+          serialize('nu-auth', encryptJson(SECURITY_KEY_BYTES_32, response), {
             maxAge: MAX_AGE_LIMIT,
             httpOnly: true,
             path: '/',

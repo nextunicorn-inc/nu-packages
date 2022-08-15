@@ -1,6 +1,12 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
+    "moduleResolution": "node",
+    "target": "ESNext",
+    "strict": true,
+    "module": "esnext",
+    "noEmitOnError": true,
+    "lib": ["ESNext"],
     "jsx": "react-jsx",
     "baseUrl": ".",
     "outDir": "dist",

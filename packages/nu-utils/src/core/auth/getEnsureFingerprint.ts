@@ -1,11 +1,11 @@
 import once from 'lodash/once';
 import { fromNumber, generateRandomString } from '../../utils';
-import { getCookie, setCookie } from './cookieUtils';
+import { getDocCookieOfKey, setCookie } from '../cookie';
 
 const getEnsureFingerprint = once(() => {
   if (typeof navigator === 'undefined' || typeof window === 'undefined') return;
 
-  let nuFp = getCookie('nu-fp');
+  let nuFp = getDocCookieOfKey('nu-fp');
   if (nuFp) return nuFp;
 
   let nuFpInLocalStorage = localStorage.getItem('nu-fp');

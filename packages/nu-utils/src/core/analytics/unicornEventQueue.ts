@@ -1,11 +1,6 @@
 import map from 'lodash/map';
 import { getLocalStorageData } from '../../utils';
 
-type Auth = {
-  accessToken: string;
-  refreshToken: string;
-};
-
 type UTM = {
   utm_source?: string;
   utm_medium?: string;
@@ -15,7 +10,8 @@ type UTM = {
 };
 
 const hasAnalytics = () => typeof window !== 'undefined' && window.gtm;
-function removeUndefinedFromObject<T = any>(obj: T): T {
+
+function removeUndefinedFromObject<T>(obj: T): T {
   const ret = {} as T;
   Object.entries(obj).forEach(([i, v]) => {
     if (v !== undefined) {
@@ -35,7 +31,7 @@ const getCurrentDate = () => Math.floor(Date.now() / 1000 / 60 / 60 / 24);
 export const getUtmSources = () => {
   try {
     return JSON.parse(getLocalStorageData('utmSources_v2'))?.filter(
-      (v: any) => v && getCurrentDate() - v[1] < 7,
+      (v: [string[], number]) => v && getCurrentDate() - v[1] < 7,
     );
   } catch (e) {
     return [];
@@ -44,7 +40,7 @@ export const getUtmSources = () => {
 
 const getRefs = () => {
   try {
-    return JSON.parse(getLocalStorageData('refs'))?.filter((v: any) => v);
+    return JSON.parse(getLocalStorageData('refs'))?.filter((v: string) => v);
   } catch (e) {
     return [];
   }
@@ -52,8 +48,6 @@ const getRefs = () => {
 
 class UnicornEventQueue {
   public collectUrl: string | undefined;
-
-  private auth: Auth | null = null;
 
   private utmFound = false;
 
@@ -63,20 +57,9 @@ class UnicornEventQueue {
 
   private queue: unknown[] = [];
 
-  private lastVersion: string =
-    typeof localStorage !== 'undefined' ? localStorage.getItem('x-nu-version') || '' : '';
-
-  public setAuth(auth: unknown) {
-    if (auth === null || auth === undefined) return;
-    if (typeof auth !== 'object') return;
-
-    this.auth = auth as Auth;
-  }
-
   public async flush() {
     if (!hasAnalytics()) return;
     if (this.queue.length <= 0) return;
-    if (this.auth === null) return;
 
     const isBrowser = typeof window !== 'undefined';
     if (!isBrowser) {
@@ -87,7 +70,7 @@ class UnicornEventQueue {
     if (process.env.ENV !== 'local') {
       fetch(`${process.env.REDIRECT_URL}/event`, {
         method: 'POST',
-        body: JSON.stringify({ auth: this.auth, url: this.collectUrl, queue: this.queue }),
+        body: JSON.stringify(this.queue),
       }).then(() => this.queue.splice(0, this.queue.length));
     }
   }
@@ -101,7 +84,6 @@ class UnicornEventQueue {
     pathname,
     contentId,
     description,
-    ampProperties,
     search,
   }: {
     category: string;
@@ -112,7 +94,6 @@ class UnicornEventQueue {
     pathname: string;
     contentId?: string | number;
     description?: string;
-    ampProperties?: any;
     search?: UTM;
   }) {
     if (!hasAnalytics()) return;
@@ -131,7 +112,7 @@ class UnicornEventQueue {
       // UTM 을 찾는 로직
       const currentSearch = search;
       if ((!this.lastSearch && currentSearch) || currentSearch !== this.lastSearch) {
-        this.cachedParams = currentSearch as any;
+        this.cachedParams = currentSearch as UTM;
         if (this.cachedParams.utm_source) {
           this.utmFound = true;
         }
@@ -155,9 +136,8 @@ class UnicornEventQueue {
         ct: this.cachedParams.utm_content,
         tm: this.cachedParams.utm_term,
         scs: map(getUtmSources(), (v) => v[0]),
-        amp: ampProperties,
         t: search,
-      }) as unknown as any,
+      }),
     );
     if (this.queue.length > 20) {
       this.flush();

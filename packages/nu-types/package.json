@@ -3,7 +3,7 @@
   "packageManager": "yarn@3.2.2",
   "version": "0.0.2",
   "type": "module",
-  "main": "./dist/nu-types.umd.js",
+  "main": "./dist/nu-types.js",
   "types": "./dist/index.d.ts",
   "homepage": "https://github.com/nextunicorn-inc/nu-packages",
   "bugs": "https://github.com/nextunicorn-inc/nu-packages/issues",
@@ -17,7 +17,7 @@
   "exports": {
     ".": {
       "import": "./dist/nu-types.js",
-      "require": "./dist/nu-types.umd.js"
+      "require": "./dist/nu-types.umd.cjs"
     }
   },
   "sideEffects": false,
@@ -30,7 +30,8 @@
   "scripts": {
     "build": "yarn clean && vite build",
     "watch": "vite build --watch",
-    "clean": "rimraf dist"
+    "clean": "rimraf dist",
+    "update": "yarn build && npm publish --access=public"
   },
   "devDependencies": {
     "@types/node": "^18.6.3",

@@ -175,13 +175,11 @@ const GlobalAnalyticsContainer = ({
   const documentVisibility = useDocumentVisibility();
   const { pathname } = useRouter();
   // collectReferencesAndUtmSources();
-  const auth = queryClient.getQueryData('/auth/sessions');
   const me = queryClient.getQueryData(['users', 'me']);
 
   // const userRoles = me?.roles;
   // const userType = me?.userType;
 
-  unicornEventQueue.setAuth(auth);
   unicornEventQueue.collectUrl = '/__e';
 
   // console.log('me', me);

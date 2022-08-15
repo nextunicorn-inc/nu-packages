@@ -1,12 +1,12 @@
+const process = require('process');
 import { GraphQLClient } from 'graphql-request';
-import process from 'process';
 import { analytics } from '../../analytics';
-import { getCookie, getEnsureFingerprint, getSessionId } from '../../auth';
+import { getEnsureFingerprint, getSessionId } from '../../auth';
 import getTransactionId from '../../auth/getTransactionId';
-
-import refreshAndAuthCall from './refershAndAuthCall';
 import { BasicGraphqlProps } from '../../../@types';
-import { interceptor } from './index';
+import refreshAndAuthCall from './refershAndAuthCall';
+import interceptor from './interceptor';
+import { getDocCookieOfKey } from '../../cookie';
 
 export const nuGQL = async <Data = unknown>({
   query,
@@ -24,7 +24,7 @@ export const nuGQL = async <Data = unknown>({
 
   graphqlConfig['x-transaction-id'] = getTransactionId();
 
-  const webEnabled = getCookie('x-nu-wp');
+  const webEnabled = getDocCookieOfKey('x-nu-wp');
   if (webEnabled) graphqlConfig['x-nu-wp'] = '1';
 
   graphQLClient.setHeaders(graphqlConfig);

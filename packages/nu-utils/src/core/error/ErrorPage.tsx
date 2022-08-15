@@ -1,7 +1,6 @@
 import styled from '@emotion/styled';
 import { useRouter } from 'next/router';
 
-
 const Wrapper = styled.div`
   width: 100%;
 `;
@@ -44,10 +43,12 @@ const Error = styled.div`
   align-items: center;
 `;
 
-const ErrorPage = ({ error }: any) => {
+const STATIC_ERROR_PAGES = [401, 403, 500, 503, 520];
+
+const ErrorPage = ({ error }: { error: any }) => {
   const { message, statusCode } = error;
   const router = useRouter();
-  const APIError = (status: number | undefined) => {
+  const APIError = (status: number | undefined): string => {
     switch (status) {
       case 500:
         return 'Internal Server Error!';
@@ -61,10 +62,11 @@ const ErrorPage = ({ error }: any) => {
       case undefined:
         return 'Client Error';
       default:
-        return 'UnknownError';
+        return 'Unknown Error';
     }
   };
-  if (statusCode === 401 || statusCode === 403) {
+
+  if (STATIC_ERROR_PAGES.indexOf(statusCode) > -1) {
     router.push(`/${statusCode}`);
   }
 
@@ -76,7 +78,6 @@ const ErrorPage = ({ error }: any) => {
   const env = process.env.ENVIRONMENT as string;
   const isDev = env === 'local' || env === 'beta';
 
-  console.error(error);
   return (
     <Wrapper>
       <Error>

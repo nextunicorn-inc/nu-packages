@@ -1,4 +1,3 @@
-export * from './cookieUtils';
 export { default as getEnsureFingerprint } from './getEnsureFingerprint';
 export { default as getSessionId } from './getSessionId';
 export { default as getTransactionId } from './getTransactionId';

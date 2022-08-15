@@ -1,5 +1,5 @@
 import { isValidElement, cloneElement as reactCloneElement } from 'react';
-import { RenderProps } from '../@types/util';
+import { RenderProps } from '../@types';
 
 export function replaceElement(
   element: React.ReactNode,

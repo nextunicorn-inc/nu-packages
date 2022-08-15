@@ -1,6 +1,6 @@
 import _ from 'lodash';
-import { getLocalStorageData, parseQueryString, setLocalStorageData } from '../../utils'; // will be executed at most once.
-import { setCookie } from '../auth';
+import { getLocalStorageData, parseQueryString, setLocalStorageData } from '../../utils';
+import { setCookie } from '../cookie'; // will be executed at most once.
 
 const WEB_URL = 'www-alpha.nextunicorn.kr';
 
@@ -18,7 +18,7 @@ export const getUtmSources = () => {
 
 export const getRefs = () => {
   try {
-    return JSON.parse(getLocalStorageData('refs'))?.filter((v: any) => v);
+    return JSON.parse(getLocalStorageData('refs'))?.filter((v: unknown) => v);
   } catch (e) {
     return [];
   }
