@@ -11,12 +11,7 @@
     "noEmit": true
   },
   "include": [
-    "index.ts",
-    "constants/**/*",
-    "types/**/*"
+    "src/**/*",
   ],
-  "exclude": ["node_modules", "**/node_modules/*"],
-  "files": [
-    "index.ts"
-  ]
+  "exclude": ["node_modules", "**/node_modules/*"]
 }

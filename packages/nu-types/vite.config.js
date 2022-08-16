@@ -4,9 +4,9 @@ import dts from 'vite-plugin-dts';
 export default defineConfig({
   build: {
     lib: {
-      entry: 'index.ts',
+      entry: 'src/index.ts',
       name: 'NuTypes',
-      fileName: 'nu-types',
+      fileName: 'index',
     },
   },
   plugins: [dts()],
