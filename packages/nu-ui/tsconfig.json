@@ -1,13 +1,21 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
+    "target": "es5",
+    "module": "esnext",
     "jsx": "react-jsx",
     "jsxImportSource": "@emotion/react",
     "strict": true,
     "baseUrl": ".",
+    "declarationDir": "types",
+    "sourceMap": true,
     "outDir": "dist",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "emitDeclarationOnly": true,
     "declaration": true,
-    "declarationDir": ".",
     "moduleResolution": "node",
     "plugins": [
       {

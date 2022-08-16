@@ -1,7 +1,6 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
 import styled from '@emotion/styled';
-import { PNGLogo } from '../assets';
 import Thumbnail from './Thumbnail';
 import { ThumbnailProps } from './Thumbnail.types';
 
@@ -29,11 +28,7 @@ const Row = styled.div`
 export const Default1by1: Story<ThumbnailProps> = (args) => (
   <Layout>
     <Row>
-      <Thumbnail
-        onClick={() => alert('size: xxlarge')}
-        size="xxlarge"
-        cover={<img src={PNGLogo.DefaultNULogo} alt="?!?!" />}
-      />
+      <Thumbnail onClick={() => alert('size: xxlarge')} size="xxlarge" cover={<img alt="?!?!" />} />
       <Thumbnail onClick={() => alert('size: xlarge')} size="xlarge" />
       <Thumbnail onClick={() => alert('size: large')} size="large" />
       <Thumbnail onClick={() => alert('size: medium')} size="medium" />

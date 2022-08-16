@@ -1,43 +1,46 @@
-import { babel } from '@rollup/plugin-babel';
-import { DEFAULT_EXTENSIONS } from '@babel/core';
-import external from 'rollup-plugin-peer-deps-external';
 import resolve from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
 import typescript from '@rollup/plugin-typescript';
 import { terser } from 'rollup-plugin-terser';
-import svgr from '@svgr/rollup';
-import commonjs from '@rollup/plugin-commonjs';
-import image from '@rollup/plugin-image';
+import external from 'rollup-plugin-peer-deps-external';
+import postcss from 'rollup-plugin-postcss';
+import dts from 'rollup-plugin-dts';
+import svg from 'rollup-plugin-svg-import';
+
+const packageJson = require('./package.json');
 
 export default [
   {
-    input: './src/index.tsx',
+    input: 'src/index.tsx',
     output: [
       {
-        file: 'dist/index.js',
+        file: packageJson.main,
         format: 'cjs',
+        sourcemap: true,
+        name: 'react-ts-lib',
       },
       {
-        file: 'dist/index.es.js',
-        format: 'es',
-        exports: 'named',
+        file: packageJson.module,
+        format: 'esm',
+        sourcemap: true,
       },
     ],
     plugins: [
-      commonjs(),
-      babel({
-        babelHelpers: 'runtime',
-        exclude: 'node_modules/**',
-        skipPreflightCheck: true,
-        extensions: [...DEFAULT_EXTENSIONS, '.ts', '.tsx'],
-      }),
       external(),
       resolve(),
-      typescript({
-        tsconfig: 'tsconfig.json',
-      }),
+      commonjs(),
+      typescript({ tsconfig: './tsconfig.json' }),
+      postcss(),
       terser(),
-      svgr(),
-      image(),
+      svg({
+        stringify: false,
+      }),
     ],
+  },
+  {
+    input: 'dist/esm/src/index.d.ts',
+    output: [{ file: 'dist/index.d.ts', format: 'esm' }],
+    external: [/\.css$/],
+    plugins: [dts()],
   },
 ];

@@ -1,10 +1,10 @@
 {
   "name": "@nextunicorn/ui",
   "packageManager": "yarn@3.2.2",
-  "version": "0.0.3",
-  "main": "dist/index.js",
-  "module": "dist/index.es.js",
-  "types": "./dist/src/index.d.ts",
+  "version": "0.0.7",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/index.d.ts",
   "homepage": "https://github.com/nextunicorn-inc/nu-packages",
   "bugs": "https://github.com/nextunicorn-inc/nu-packages/issues",
   "repository": "git://github.com/nextunicorn-inc/nu-packages.git",
@@ -16,10 +16,10 @@
   ],
   "exports": {
     ".": {
-      "import": "./dist/index.js",
-      "require": "./dist/index.es.js"
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
     },
-    "./global.css": {
+    "./css": {
       "import": "./dist/variables.css",
       "require": "./dist/variables.css"
     }
@@ -33,15 +33,17 @@
   },
   "scripts": {
     "dev": "start-storybook -p 4000",
-    "build": "yarn clean && rollup -c && cp src/@styles/variables.css dist/variables.css && copyfiles -su 1 src/assets/**/*.svg dist/src/ && copyfiles -su 1 src/assets/**/*.png dist/src/",
+    "build:q": "tsc --build --verbose && cp src/@styles/variables.css dist/variables.css && copyfiles -su 1 src/assets/**/*.svg dist/src/",
+    "build": "yarn clean && rollup -c && cp src/@styles/variables.css dist/variables.css && copyfiles -su 1 src/assets/**/*.svg dist/esm/src/",
     "watch": "tsc --build -w",
-    "clean": "rimraf dist storybook-static",
+    "clean": "rimraf dist storybook-static && tsc --build --clean",
     "build:storybook": "build-storybook",
     "update": "yarn build && npm publish --access=public"
   },
   "devDependencies": {
     "@babel/core": "^7.18.10",
     "@babel/plugin-proposal-class-properties": "^7.18.6",
+    "@babel/plugin-proposal-decorators": "^7.18.10",
     "@babel/plugin-transform-runtime": "^7.18.10",
     "@babel/preset-env": "^7.18.10",
     "@babel/preset-react": "^7.18.6",
@@ -50,7 +52,8 @@
     "@emotion/babel-plugin": "^11.10.0",
     "@emotion/react": "^11.10.0",
     "@emotion/styled": "^11.10.0",
-    "@nextunicorn/types": "0.0.2",
+    "@emotion/utils": "^1.2.0",
+    "@nextunicorn/types": "0.0.3",
     "@rollup/plugin-babel": "^5.3.1",
     "@rollup/plugin-commonjs": "^22.0.2",
     "@rollup/plugin-image": "^2.1.1",
@@ -59,6 +62,7 @@
     "@storybook/addon-actions": "^6.5.10",
     "@storybook/addon-docs": "^6.5.10",
     "@storybook/addon-essentials": "^6.5.10",
+    "@storybook/addon-knobs": "^6.3.1",
     "@storybook/addon-links": "^6.5.10",
     "@storybook/builder-webpack5": "^6.5.10",
     "@storybook/core-common": "^6.5.10",
@@ -80,15 +84,23 @@
     "react-router-dom": "^6.3.0",
     "regenerator-runtime": "^0.13.9",
     "rimraf": "^3.0.2",
-    "rollup": "^2.77.3",
+    "rollup": "^2.78.0",
+    "rollup-plugin-dts": "^4.2.2",
     "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-svg-import": "^1.6.0",
     "rollup-plugin-terser": "^7.0.2",
     "style-loader": "^3.3.1",
+    "terser-webpack-plugin": "^5.3.4",
+    "ts-loader": "^9.3.1",
     "tslib": "^2.4.0",
     "typescript": "^4.7.4",
-    "typescript-styled-plugin": "^0.18.2"
+    "typescript-styled-plugin": "^0.18.2",
+    "webpack": "^5.74.0",
+    "webpackbar": "^5.0.2"
   },
   "peerDependencies": {
+    "@nextunicorn/types": "*",
     "@types/react": "^18.0.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
