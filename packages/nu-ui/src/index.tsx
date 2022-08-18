@@ -1,7 +1,6 @@
 export * from './@foundations';
 export * from './@layout';
 export * from './@styles';
-export * from './assets';
 export * from './AssistiveButton';
 export * from './Asterisk';
 export * from './Badge';

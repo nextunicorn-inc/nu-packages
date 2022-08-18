@@ -74,12 +74,19 @@ export const DSThumbnailWrapper = styled.div<{
   }
 `;
 
-export const RatioBox = styled.div<{ $category: ThumbnailCategory }>`
+export const RatioBox = styled.div<{ $category: ThumbnailCategory; $hasSrc: boolean }>`
   position: relative;
   ${({ $category }) => $category && categoryCSS[$category]};
   border-radius: 5px;
   border: 1px solid ${Color.blueGray1} !important;
-  background-color: ${Color.blueGray1};
+  background-color: ${({ $hasSrc }) =>
+    $hasSrc
+      ? css`
+          ${Color.naturalGray0}
+        `
+      : css`
+          ${Color.blueGray1}
+        `};
   display: flex;
   justify-content: center;
   align-items: center;

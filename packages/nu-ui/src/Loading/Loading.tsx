@@ -1,9 +1,7 @@
 import React from 'react';
 import * as Styled from './Loading.styled';
 
-
 import type { LoadingProps } from './Loading.types';
-
 
 const Loading = ({ kind }: LoadingProps) => (
   <Styled.DSLoadingWrapper>

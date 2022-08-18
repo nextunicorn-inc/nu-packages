@@ -1,5 +1,4 @@
 import { BREAK_POINT } from '@nextunicorn/types';
-
 import styled from '@emotion/styled';
 import {
   MOBILE_GLOBAL_PADDING,
@@ -21,7 +20,6 @@ import { mediaQuery } from '../@styles';
 
 // 일반적으로는 이 레아아웃 시스템으로 감싸서 사용한다.
 // 최대 width가 1240px 까지 늘어난다.
-
 export const ResponsiveLayout = styled.div`
   width: 100%;
   height: 100%;

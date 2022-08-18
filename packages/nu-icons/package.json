@@ -1,10 +1,10 @@
 {
   "name": "@nextunicorn/icons",
   "packageManager": "yarn@3.2.2",
-  "version": "0.0.1",
-  "main": "./dist/cjs/index.js",
-  "module": "./dist/esm/index.js",
-  "types": "./dist/index.d.ts",
+  "version": "0.0.2",
+  "main": "./lib/cjs/index.js",
+  "module": "./lib/es/index.js",
+  "typings": "./lib/es/index.d.ts",
   "homepage": "https://github.com/nextunicorn-inc/nu-packages",
   "bugs": "https://github.com/nextunicorn-inc/nu-packages/issues",
   "repository": "git://github.com/nextunicorn-inc/nu-packages.git",
@@ -12,15 +12,13 @@
     "registry": "https://registry.npmjs.org/"
   },
   "files": [
+    "lib",
+    "src",
     "dist"
   ],
-  "exports": {
-    ".": {
-      "import": "./dist/cjs/index.js",
-      "require": "./dist/esm/index.js"
-    }
-  },
-  "sideEffects": false,
+  "sideEffects": [
+    "./lib/es/index.js"
+  ],
   "author": "Nextunicorn Inc",
   "engines": {
     "node": "^16.10.0",
@@ -28,26 +26,49 @@
     "npm": "Please use yarn instead of NPM to install dependencies"
   },
   "scripts": {
-    "build": "yarn clean && rollup -c",
-    "clean": "rimraf dist",
-    "update": "yarn build && npm publish --access=public"
+    "clean": "rimraf dist lib",
+    "build:icon": "node ./scripts/build-icon ",
+    "build:lib": "node ./scripts/compileLib.js",
+    "build:js": "yarn build:lib && node ./scripts/compileDist.js",
+    "update": "yarn clean && npm run build:js && npm publish --access=public"
+  },
+  "dependencies": {
+    "@babel/runtime-corejs3": "^7.18.9",
+    "classnames": "^2.2.6"
   },
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^22.0.2",
-    "@rollup/plugin-node-resolve": "^13.3.0",
-    "@rollup/plugin-typescript": "^8.3.4",
+    "@babel/plugin-proposal-decorators": "^7.15.8",
+    "@babel/plugin-transform-runtime": "^7.18.10",
+    "@babel/preset-env": "^7.15.8",
+    "@babel/preset-react": "^7.14.5",
+    "@douyinfe/semi-webpack-plugin": "2.17.1",
+    "@types/case-sensitive-paths-webpack-plugin": "^2",
     "@types/react": "^18.0.17",
-    "@types/rollup-plugin-peer-deps-external": "^2",
-    "react": "^18.2.0",
+    "babel-loader": "^8.2.2",
+    "case-sensitive-paths-webpack-plugin": "^2.4.0",
+    "css-loader": "4.3.0",
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-replace": "^1.1.3",
+    "gulp-sass": "^5.0.0",
+    "gulp-typescript": "^6.0.0-alpha.1",
+    "merge2": "^1.4.1",
+    "mini-css-extract-plugin": "0.11.3",
     "rimraf": "^3.0.2",
-    "rollup": "^2.78.0",
-    "rollup-plugin-dts": "^4.2.2",
-    "rollup-plugin-peer-deps-external": "^2.2.4",
-    "rollup-plugin-terser": "^7.0.2",
-    "tslib": "^2.4.0",
-    "typescript": "^4.7.4"
+    "sass": "1.32.2",
+    "sass-loader": "^10.0.5",
+    "terser-webpack-plugin": "^4.2.3",
+    "through2": "^4.0.2",
+    "ts-loader": "^5.4.5",
+    "typescript": "^4.7.4",
+    "webpack": "^4.46.0"
   },
   "peerDependencies": {
-    "react": "^18.0.0"
-  }
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0"
+  },
+  "_unpkg": true,
+  "unpkgFiles": [
+    "*"
+  ]
 }

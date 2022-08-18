@@ -20,6 +20,7 @@ type ThumbnailOptions = {
   alt?: string;
   hasBadge?: boolean;
   isPlay?: boolean;
+  hasSrc?: boolean;
 };
 
 export interface ThumbnailProps
