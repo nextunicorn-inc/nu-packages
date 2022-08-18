@@ -1,10 +1,11 @@
-import React, { ReactNode, CSSProperties, DetailedHTMLProps, ComponentType } from 'react';
+import React, { CSSProperties, DetailedHTMLProps, ComponentType } from 'react';
 
-export type IconSize = 'inherit' | 'extra-small' | 'small' | 'default' | 'large' | 'extra-large';
+// TODO: use Icon size
+export type IconSize<T = '20'> = '16' | '20' | '24' | '32' | '40' | T;
 
 export interface IconProps
   extends DetailedHTMLProps<React.HTMLAttributes<HTMLSpanElement>, HTMLSpanElement> {
-  svg: ReactNode;
+  svg: React.ReactElement;
   size?: IconSize;
   spin?: boolean;
   rotate?: number;
@@ -12,22 +13,22 @@ export interface IconProps
 }
 
 const Icon = React.forwardRef<HTMLSpanElement, IconProps>((props, ref) => {
-  const { svg, rotate, style, type, size = 'default', ...restProps } = props;
+  const { svg, rotate, style, type, color, size = 'default', ...restProps } = props;
+
+  const svgComponent = React.cloneElement(svg, { color, size, style });
 
   const outerStyle: CSSProperties = {};
-  if (Number.isSafeInteger(rotate)) {
-    outerStyle.transform = `rotate(${rotate}deg)`;
-  }
+  if (Number.isSafeInteger(rotate)) outerStyle.transform = `rotate(${rotate}deg)`;
   Object.assign(outerStyle, style);
+
   return (
     <span role="img" ref={ref} aria-label={type} style={outerStyle} {...restProps}>
-      {svg}
+      {svgComponent}
     </span>
   );
 });
 
-// @ts-ignore used to judge whether it is a semi-icon in semi-ui
-// custom icon case
+// @ts-ignore
 Icon.elementType = 'Icon';
 
 const convertIcon = (Svg: ComponentType, iconType: string) => {
@@ -36,8 +37,7 @@ const convertIcon = (Svg: ComponentType, iconType: string) => {
       <Icon svg={React.createElement(Svg)} type={iconType} ref={ref as any} {...props} />
     ),
   );
-  // @ts-ignore used to judge whether it is a semi-icon in semi-ui
-  // builtin icon case
+  // @ts-ignore
   InnerIcon.elementType = 'Icon';
   return InnerIcon;
 };

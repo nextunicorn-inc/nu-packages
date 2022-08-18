@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import { convertIcon } from '../component/Icon';
 
 function SvgComponent(props: React.SVGProps<SVGSVGElement>) {

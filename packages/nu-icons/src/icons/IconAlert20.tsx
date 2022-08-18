@@ -1,9 +1,16 @@
-import * as React from 'react';
+import React from 'react';
 import { convertIcon } from '../component/Icon';
 
 function SvgComponent({ color = '#E40F0F', ...rest }: React.SVGProps<SVGSVGElement>) {
   return (
-    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      width="20"
+      height="20"
+      viewBox="0 0 20 20"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...rest}
+    >
       <path
         fillRule="evenodd"
         clipRule="evenodd"

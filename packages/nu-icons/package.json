@@ -1,7 +1,7 @@
 {
   "name": "@nextunicorn/icons",
   "packageManager": "yarn@3.2.2",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "./lib/cjs/index.js",
   "module": "./lib/es/index.js",
   "typings": "./lib/es/index.d.ts",
@@ -30,7 +30,8 @@
     "build:icon": "node ./scripts/build-icon ",
     "build:lib": "node ./scripts/compileLib.js",
     "build:js": "yarn build:lib && node ./scripts/compileDist.js",
-    "update": "yarn clean && npm run build:js && npm publish --access=public"
+    "build": "yarn clean && yarn build:js",
+    "update": "yarn build && npm publish --access=public"
   },
   "dependencies": {
     "@babel/runtime-corejs3": "^7.18.9",
