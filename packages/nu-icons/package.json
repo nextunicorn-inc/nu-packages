@@ -1,7 +1,7 @@
 {
   "name": "@nextunicorn/icons",
   "packageManager": "yarn@3.2.2",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "main": "./lib/cjs/index.js",
   "module": "./lib/es/index.js",
   "typings": "./lib/es/index.d.ts",
