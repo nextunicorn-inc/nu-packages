@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
-import { Radio, RadioGroup } from '.';
+import { Radio, RadioGroup } from './index';
 import { Button } from '../Button';
 import type { RadioChangeEvent, RadioProps } from './Radio.types';
 

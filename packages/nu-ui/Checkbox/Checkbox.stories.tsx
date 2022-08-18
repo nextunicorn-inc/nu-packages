@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
-import { Checkbox, CheckboxGroup } from '.';
+import { Checkbox, CheckboxGroup } from './index';
 import type { CheckboxValueType, CheckboxProps, CheckboxChangeEvent } from './Checkbox.types';
 
 export default {

@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
-import { NotiBadge } from '.';
+import { NotiBadge } from './index';
 import { Button } from '../Button';
 
 export default {

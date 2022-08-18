@@ -1,19 +1,28 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "target": "es5",
-    "module": "CommonJS",
+    "target": "ES2015",
+    "baseUrl": "./",
+    "outDir": "lib",
+    "sourceMap": true,
+    "allowJs": true,
+    "module": "es6",
+    "lib": ["es7", "dom"],
+    "moduleResolution": "node",
+    "noImplicitAny": false,
     "jsx": "react-jsx",
     "jsxImportSource": "@emotion/react",
-    "strict": true,
-    "baseUrl": ".",
-    "sourceMap": true,
-    "outDir": "dist",
+    "suppressImplicitAnyIndexErrors": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "noImplicitReturns": false,
+    "noImplicitThis": false,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
     "declaration": true,
-    "moduleResolution": "node",
+    "strictNullChecks": false,
+    "strict": true,
     "plugins": [
       {
         "name": "typescript-styled-plugin",
@@ -27,10 +36,5 @@
       "@types"
     ]
   },
-  "include": [
-    "@types/*",
-    "src/**/*",
-    "src/**/*.json",
-    ".storybook/*"
-  ]
+  "include": ["**/*.tsx", "**/*.ts"]
 }

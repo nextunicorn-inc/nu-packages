@@ -1,7 +1,7 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
 import styled from '@emotion/styled';
-import { IconBookmark20Deselected } from '@nextunicorn/icons';
+import { IconBookmarkDeselected } from '@nextunicorn/icons';
 import Input from './Input';
 
 import type { InputProps } from './Input.types';
@@ -28,7 +28,7 @@ const Row = styled.div`
 `;
 
 const Template: Story<InputProps> = (args) => {
-  const icon = () => <IconBookmark20Deselected />;
+  const icon = () => <IconBookmarkDeselected size="20" />;
   return (
     <Layout>
       <Row>
