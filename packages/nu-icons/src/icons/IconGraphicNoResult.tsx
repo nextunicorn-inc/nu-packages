@@ -1,7 +1,7 @@
 import React from 'react';
-import { convertIcon } from '../component/Icon';
+import { convertIcon, IconSize } from '../component/Icon';
 
-function SvgComponent(props: React.SVGProps<SVGSVGElement>) {
+function SvgComponent({ ...rest }: React.SVGProps<SVGSVGElement> & IconSize) {
   return (
     <svg width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
       <circle cx="27.4281" cy="27.4281" r="27.4281" fill="#C3C8D2" />

@@ -1,1 +1,120 @@
 # nu-icons
+> 넥스트유니콘 아이콘 패키지
+
+기본적으로 파스칼 케이스로 정의되었습니다.
+
+```
+- 예) IconAlert
+```
+
+## 아이콘 설명
+> default : 20
+
+- alert: 20, 24 / 컬러 변경 가능
+- appstore: 24
+- asc: 24
+- award: 24 / 컬러 변경 가능
+- blog: 32 / 컬러 변경 가능
+- bookmark-circle: 24 / 컬러 변경 가능
+- bookmark-deselected: 20, 24 / 컬러 변경 가능
+- bookmark-selected: 20, 24 / 컬러 변경 가능
+- calendar: 20, 24 / 컬러 변경 가능
+- chart: 24
+- chat: 24 / 컬러 변경 가능
+- checkbox-deselected: 20 / 컬러 변경 가능
+- checkbox-indeterminate: 20 / 컬러 변경 가능
+- checkbox-selected: 20 / 컬러 변경 가능
+- check-deselected: 16, 20, 24 / 컬러 변경 가능
+- check-selected: 16, 20, 24 / 컬러 변경 가능
+- clock: 20 / 컬러 변경 가능
+- close: 16 / 컬러 변경 가능
+- company-profile: 20, 24 / 컬러 변경 가능
+- congratulation: 20 / 컬러 변경 가능
+- desc: 16 / 컬러 변경 가능
+- down: 16 / 컬러 변경 가능
+- download: 24 / 컬러 변경 가능
+- edit: 20, 24 / 컬러 변경 가능
+- edit-square: 24 / 컬러 변경 가능
+- event: 24 / 컬러 변경 가능
+- eye: 20, 24 / 컬러 변경 가능
+- eye-circle: 24 / 컬러 변경 가능
+- facebook: 32 / 컬러 변경 가능
+- fast: 16, 20, 32 / 컬러 변경 가능
+- file-doc: 32, 40 / 컬러 변경 가능
+- file-img: 32, 40 / 컬러 변경 가능
+- file-IR: 32, 40 / 컬러 변경 가능
+- fileEnlarger: 24 / 컬러 변경 가능
+- fileView: 24 / 컬러 변경 가능
+- filter: 24 / 컬러 변경 가능
+- findInvestor: 24 / 컬러 변경 가능
+- folder-open: 20, 24 / 컬러 변경 가능
+- folder-fill: 24, 32 / 컬러 변경 가능
+- folder-default: 24 / 컬러 변경 가능
+- ghost: 24 / 컬러 변경 가능
+- googlestore: 24 / 컬러 변경 가능
+- graph: 20 / 컬러 변경 가능
+- graphic-doBookmark: width 160, height 146
+- graphic-noResult: 55
+- heart-circle: 24 / 컬러 변경 가능
+- heart-deselected: 20, 24 / 컬러 변경 가능
+- heart-selected: 20, 24 / 컬러 변경 가능
+- home: 24 / 컬러 변경 가능
+- hr: 24 / 컬러 변경 가능
+- instagram: 24 / 컬러 변경 가능
+- introduce: 24 / 컬러 변경 가능
+- job: 20 / 컬러 변경 가능
+- judge: 24 / 컬러 변경 가능
+- kakao: 32 / 컬러 변경 가능
+- larger: 24 / 컬러 변경 가능
+- list: 24 / 컬러 변경 가능
+- lock: 20 / 컬러 변경 가능
+- logo: 24
+- logout: 24 / 컬러 변경 가능
+- mail: 20 / 컬러 변경 가능
+- managerAdd: 20, 24 / 컬러 변경 가능
+- megaphone: 20, 24 / 컬러 변경 가능
+- myInvestor: 24 / 컬러 변경 가능
+- myTicket: 24 / 컬러 변경 가능
+- navigation-arrNext: 20, 24 / 컬러 변경 가능
+- navigation-arrPrev: 20, 24 / 컬러 변경 가능
+- navigation-close: 20, 24, 32, 40 / 컬러 변경 가능
+- navigation-fold: 20, 24 / 컬러 변경 가능
+- navigation-spread: 20, 24 / 컬러 변경 가능
+- navigation-menu: 24 / 컬러 변경 가능
+- news: 20 / 컬러 변경 가능
+- news-color: 20
+- newsroom: 24 / 컬러 변경 가능
+- nextunicorn: 20
+- notification: 24 / 컬러 변경 가능
+- notification-new: 24
+- nuUser: 24
+- payment: 24 / 컬러 변경 가능
+- plus: 20 / 컬러 변경 가능
+- post: 32 / 컬러 변경 가능
+- QnA: 24 / 컬러 변경 가능
+- question: 24 / 컬러 변경 가능
+- radio-deselected: 20 / 컬러 변경 가능
+- radio-selected: 20 / 컬러 변경 가능
+- received: 24 / 컬러 변경 가능
+- refresh: 16 / 컬러 변경 가능
+- requested: 24 / 컬러 변경 가능
+- search: 20, 24, 32, 40 / 컬러 변경 가능
+- service: 24 / 컬러 변경 가능
+- setting: 24 / 컬러 변경 가능
+- share: 20, 24, 32 / 컬러 변경 가능
+- showcase: 24 / 컬러 변경 가능
+- site: 24 / 컬러 변경 가능
+- sort: 16 / 컬러 변경 가능
+- trash: 20, 24 / 컬러 변경 가능
+- twitter: 32 / 컬러 변경 가능
+- unicorn: 24 / 컬러 변경 가능
+- unicornbox: 20
+- unicorncard: 24 / 컬러 변경 가능
+- unicornLive: 24 / 컬러 변경 가능
+- unlock: 20 / 컬러 변경 가능
+- url: 16, 20, 32 / 컬러 변경 가능
+- user: 20 / 컬러 변경 가능
+- vote: 20, 24 / 컬러 변경 가능
+- waiting: 20 / 컬러 변경 가능
+- writePR: 20, 24 / 컬러 변경 가능
+- youtube: 32 / 컬러 변경 가능

@@ -1,12 +1,11 @@
 import React, { CSSProperties, DetailedHTMLProps, ComponentType } from 'react';
 
-// TODO: use Icon size
-export type IconSize<T = '20'> = '16' | '20' | '24' | '32' | '40' | T;
+export type IconSize<T = '20'> = { size?: '16' | '20' | '24' | '32' | '40' | T };
 
 export interface IconProps
-  extends DetailedHTMLProps<React.HTMLAttributes<HTMLSpanElement>, HTMLSpanElement> {
+  extends DetailedHTMLProps<React.HTMLAttributes<HTMLSpanElement>, HTMLSpanElement>,
+    IconSize {
   svg: React.ReactElement;
-  size?: IconSize;
   spin?: boolean;
   rotate?: number;
   type?: string;
@@ -31,7 +30,7 @@ const Icon = React.forwardRef<HTMLSpanElement, IconProps>((props, ref) => {
 // @ts-ignore
 Icon.elementType = 'Icon';
 
-const convertIcon = (Svg: ComponentType, iconType: string) => {
+const convertIcon = (Svg: ComponentType<IconSize>, iconType: string) => {
   const InnerIcon = React.forwardRef<HTMLSpanElement, Omit<IconProps, 'svg' | 'type'>>(
     (props, ref) => (
       <Icon svg={React.createElement(Svg)} type={iconType} ref={ref as any} {...props} />
