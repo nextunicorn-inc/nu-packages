@@ -1,7 +1,7 @@
 {
   "name": "@nextunicorn/ui",
   "packageManager": "yarn@3.2.2",
-  "version": "0.0.20",
+  "version": "0.0.23",
   "main": "./lib/cjs/index.js",
   "module": "./lib/es/index.js",
   "typings": "./lib/es/index.d.ts",
@@ -37,13 +37,13 @@
   },
   "scripts": {
     "dev": "start-storybook -p 4000",
-    "build": "yarn clean && cp @styles/variables.css dist/variables.css",
+    "1build": "yarn clean && cp @styles/variables.css dist/variables.css",
     "watch": "tsc --build -w",
     "clean": "rimraf dist storybook-static lib && tsc --build --verbose",
     "build:storybook": "build-storybook",
     "build:lib": "node ./scripts/compileLib.js",
     "build:js": "node ./scripts/compileDist.js",
-    "prepublishOnly": "yarn clean && yarn build:lib && yarn build:js",
+    "build": "yarn clean && yarn build:lib && yarn build:js",
     "update": "yarn build && npm publish --access=public"
   },
   "dependencies": {
