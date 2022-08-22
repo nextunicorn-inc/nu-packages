@@ -2193,7 +2193,18 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@nextunicorn/types@^0.0.3, @nextunicorn/types@workspace:packages/nu-types":
+"@nextunicorn/types@npm:^0.0.5":
+  version: 0.0.5
+  resolution: "@nextunicorn/types@npm:0.0.5"
+  peerDependencies:
+    "@types/react": ^18.0.0
+    react: ^18.0.0
+    react-dom: ^18.0.0
+  checksum: d106aeb925441d39b5af2d0137cc770deb18799eb9448bc28dc01214ae88af84c85187d8795fbb56408aee2ab0b7e02f3141e1a8f85839a7e46f8efb986eedd1
+  languageName: node
+  linkType: hard
+
+"@nextunicorn/types@workspace:packages/nu-types":
   version: 0.0.0-use.local
   resolution: "@nextunicorn/types@workspace:packages/nu-types"
   dependencies:
@@ -2230,7 +2241,7 @@ __metadata:
     "@emotion/react": ^11.10.0
     "@emotion/styled": ^11.10.0
     "@nextunicorn/icons": ^0.0.4
-    "@nextunicorn/types": ^0.0.3
+    "@nextunicorn/types": ^0.0.5
     "@storybook/addon-actions": ^6.5.10
     "@storybook/addon-docs": ^6.5.10
     "@storybook/addon-essentials": ^6.5.10

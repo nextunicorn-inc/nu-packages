@@ -1,5 +1,5 @@
 import { DecoratorFn } from '@storybook/react';
-import { NextUnicornGlobalStyle } from '../index';
+import { NextUnicornGlobalStyle } from '../@styles';
 import '../@styles/variables.css';
 
 export const decorators: DecoratorFn[] = [
