@@ -25,7 +25,7 @@ export interface DataEventProps {
 }
 
 export interface IconProps {
-  icon?: React.FC<React.SVGProps<SVGSVGElement>>;
+  icon?: React.FC<React.SVGProps<SVGSVGElement>> | React.ReactNode;
   isIconOnly?: boolean;
   isIconAfter?: boolean;
 }
