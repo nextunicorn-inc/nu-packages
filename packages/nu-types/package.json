@@ -1,7 +1,7 @@
 {
   "name": "@nextunicorn/types",
   "packageManager": "yarn@3.2.2",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "type": "module",
   "main": "./dist/index.umd.cjs",
   "types": "./dist/index.d.ts",
