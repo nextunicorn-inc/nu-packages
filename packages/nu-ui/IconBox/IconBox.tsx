@@ -13,7 +13,7 @@ const TextAfterIcon = ({
   return (
     <Styled.DSIconBoxWrapper $size={size} $gap={gap}>
       <div>{text}</div>
-      <IconElement />
+      {typeof Icon === 'object' ? Icon : <IconElement />}
     </Styled.DSIconBoxWrapper>
   );
 };
@@ -27,7 +27,7 @@ const TextBeforeIcon = ({
   const IconElement = Icon as unknown as typeof React.Component;
   return (
     <Styled.DSIconBoxWrapper $size={size} $gap={gap}>
-      <IconElement />
+      {typeof Icon === 'object' ? Icon : <IconElement />}
       <div>{text}</div>
     </Styled.DSIconBoxWrapper>
   );
@@ -37,7 +37,7 @@ const OnlyIcon = ({ size, icon: Icon, isIconOnly }: Omit<IconBoxProps, 'text' | 
   const IconElement = Icon as unknown as typeof React.Component;
   return (
     <Styled.DSIconBoxWrapper $size={size} $isIconOnly={isIconOnly}>
-      <IconElement />
+      {typeof Icon === 'object' ? Icon : <IconElement />}
     </Styled.DSIconBoxWrapper>
   );
 };
