@@ -36,20 +36,20 @@
     "npm": "Please use yarn instead of NPM to install dependencies"
   },
   "scripts": {
-    "dev": "start-storybook -p 4000",
+    "dev": "yarn clean && start-storybook -p 4000",
     "1build": "yarn clean && cp @styles/variables.css dist/variables.css",
     "watch": "tsc --build -w",
     "clean": "rimraf dist storybook-static lib && tsc --build --verbose",
     "build:storybook": "build-storybook",
     "build:lib": "node ./scripts/compileLib.js",
     "build:js": "node ./scripts/compileDist.js",
-    "build": "yarn clean && yarn build:lib && yarn build:js",
+    "build": "yarn clean && yarn build:lib && yarn build:js && cp @styles/variables.css dist/variables.css",
     "update": "yarn build && npm publish --access=public"
   },
   "dependencies": {
     "@babel/runtime-corejs3": "^7.18.9",
     "@nextunicorn/icons": "^0.0.4",
-    "@nextunicorn/types": "^0.0.3",
+    "@nextunicorn/types": "^0.0.5",
     "async-validator": "^4.2.5",
     "classnames": "^2.3.1",
     "copy-text-to-clipboard": "^3.0.1",
