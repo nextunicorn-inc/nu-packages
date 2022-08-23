@@ -1,7 +1,7 @@
 {
   "name": "@nextunicorn/ui",
   "packageManager": "yarn@3.2.2",
-  "version": "0.0.24",
+  "version": "0.0.25",
   "main": "./lib/cjs/index.js",
   "module": "./lib/es/index.js",
   "typings": "./lib/es/index.d.ts",
@@ -25,8 +25,8 @@
       "require": "./lib/cjs/index.js"
     },
     "./css": {
-      "import": "./dist/variables.css",
-      "require": "./dist/variables.css"
+      "import": "./lib/variables.css",
+      "require": "./lib/variables.css"
     }
   },
   "author": "Nextunicorn Inc",
@@ -43,7 +43,7 @@
     "build:storybook": "build-storybook",
     "build:lib": "node ./scripts/compileLib.js",
     "build:js": "node ./scripts/compileDist.js",
-    "build": "yarn clean && yarn build:lib && yarn build:js && cp @styles/variables.css dist/variables.css",
+    "build": "yarn clean && yarn build:lib && yarn build:js && cp @styles/variables.css lib/variables.css",
     "update": "yarn build && npm publish --access=public"
   },
   "dependencies": {
