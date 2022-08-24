@@ -2128,7 +2128,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nextunicorn/icons@^0.0.4, @nextunicorn/icons@workspace:packages/nu-icons":
+"@nextunicorn/icons@npm:^0.0.4":
+  version: 0.0.4
+  resolution: "@nextunicorn/icons@npm:0.0.4"
+  dependencies:
+    "@babel/runtime-corejs3": ^7.18.9
+    classnames: ^2.2.6
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+  checksum: a5c9067093e26fdbb9074cabf9d97f348f3c9a9822cd23f8568e8153976856d4667ac326315a15723e4afe7ec00b221c8518f3205134b861d894ef12b4445447
+  languageName: node
+  linkType: hard
+
+"@nextunicorn/icons@workspace:packages/nu-icons":
   version: 0.0.0-use.local
   resolution: "@nextunicorn/icons@workspace:packages/nu-icons"
   dependencies:
