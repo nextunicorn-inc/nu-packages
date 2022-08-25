@@ -50,7 +50,7 @@
     "@babel/runtime-corejs3": "^7.18.9",
     "@emotion/react": "^11.10.0",
     "@emotion/styled": "^11.10.0",
-    "@nextunicorn/icons": "^0.0.4",
+    "@nextunicorn/icons": "^0.0.8",
     "@nextunicorn/types": "^0.0.5",
     "async-validator": "^4.2.5",
     "classnames": "^2.3.1",
