@@ -39,7 +39,7 @@
     "dev": "yarn clean && start-storybook -p 4000",
     "watch": "tsc --build -w",
     "clean": "rimraf dist storybook-static lib && tsc --build --verbose",
-    "build:storybook": "build-storybook",
+    "build:storybook": "yarn clean && build-storybook",
     "build:lib": "node ./scripts/compileLib.js",
     "build:js": "node ./scripts/compileDist.js",
     "build": "yarn clean && yarn build:lib && yarn build:js && cp @styles/variables.css lib/variables.css",
