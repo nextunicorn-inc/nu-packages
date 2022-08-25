@@ -51,7 +51,7 @@
     "@emotion/react": "^11.10.0",
     "@emotion/styled": "^11.10.0",
     "@nextunicorn/icons": "^0.0.8",
-    "@nextunicorn/types": "^0.0.5",
+    "@nextunicorn/types": "^0.0.6",
     "async-validator": "^4.2.5",
     "classnames": "^2.3.1",
     "copy-text-to-clipboard": "^3.0.1",
@@ -67,6 +67,7 @@
     "utility-types": "^3.10.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.18.13",
     "@babel/plugin-proposal-decorators": "^7.18.10",
     "@babel/plugin-transform-runtime": "^7.18.10",
     "@babel/preset-env": "^7.18.10",
@@ -85,6 +86,7 @@
     "@storybook/manager-webpack5": "^6.5.10",
     "@storybook/react": "^6.5.10",
     "@svgr/webpack": "^6.3.1",
+    "@types/babel__core": "^7",
     "@types/case-sensitive-paths-webpack-plugin": "^2",
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
