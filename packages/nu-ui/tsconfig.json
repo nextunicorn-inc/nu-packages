@@ -23,6 +23,7 @@
     "declaration": true,
     "strictNullChecks": false,
     "strict": true,
+    "isolatedModules": false,
     "plugins": [
       {
         "name": "typescript-styled-plugin",
@@ -36,5 +37,6 @@
       "@types"
     ]
   },
-  "include": ["**/*.tsx", "**/*.ts"]
+  "include": [".storybook/*", "**/*.ts", "**/*.tsx"],
+  "exclude": ["node_modules"]
 }

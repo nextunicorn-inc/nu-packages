@@ -8,6 +8,8 @@ module.exports = {
     '@storybook/addon-docs',
     '@storybook/addon-links',
     '@storybook/addon-essentials',
+    '@storybook/addon-interactions',
+    '@storybook/addon-a11y',
   ],
   framework: '@storybook/react',
   typescript: {
@@ -45,6 +47,10 @@ module.exports = {
     config.module.rules.push({
       test: /\.svg$/,
       use: ['@svgr/webpack'],
+    });
+
+    config.module.rules.push({
+      resolve: { fullySpecified: false },
     });
 
     return config;

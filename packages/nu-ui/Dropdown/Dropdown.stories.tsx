@@ -31,7 +31,7 @@ const Template: Story<DropdownProps> = (args) => {
     console.log(item, name);
   };
 
-  return <Dropdown {...args} isTop list={locations} onChange={onChange} />;
+  return <Dropdown {...args} list={locations} onChange={onChange} />;
 };
 
 export const Default = Template.bind({});

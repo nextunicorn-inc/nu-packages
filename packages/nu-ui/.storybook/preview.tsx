@@ -1,4 +1,5 @@
 import { DecoratorFn } from '@storybook/react';
+import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 import { NextUnicornGlobalStyle } from '../@styles';
 import '../@styles/variables.css';
 
@@ -18,6 +19,15 @@ export const parameters = {
       color: /(background|color)$/i,
       date: /Date$/,
     },
+  },
+  options: {
+    storySort: {
+      order: ['Foundations', 'Components', '*'],
+    },
+  },
+  viewport: {
+    viewports: INITIAL_VIEWPORTS,
+    defaultViewport: 'iphone12mini',
   },
   layout: 'fullscreen',
 };
