@@ -107,3 +107,5 @@ export { default as IconWaiting } from './IconWaiting';
 export { default as IconWritePR } from './IconWritePR';
 export { default as IconYoutube } from './IconYoutube';
 export { default as IconUp } from './IconUp';
+export { default as IconFold } from './IconFold';
+export { default as IconSpread } from './IconSpread';
