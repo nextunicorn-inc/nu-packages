@@ -6,7 +6,7 @@ on: push
 
 # List of jobs
 jobs:
-  yarn_setup_and_build:
+  chromatic-deployment:
     runs-on: ubuntu-latest
 
     steps:
@@ -14,17 +14,17 @@ jobs:
         with:
           fetch-depth: 0
 
-#      - name: Get yarn cache directory path
-#        id: yarn-cache-dir-path
-#        run: echo "::set-output name=dir::$(yarn cache dir)"
-#
-#      - uses: actions/cache@v3
-#        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
-#        with:
-#          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
-#          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-#          restore-keys: |
-#            ${{ runner.os }}-yarn-
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+
+      - uses: actions/cache@v3
+        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
 
       - name: Yarn Setting
         run: |
@@ -33,12 +33,9 @@ jobs:
           yarn plugin import workspace-tools
           yarn plugin import constraints
 
-      - name: Install dependencies
+      - name: Install dependencies & Yarn Build To Main Service
         run: |
-          YARN_ENABLE_IMMUTABLE_INSTALLS=false yarn install
-
-      - name: Yarn Build To Main Service
-        run: |
+          yarn
           yarn ui build:storybook
 
       - name: Publish to Chromatic
