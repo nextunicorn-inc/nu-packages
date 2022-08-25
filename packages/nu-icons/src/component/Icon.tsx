@@ -12,7 +12,7 @@ export interface IconProps
 }
 
 const Icon = React.forwardRef<HTMLSpanElement, IconProps>((props, ref) => {
-  const { svg, rotate, style, type, color, size = 'default', ...restProps } = props;
+  const { svg, rotate, style, type, color, size = '20', ...restProps } = props;
 
   const svgComponent = React.cloneElement(svg, { color, size, style });
 

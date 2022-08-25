@@ -17,6 +17,10 @@
     "yarn": ">=1.22.4 <2",
     "npm": "Please use yarn instead of NPM to install dependencies"
   },
+  "scripts": {
+    "//0": "======================================================================================================================[ run special package ]",
+    "ui": "yarn workspace @nextunicorn/ui"
+  },
   "devDependencies": {
     "@babel/core": "^7.18.9",
     "@emotion/eslint-plugin": "^11.10.0",
