@@ -23,7 +23,7 @@ jobs:
 
       - name: Install dependencies & Yarn Build To Main Service
         run: |
-          yarn install
+          YARN_ENABLE_IMMUTABLE_INSTALLS=false yarn install
           yarn ui build:storybook
 
       - name: Publish to Chromatic
