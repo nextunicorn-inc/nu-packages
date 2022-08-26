@@ -1,11 +1,7 @@
 {
   "name": "@nextunicorn/icons",
   "packageManager": "yarn@3.2.2",
-<<<<<<< Updated upstream
-  "version": "0.0.9",
-=======
-  "version": "0.0.8",
->>>>>>> Stashed changes
+  "version": "0.0.10",
   "main": "./lib/cjs/index.js",
   "module": "./lib/es/index.js",
   "typings": "./lib/es/index.d.ts",
