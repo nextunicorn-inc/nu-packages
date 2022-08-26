@@ -31,23 +31,16 @@ function SvgComponent({ color = '#616161', ...rest }: React.SVGProps<SVGSVGEleme
         </filter>
         <circle id="wpln3zjq7b" cx="12" cy="12" r="12" />
       </defs>
-      <g fill="none" fill-rule="evenodd">
+      <g fill="none" fillRule="evenodd">
         <g>
           <g>
             <g transform="translate(-179 -79) translate(183 83)">
               <use fill="#000" filter="url(#ru7jb8cd5a)" xlinkHref="#wpln3zjq7b" />
-              <circle
-                cx="12"
-                cy="12"
-                r="11.5"
-                fill="#FEFEFE"
-                stroke="#2581FF"
-                stroke-linejoin="square"
-              />
+              <circle cx="12" cy="12" r="11.5" fill="#FEFEFE" stroke="#2581FF" />
             </g>
             <path
               fill="#2781FF"
-              fill-rule="nonzero"
+              fillRule="nonzero"
               d="M15.85 16.182c.217.202.196.512-.046.693-.241.18-.612.163-.828-.038l-4.826-4.51c-.2-.186-.2-.468 0-.654l4.826-4.51c.216-.201.587-.219.828-.038.242.18.263.491.046.693L11.375 12l4.475 4.182z"
               transform="translate(-179 -79) translate(183 83) matrix(-1 0 0 1 26 0)"
             />
