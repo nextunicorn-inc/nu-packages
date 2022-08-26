@@ -56,7 +56,7 @@
   "dependencies": {
     "@babel/runtime": "^7.18.9",
     "@babel/runtime-corejs3": "^7.18.9",
-    "@emotion/babel-plugin": "^11.10.0",
+    "@emotion/babel-plugin": "^11.10.2",
     "@emotion/react": "^11.10.0",
     "@emotion/styled": "^11.10.0",
     "@nextunicorn/icons": "^0.0.12",
@@ -90,11 +90,11 @@
     "@types/webpack": "^5.28.0",
     "babel-loader": "^8.2.5",
     "case-sensitive-paths-webpack-plugin": "^2.4.0",
-    "chromatic": "^6.7.4",
+    "chromatic": "^6.8.0",
     "classnames": "^2.3.1",
     "copyfiles": "^2.4.1",
     "css-loader": "^6.7.1",
-    "del": "^6.0.0",
+    "del": "6.0.0",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
     "gulp-replace": "^1.1.3",
@@ -110,13 +110,14 @@
     "regenerator-runtime": "^0.13.9",
     "rimraf": "^3.0.2",
     "style-loader": "^3.3.1",
-    "terser-webpack-plugin": "^4.2.3",
+    "terser-webpack-plugin": "^5.3.5",
     "through2": "^4.0.2",
     "ts-loader": "^9.3.1",
-    "typescript": "^4.7.4",
+    "typescript": "^4.8.2",
     "typescript-styled-plugin": "^0.18.2",
     "webpack": "^5.74.0"
   },
+  "bundledDependencies": true,
   "peerDependencies": {
     "@nextunicorn/icons": "*",
     "@nextunicorn/types": "*",
@@ -129,7 +130,7 @@
   },
   "_unpkg": true,
   "unpkgFiles": [
-    "lib/variables.css",
+    "dist/css",
     "dist/umd/*.js"
   ]
 }

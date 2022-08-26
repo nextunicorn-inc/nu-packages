@@ -20,6 +20,7 @@
   "scripts": {
     "postinstall": "husky install",
     "//0": "======================================================================================================================[ run special package ]",
+    "icon": "yarn workspace @nextunicorn/icons",
     "ui": "yarn workspace @nextunicorn/ui"
   },
   "devDependencies": {
