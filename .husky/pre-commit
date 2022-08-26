@@ -1,0 +1,7 @@
+##!/bin/sh
+#. "$(dirname "$0")/_/husky.sh"
+#
+#yarn ui build:storybook
+#yarn ui deploy
+#
+#exit 0
