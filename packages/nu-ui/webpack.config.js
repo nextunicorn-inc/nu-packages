@@ -8,6 +8,7 @@ const getBabelConfig = require('./getBabelConfig');
 const rootPath = path.join(__dirname, '../..');
 module.exports = function ({ minimize }) {
   return {
+    cache: false,
     mode: 'production',
     bail: true,
     devtool: 'source-map',
@@ -60,7 +61,7 @@ module.exports = function ({ minimize }) {
       }),
     ],
     resolve: {
-      extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
+      extensions: ['.ts', '.tsx', '.js', '.jsx', '.json', '...'],
     },
     externals: {
       react: {

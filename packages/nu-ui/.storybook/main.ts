@@ -2,7 +2,11 @@ module.exports = {
   core: {
     builder: 'webpack5',
   },
-  stories: ['../**/*.stories.@(js|jsx|ts|tsx|mdx)'],
+  stories: ['../**/*.stories.@(ts|tsx)'],
+  logLevel: 'debug',
+  reactOptions: {
+    fastRefresh: true,
+  },
   addons: [
     '@storybook/core-common',
     '@storybook/addon-docs',
@@ -24,10 +28,6 @@ module.exports = {
       loader: require.resolve('babel-loader'),
     });
 
-    // eslint-disable-next-line no-param-reassign
-    config.module.rules.find((rule) => rule.test.toString() === '/\\.css$/').exclude =
-      /\.module\.css$/;
-
     config.module.rules.push({
       test: /\.module\.css$/,
       use: [
@@ -40,9 +40,6 @@ module.exports = {
         },
       ],
     });
-
-    const fileLoaderRule = config.module.rules.find((rule) => rule.test.test('.svg'));
-    fileLoaderRule.exclude = /\.svg$/;
 
     config.module.rules.push({
       test: /\.svg$/,

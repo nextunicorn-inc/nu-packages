@@ -55,21 +55,8 @@
   },
   "dependencies": {
     "@babel/runtime-corejs3": "^7.18.9",
-    "@emotion/react": "^11.10.0",
-    "@emotion/styled": "^11.10.0",
-    "async-validator": "^4.2.5",
-    "classnames": "^2.3.1",
-    "copy-text-to-clipboard": "^3.0.1",
-    "date-fns": "^2.29.2",
-    "date-fns-tz": "^1.3.6",
-    "prop-types": "^15.8.1",
     "rc-checkbox": "^2.3.2",
-    "react-resizable": "^3.0.4",
-    "react-sortable-hoc": "^2.0.0",
-    "react-window": "^1.8.7",
-    "resize-observer-polyfill": "^1.5.1",
-    "scroll-into-view-if-needed": "^2.2.29",
-    "utility-types": "^3.10.0"
+    "react-window": "^1.8.7"
   },
   "devDependencies": {
     "@babel/core": "^7.18.13",
@@ -80,6 +67,8 @@
     "@babel/preset-typescript": "^7.18.6",
     "@babel/runtime": "^7.18.9",
     "@emotion/babel-plugin": "^11.10.0",
+    "@emotion/react": "^11.10.0",
+    "@emotion/styled": "^11.10.0",
     "@nextunicorn/icons": "^0.0.12",
     "@nextunicorn/types": "^0.0.6",
     "@storybook/addon-a11y": "^6.5.10",
@@ -98,6 +87,7 @@
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
     "@types/react-window": "^1.8.5",
+    "@types/webpack": "^5.28.0",
     "babel-loader": "^8.2.5",
     "case-sensitive-paths-webpack-plugin": "^2.4.0",
     "chromatic": "^6.7.4",
@@ -105,21 +95,13 @@
     "copyfiles": "^2.4.1",
     "css-loader": "^6.7.1",
     "del": "^6.0.0",
-    "enzyme": "^3.11.0",
-    "grapheme-splitter": "^1.0.4",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
     "gulp-replace": "^1.1.3",
     "gulp-sass": "^5.1.0",
     "gulp-typescript": "^6.0.0-alpha.1",
-    "immutability-helper": "^3.1.1",
-    "jest-date-mock": "^1.0.8",
-    "jsdom": "^20.0.0",
     "merge2": "^1.4.1",
-    "null-loader": "^4.0.1",
-    "prop-types": "15.8.1",
     "react": "^18.2.0",
-    "react-dnd": "^16.0.1",
     "react-dom": "^18.2.0",
     "react-infinite-scroller": "^1.2.6",
     "react-router-dom": "^6.3.0",
@@ -127,7 +109,6 @@
     "react-virtualized": "^9.22.3",
     "regenerator-runtime": "^0.13.9",
     "rimraf": "^3.0.2",
-    "sinon": "^14.0.0",
     "style-loader": "^3.3.1",
     "terser-webpack-plugin": "^4.2.3",
     "through2": "^4.0.2",
@@ -150,7 +131,5 @@
   "unpkgFiles": [
     "dist/css",
     "dist/umd/*.js"
-  ],
-  "readme": "ERROR: No README data found!",
-  "_id": "@nextunicorn/ui@0.0.27"
+  ]
 }
