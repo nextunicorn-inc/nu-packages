@@ -24,8 +24,8 @@ jobs:
 
       - name: Yarn Setting
         run: |
-          
           yarn set version berry
+          yarn config set -H enableImmutableInstalls false
           yarn config set nodeLinker "node-modules"
           yarn plugin import typescript
           yarn plugin import workspace-tools
