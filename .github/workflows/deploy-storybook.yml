@@ -23,8 +23,10 @@ jobs:
           yarn plugin import constraints
 
       - name: Install dependencies & Yarn Build To Main Service
+        uses: borales/actions-yarn@v3.0.0
+        with:
+          cmd: install # will run `yarn install` command
         run: |
-          YARN_ENABLE_IMMUTABLE_INSTALLS=false yarn install
           yarn ui build:storybook
 
       - name: Publish to Chromatic
