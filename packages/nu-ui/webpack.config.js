@@ -52,7 +52,12 @@ module.exports = function ({ minimize }) {
         'process.env': { NODE_ENV: '"production"', PUBLIC_URL: undefined },
       }),
       new CaseSensitivePathsPlugin(),
-      new webpack.HashedModuleIdsPlugin(),
+      new webpack.ids.HashedModuleIdsPlugin({
+        context: __dirname,
+        hashFunction: 'sha256',
+        hashDigest: 'hex',
+        hashDigestLength: 20,
+      }),
     ],
     resolve: {
       extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],

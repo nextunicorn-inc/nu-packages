@@ -2225,7 +2225,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nextunicorn/icons@^0.0.9, @nextunicorn/icons@workspace:packages/nu-icons":
+"@nextunicorn/icons@^0.0.10, @nextunicorn/icons@workspace:packages/nu-icons":
   version: 0.0.0-use.local
   resolution: "@nextunicorn/icons@workspace:packages/nu-icons"
   dependencies:
@@ -2330,7 +2330,7 @@ __metadata:
     "@emotion/babel-plugin": ^11.10.0
     "@emotion/react": ^11.10.0
     "@emotion/styled": ^11.10.0
-    "@nextunicorn/icons": ^0.0.9
+    "@nextunicorn/icons": ^0.0.10
     "@nextunicorn/types": ^0.0.6
     "@storybook/addon-a11y": ^6.5.10
     "@storybook/addon-actions": ^6.5.10
@@ -2391,11 +2391,11 @@ __metadata:
     style-loader: ^3.3.1
     terser-webpack-plugin: ^4.2.3
     through2: ^4.0.2
-    ts-loader: ^5.4.5
+    ts-loader: ^9.3.1
     typescript: ^4.7.4
     typescript-styled-plugin: ^0.18.2
     utility-types: ^3.10.0
-    webpack: ^4.46.0
+    webpack: ^5.74.0
   peerDependencies:
     "@nextunicorn/icons": "*"
     "@nextunicorn/types": "*"
@@ -8402,7 +8402,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"enhanced-resolve@npm:^5.10.0":
+"enhanced-resolve@npm:^5.0.0, enhanced-resolve@npm:^5.10.0":
   version: 5.10.0
   resolution: "enhanced-resolve@npm:5.10.0"
   dependencies:
@@ -13235,7 +13235,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"micromatch@npm:^4.0.2, micromatch@npm:^4.0.4":
+"micromatch@npm:^4.0.0, micromatch@npm:^4.0.2, micromatch@npm:^4.0.4":
   version: 4.0.5
   resolution: "micromatch@npm:4.0.5"
   dependencies:
@@ -17933,6 +17933,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"ts-loader@npm:^9.3.1":
+  version: 9.3.1
+  resolution: "ts-loader@npm:9.3.1"
+  dependencies:
+    chalk: ^4.1.0
+    enhanced-resolve: ^5.0.0
+    micromatch: ^4.0.0
+    semver: ^7.3.4
+  peerDependencies:
+    typescript: "*"
+    webpack: ^5.0.0
+  checksum: 462a8ac315017cf4961dafd2be29d5abe7c3af63c4515e325269f79b9d0212b35c59184d7fd01fc378749c88454752e1599301d2190eb6844ea5fe332de5f695
+  languageName: node
+  linkType: hard
+
 "ts-morph@npm:^14.0.0":
   version: 14.0.0
   resolution: "ts-morph@npm:14.0.0"
@@ -19045,7 +19060,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"webpack@npm:*, webpack@npm:>=4.43.0 <6.0.0, webpack@npm:^5.9.0":
+"webpack@npm:*, webpack@npm:>=4.43.0 <6.0.0, webpack@npm:^5.74.0, webpack@npm:^5.9.0":
   version: 5.74.0
   resolution: "webpack@npm:5.74.0"
   dependencies:
