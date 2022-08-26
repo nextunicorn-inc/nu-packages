@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
-import * as Icons from '@nextunicorn/icons';
+import Icons from '@nextunicorn/icons';
 import { Story, Meta } from '@storybook/react';
+import { Color } from '../@foundations';
 import IconBox from './IconBox';
 import { IconBoxProps } from './IconBox.types';
 
@@ -22,9 +23,16 @@ const Div = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
-  width: 100px;
-  height: 100px;
+  justify-content: center;
+  gap: 30px;
+  width: 200px;
+  height: 200px;
+  border-radius: 15px;
+
+  &:hover {
+    cursor: pointer;
+    background-color: ${Color.naturalGray1};
+  }
 `;
 
 export const Template: Story<IconBoxProps> = (args) => {

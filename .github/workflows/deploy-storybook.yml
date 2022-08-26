@@ -11,8 +11,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
 
       - name: Yarn Setting
         run: |
@@ -24,12 +22,12 @@ jobs:
       - name: Install dependencies & Yarn Build To Main Service
         run: |
           YARN_ENABLE_IMMUTABLE_INSTALLS=false yarn install
-          yarn ui build:storybook
 
       - name: Publish to Chromatic
         uses: chromaui/action@v1
         with:
           workingDir: packages/nu-ui
+          buildScriptName: build:storybook
           storybookBuildDir: storybook-static
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           token: ${{ secrets.GITHUB_TOKEN }}
