@@ -54,7 +54,13 @@
     "update": "yarn build && npm publish --access=public"
   },
   "dependencies": {
+    "@babel/runtime": "^7.18.9",
     "@babel/runtime-corejs3": "^7.18.9",
+    "@emotion/babel-plugin": "^11.10.0",
+    "@emotion/react": "^11.10.0",
+    "@emotion/styled": "^11.10.0",
+    "@nextunicorn/icons": "^0.0.12",
+    "@nextunicorn/types": "^0.0.6",
     "rc-checkbox": "^2.3.2",
     "react-window": "^1.8.7"
   },
@@ -65,12 +71,6 @@
     "@babel/preset-env": "^7.18.10",
     "@babel/preset-react": "^7.18.6",
     "@babel/preset-typescript": "^7.18.6",
-    "@babel/runtime": "^7.18.9",
-    "@emotion/babel-plugin": "^11.10.0",
-    "@emotion/react": "^11.10.0",
-    "@emotion/styled": "^11.10.0",
-    "@nextunicorn/icons": "^0.0.12",
-    "@nextunicorn/types": "^0.0.6",
     "@storybook/addon-a11y": "^6.5.10",
     "@storybook/addon-actions": "^6.5.10",
     "@storybook/addon-docs": "^6.5.10",
@@ -129,7 +129,7 @@
   },
   "_unpkg": true,
   "unpkgFiles": [
-    "dist/css",
+    "lib/variables.css",
     "dist/umd/*.js"
   ]
 }
