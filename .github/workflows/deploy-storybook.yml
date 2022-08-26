@@ -22,10 +22,12 @@ jobs:
           yarn plugin import workspace-tools
           yarn plugin import constraints
 
-      - name: Install dependencies & Yarn Build To Main Service
+      - name: Install dependencies
         uses: borales/actions-yarn@v3.0.0
         with:
           cmd: install # will run `yarn install` command
+
+      - name: Yarn Build To Main Service
         run: |
           yarn ui build:storybook
 
