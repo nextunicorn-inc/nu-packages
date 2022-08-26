@@ -2,7 +2,7 @@ import React from 'react';
 import { convertIcon, IconSize } from '../component/Icon';
 
 function SvgComponent({
-  color = '#595959',
+  color = '#616161',
   size = '20',
   ...rest
 }: React.SVGProps<SVGSVGElement> & IconSize) {

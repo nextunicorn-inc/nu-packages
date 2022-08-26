@@ -1,7 +1,33 @@
 import React from 'react';
 import { convertIcon, IconSize } from '../component/Icon';
 
-function SvgComponent({ color = '#595959', ...rest }: React.SVGProps<SVGSVGElement> & IconSize) {
+function SvgComponent({
+  size = '20',
+  color = '#616161',
+  ...rest
+}: React.SVGProps<SVGSVGElement> & IconSize) {
+  if (size === '20') {
+    return (
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 20 20"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fillRule="evenodd"
+          clipRule="evenodd"
+          d="M9.64644 12.8536C9.84171 13.0488 10.1583 13.0488 10.3536 12.8536L13.182 10.0251C13.3772 9.82986 13.3772 9.51328 13.182 9.31802C12.9867 9.12276 12.6701 9.12276 12.4749 9.31802L10.5 11.2929L10.5 3.5C10.5 3.22386 10.2761 3 9.99999 3C9.72385 3 9.49999 3.22386 9.49999 3.5L9.49999 11.2929L7.52512 9.31802C7.32986 9.12276 7.01328 9.12276 6.81802 9.31802C6.62275 9.51328 6.62275 9.82986 6.81802 10.0251L9.64644 12.8536Z"
+          fill={color}
+        />
+        <path
+          d="M4 10.5C4 10.2239 3.77614 10 3.5 10C3.22386 10 3 10.2239 3 10.5H4ZM17 10.5C17 10.2239 16.7761 10 16.5 10C16.2239 10 16 10.2239 16 10.5H17ZM16 10.5V15.5H17V10.5H16ZM15.5 16H4.5V17H15.5V16ZM4 15.5V10.5H3V15.5H4ZM4.5 16C4.22386 16 4 15.7761 4 15.5H3C3 16.3284 3.67157 17 4.5 17V16ZM16 15.5C16 15.7761 15.7761 16 15.5 16V17C16.3284 17 17 16.3284 17 15.5H16Z"
+          fill={color}
+        />
+      </svg>
+    );
+  }
   return (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
