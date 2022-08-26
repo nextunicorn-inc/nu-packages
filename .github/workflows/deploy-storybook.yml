@@ -15,17 +15,25 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Set up Node.js
+        uses: actions/setup-node@master
+        with:
+          node-version: '18.x'
+          cache: 'yarn'
+          registry-url: 'https://registry.npmjs.org'
+
       - name: Yarn Setting
         run: |
+          
           yarn set version berry
+          yarn config set nodeLinker "node-modules"
           yarn plugin import typescript
           yarn plugin import workspace-tools
           yarn plugin import constraints
 
       - name: Install dependencies
-        uses: borales/actions-yarn@v3.0.0
-        with:
-          cmd: install # will run `yarn install` command
+        run: |
+          yarn install --immutable
 
       - name: Yarn Build To Main Service
         run: |
