@@ -1,7 +1,7 @@
 import React from 'react';
 import { convertIcon, IconSize } from '../component/Icon';
 
-function SvgComponent({ color = '#595959', ...rest }: React.SVGProps<SVGSVGElement> & IconSize) {
+function SvgComponent({ color = '#616161', ...rest }: React.SVGProps<SVGSVGElement> & IconSize) {
   return (
     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect x="2.5" y="4.5" width="15" height="11" rx="0.5" stroke={color} />

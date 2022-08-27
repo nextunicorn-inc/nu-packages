@@ -15,8 +15,14 @@ export default {
 
 const Layout = styled.div`
   display: flex;
-  gap: 10px;
+  gap: 20px;
   flex-wrap: wrap;
+  flex-direction: column;
+`;
+
+const IconGroup = styled.div`
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
 `;
 
 const Div = styled.div`
@@ -34,16 +40,30 @@ const Div = styled.div`
     background-color: ${Color.naturalGray1};
   }
 `;
-
+const sizes = [undefined, '16', '20', '24', '32', '40'] as const;
+const colors = [undefined, 'red'];
 export const Template: Story<IconBoxProps> = (args) => {
   return (
     <Layout>
-      {Object.entries(Icons).map(([name, Icon]) => (
-        <Div>
-          <IconBox icon={<Icon />} />
-          <div>{name.substring(4)}</div>
-        </Div>
-      ))}
+      {Object.entries(Icons)
+        .map(([name, Icon]) => (
+          <div style={{ border: 'inset' }}>
+            <h4 style={{ display: 'flex', justifyContent: 'center' }}>{name.substring(4)}</h4>
+            <IconGroup>
+              {colors
+                .map((color) =>
+                  sizes.map((size) => (
+                    <Div>
+                      {<IconBox icon={<Icon color={color} size={size} />} />}
+                      <div>{`size:${size ?? 'default'}, color: ${color ?? 'default'}`}</div>
+                    </Div>
+                  )),
+                )
+                .flat()}
+            </IconGroup>
+          </div>
+        ))
+        .flat()}
     </Layout>
   );
 };

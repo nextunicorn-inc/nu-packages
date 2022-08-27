@@ -1,6 +1,7 @@
 import React from 'react';
 import { convertIcon, IconSize } from '../component/Icon';
 
+// @todo 지울 수 있음
 function SvgComponent({ ...rest }: React.SVGProps<SVGSVGElement> & IconSize) {
   return (
     <svg width="55" height="55" viewBox="0 0 55 55" fill="none" xmlns="http://www.w3.org/2000/svg">
