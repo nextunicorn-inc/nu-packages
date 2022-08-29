@@ -50,7 +50,7 @@
     "build:lib": "node ./scripts/compileLib.js",
     "build:js": "node ./scripts/compileDist.js",
     "build": "yarn clean && yarn build:lib && yarn build:js && cp @styles/variables.css lib/variables.css",
-    "deploy": "chromatic --project-token=$(grep CHROMATIC_TOKEN .env | cut -d '=' -f2)",
+    "deploy": "chromatic --project-token=$(grep CHROMATIC_TOKEN .env | cut -d '=' -f2) --exit-zero-on-changes=master --exit-zero-on-changes=master",
     "update": "yarn build && npm publish --access=public"
   },
   "dependencies": {
