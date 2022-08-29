@@ -2,6 +2,6 @@
 . "$(dirname "$0")/_/husky.sh"
 
 yarn ui build:storybook
-#yarn ui deploy
+yarn ui deploy
 
 exit 0
