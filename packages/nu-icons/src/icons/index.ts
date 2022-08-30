@@ -101,3 +101,4 @@ export { default as IconVote } from './IconVote';
 export { default as IconWaiting } from './IconWaiting';
 export { default as IconWritePR } from './IconWritePR';
 export { default as IconYoutube } from './IconYoutube';
+export { default as IconInfo } from './IconInfo';
