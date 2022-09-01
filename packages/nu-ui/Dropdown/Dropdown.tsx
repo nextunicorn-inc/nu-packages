@@ -4,7 +4,6 @@ import * as Icon from './Dropdown.icon';
 import { DropdownProps, ItemProps } from './Dropdown.types';
 
 const DropDownList = ({
-  id,
   isTop,
   searchable,
   itemSelect,
@@ -12,7 +11,6 @@ const DropDownList = ({
   selectedItem,
   keyword,
 }: {
-  id: string;
   isTop: boolean;
   searchable: [string, string];
   itemSelect: ({ value, label }: ItemProps) => void;
@@ -45,15 +43,13 @@ const DropDownList = ({
   }
 
   if (searchable) {
-    return <div className={`dd-list-item no-result ${id}`}>{searchable[1]}</div>;
+    return <div className="dd-list-item no-result">{searchable[1]}</div>;
   }
 
   return <></>;
 };
 
 const Dropdown = ({
-  id = 'nu-dropdown',
-  name = 'nu-dropdown',
   width = '100%',
   onChange = (e) => console.log(e),
   // eslint-disable-next-line @typescript-eslint/no-empty-function
@@ -92,7 +88,7 @@ const Dropdown = ({
     setSelectedItem({ value, label });
     setListOpen(false);
 
-    if (selectedItem.value !== value) onChange({ value, label }, name);
+    if (selectedItem.value !== value) onChange({ value, label });
   };
 
   const toggleList = () => {
@@ -135,7 +131,6 @@ const Dropdown = ({
           )}
           <Styled.DropdownScrollList>
             <DropDownList
-              id={id}
               isTop={isTop}
               itemSelect={itemSelect}
               searchable={searchable as [string, string]}

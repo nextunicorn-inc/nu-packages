@@ -52,6 +52,8 @@ export const NextUnicornGlobalStyle = () => (
       body {
         width: 100%;
         height: 100%;
+
+        overscroll-behavior-y: none;
       }
 
       a[href],

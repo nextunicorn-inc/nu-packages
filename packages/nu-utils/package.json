@@ -47,14 +47,5 @@
     "rollup-plugin-terser": "^7.0.2",
     "tslib": "^2.4.0",
     "typescript": "^4.7.4"
-  },
-  "peerDependencies": {
-    "@types/react": "^18.0.0",
-    "react": "^18.0.0"
-  },
-  "peerDependenciesMeta": {
-    "@types/react": {
-      "optional": true
-    }
   }
 }
