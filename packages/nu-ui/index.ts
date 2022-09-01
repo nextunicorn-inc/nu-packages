@@ -18,3 +18,4 @@ export * from './TextButton';
 export * from './TextField';
 export * from './Thumbnail';
 export * from './Typography';
+export * from './Toggle';

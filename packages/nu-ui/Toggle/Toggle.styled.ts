@@ -1,5 +1,7 @@
 import styled from '@emotion/styled';
+import { Color } from '../@foundations';
 
+// TODO: 클래스 제거해서 고도화하기
 export const ToggleWrapper = styled.div`
   touch-action: pan-x;
 
@@ -7,7 +9,7 @@ export const ToggleWrapper = styled.div`
   position: relative;
   cursor: pointer;
   background-color: transparent;
-  border: 0;
+  border: none;
   padding: 0;
 
   -webkit-touch-callout: none;
@@ -16,72 +18,78 @@ export const ToggleWrapper = styled.div`
   -ms-user-select: none;
   user-select: none;
 
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
 
-  .disabled {
+  -webkit-transition: opacity 0.25s ease;
+  -moz-transition: opacity 0.25s ease;
+  transition: opacity 0.25s ease;
+
+  /* 클래스 */
+  &.nu-toggle--disabled {
     cursor: not-allowed;
     opacity: 0.5;
     -webkit-transition: opacity 0.25s;
     transition: opacity 0.25s;
   }
 
-  .checked .track {
-    background-color: #19ab27;
+  &.nu-toggle:hover:not(.nu-toggle--disabled) .nu-toggle-track {
+    background-color: ${Color.blueGray3};
   }
 
-  .checked .track-check {
+  &.nu-toggle--checked .nu-toggle-track {
+    background-color: ${Color.unicornBlue6};
+  }
+
+  &.nu-toggle--checked:hover:not(.nu-toggle--disabled) .nu-toggle-track {
+    background-color: ${Color.unicornBlue7};
+  }
+
+  &.nu-toggle--checked .nu-toggle-track-check {
     opacity: 1;
     -webkit-transition: opacity 0.25s ease;
     -moz-transition: opacity 0.25s ease;
     transition: opacity 0.25s ease;
   }
 
-  .checked .track-x {
+  &.nu-toggle--checked .nu-toggle-track-uncheck {
     opacity: 0;
   }
 
-  .checked .thumb {
-    left: 27px;
-    border-color: #19ab27;
+  &.nu-toggle--checked .nu-toggle-thumb {
+    left: 14px;
   }
 
-  .focus .thumb {
-    -webkit-box-shadow: 0px 0px 3px 2px #0099e0;
-    -moz-box-shadow: 0px 0px 3px 2px #0099e0;
-    box-shadow: 0px 0px 2px 3px #0099e0;
+  &.nu-toggle--focus .nu-toggle-thumb {
+    -webkit-box-shadow: 0 0 3px 2px #0099e0;
+    -moz-box-shadow: 0 0 3px 2px #0099e0;
+    box-shadow: 0 0 2px 3px #0099e0;
   }
 
-  &:hover:not(.disabled) .track {
-    background-color: #000000;
-  }
-
-  &:active:not(.disabled) .thumb {
-    -webkit-box-shadow: 0px 0px 5px 5px #0099e0;
-    -moz-box-shadow: 0px 0px 5px 5px #0099e0;
-    box-shadow: 0px 0px 5px 5px #0099e0;
+  &.nu-toggle:active:not(.nu-toggle--disabled) .nu-toggle-thumb {
+    -webkit-box-shadow: 0 0 5px 5px #0099e0;
+    -moz-box-shadow: 0 0 5px 5px #0099e0;
+    box-shadow: 0 0 5px 5px #0099e0;
   }
 `;
 
 export const ToggleArea = styled.div`
-  width: 50px;
-  height: 24px;
+  width: 28px;
+  height: 16px;
   padding: 0;
-  border-radius: 30px;
-  background-color: #4d4d4d;
+  border-radius: 16px;
+  background-color: ${Color.blueGray2};
+
   -webkit-transition: all 0.2s ease;
   -moz-transition: all 0.2s ease;
   transition: all 0.2s ease;
 `;
 
-export const ToggleAreaCheck = styled.div`
+export const ToggleCheck = styled.div`
   position: absolute;
-  width: 14px;
-  height: 10px;
-  top: 0px;
-  bottom: 0px;
-  margin-top: auto;
-  margin-bottom: auto;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
   line-height: 0;
   left: 8px;
   opacity: 0;
@@ -90,15 +98,12 @@ export const ToggleAreaCheck = styled.div`
   transition: opacity 0.25s ease;
 `;
 
-export const ToggleAreaUnCheck = styled.div`
+export const ToggleUncheck = styled.div`
   position: absolute;
-  width: 10px;
-  height: 10px;
-  top: 0px;
-  bottom: 0px;
-  margin-top: auto;
-  margin-bottom: auto;
-  line-height: 0;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
   right: 10px;
   opacity: 1;
   -webkit-transition: opacity 0.25s ease;
@@ -106,16 +111,16 @@ export const ToggleAreaUnCheck = styled.div`
   transition: opacity 0.25s ease;
 `;
 
-export const ToggleThumb = styled.div`
+export const ToggleCircle = styled.div`
   transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0ms;
   position: absolute;
-  top: 1px;
-  left: 1px;
-  width: 22px;
-  height: 22px;
-  border: 1px solid #4d4d4d;
+  top: 2px;
+  left: 2px;
+  width: 12px;
+  height: 12px;
+  border: 1px solid ${Color.blueGray1};
   border-radius: 50%;
-  background-color: #fafafa;
+  background-color: ${Color.naturalGray0};
 
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -123,11 +128,10 @@ export const ToggleThumb = styled.div`
 
   -webkit-transition: all 0.25s ease;
   -moz-transition: all 0.25s ease;
-  transition: all 0.25s ease;
 `;
 
 export const ToggleInput = styled.input`
-  border: 0;
+  border: none;
   clip: rect(0 0 0 0);
   height: 1px;
   margin: -1px;

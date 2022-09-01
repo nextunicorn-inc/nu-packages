@@ -1,17 +1,17 @@
-import { FocusEvent, ReactElement } from 'react';
+import { InputHTMLAttributes, ReactNode } from 'react';
 
-type ToggleProps = Partial<{
-  checked: boolean;
-  disabled: boolean;
-  defaultChecked: boolean;
-  onChange: () => void;
-  onFocus: (event: FocusEvent) => void;
-  onBlur: (event: FocusEvent) => void;
-  className: string;
-  name: string;
-  value: string;
-  id: string;
-  icons: boolean | { checked: ReactElement; unchecked: ReactElement };
-}>;
+export interface PointerCoordinates {
+  x?: number;
+  y?: number;
+}
 
-export default ToggleProps;
+export interface ToggleIcons {
+  checked?: ReactNode | undefined;
+  unchecked?: ReactNode | undefined;
+}
+
+export interface ToggleProps extends InputHTMLAttributes<HTMLInputElement> {
+  'aria-labelledby'?: string | undefined;
+  'aria-label'?: string | undefined;
+  icons?: boolean | ToggleIcons | undefined;
+}
