@@ -26,7 +26,9 @@
     "ui": "yarn workspace @nextunicorn/ui",
     "utils": "yarn workspace @nextunicorn/utils",
     "//1": "========================================================================================================================[ run all workspace ]",
-    "build": "yarn workspaces foreach -vit --include \"{@nextunicorn/types,@nextunicorn/icons,@nextunicorn/utils}\" run build && yarn ui build"
+    "build": "yarn workspaces foreach -vit --include \"{@nextunicorn/types,@nextunicorn/icons,@nextunicorn/utils}\" run build && yarn ui build",
+    "//2": "========================================================================================================================[ build docs ]",
+    "docs:build:react-icons": "yarn workspace @nextunicorn/react-icons build"
   },
   "devDependencies": {
     "@babel/core": "^7.18.13",

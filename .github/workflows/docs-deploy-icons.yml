@@ -44,7 +44,7 @@ jobs:
 
       - name: Yarn Build To Main Service
         run: |
-          yarn build
+          yarn docs:build:react-icons
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
