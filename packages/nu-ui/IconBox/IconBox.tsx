@@ -8,10 +8,11 @@ const TextAfterIcon = ({
   size,
   icon: Icon,
   gap,
+  style,
 }: Omit<IconBoxProps, 'isIconOnly' | 'isIconAfter'>) => {
   const IconElement = Icon as unknown as typeof React.Component;
   return (
-    <Styled.DSIconBoxWrapper $size={size} $gap={gap}>
+    <Styled.DSIconBoxWrapper style={style} $size={size} $gap={gap}>
       <div>{text}</div>
       {typeof Icon === 'object' ? Icon : <IconElement />}
     </Styled.DSIconBoxWrapper>
@@ -23,30 +24,45 @@ const TextBeforeIcon = ({
   size,
   icon: Icon,
   gap,
+  style,
 }: Omit<IconBoxProps, 'isIconOnly' | 'isIconAfter'>) => {
   const IconElement = Icon as unknown as typeof React.Component;
   return (
-    <Styled.DSIconBoxWrapper $size={size} $gap={gap}>
+    <Styled.DSIconBoxWrapper style={style} $size={size} $gap={gap}>
       {typeof Icon === 'object' ? Icon : <IconElement />}
       <div>{text}</div>
     </Styled.DSIconBoxWrapper>
   );
 };
 
-const OnlyIcon = ({ size, icon: Icon, isIconOnly }: Omit<IconBoxProps, 'text' | 'isIconAfter'>) => {
+const OnlyIcon = ({
+  size,
+  icon: Icon,
+  isIconOnly,
+  style,
+}: Omit<IconBoxProps, 'text' | 'isIconAfter'>) => {
   const IconElement = Icon as unknown as typeof React.Component;
   return (
-    <Styled.DSIconBoxWrapper $size={size} $isIconOnly={isIconOnly}>
+    <Styled.DSIconBoxWrapper style={style} $size={size} $isIconOnly={isIconOnly}>
       {typeof Icon === 'object' ? Icon : <IconElement />}
     </Styled.DSIconBoxWrapper>
   );
 };
 
-const IconBox = ({ text, size = 'medium', isIconOnly, isIconAfter, icon, gap }: IconBoxProps) => {
+const IconBox = ({
+  text,
+  size = 'medium',
+  isIconOnly,
+  isIconAfter,
+  icon,
+  gap,
+  style,
+}: IconBoxProps) => {
   if (!icon) return <>{text}</>;
-  if (isIconOnly) return <OnlyIcon size={size} icon={icon} isIconOnly={isIconOnly} />;
-  if (isIconAfter) return <TextAfterIcon size={size} text={text} icon={icon} gap={gap} />;
-  return <TextBeforeIcon size={size} text={text} icon={icon} gap={gap} />;
+  if (isIconOnly) return <OnlyIcon size={size} icon={icon} isIconOnly={isIconOnly} style={style} />;
+  if (isIconAfter)
+    return <TextAfterIcon size={size} text={text} icon={icon} gap={gap} style={style} />;
+  return <TextBeforeIcon size={size} text={text} icon={icon} gap={gap} style={style} />;
 };
 
 export default IconBox;
