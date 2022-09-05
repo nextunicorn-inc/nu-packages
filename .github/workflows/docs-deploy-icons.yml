@@ -21,9 +21,6 @@ jobs:
       contents: write
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
-    defaults:
-      run:
-        working-directory: "./docs/react-icons"
 
     steps:
       - name: Checkout repository

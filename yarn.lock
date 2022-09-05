@@ -2421,7 +2421,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nextunicorn/icons@^0.0.14, @nextunicorn/icons@workspace:^, @nextunicorn/icons@workspace:packages/nu-icons":
+"@nextunicorn/icons@0.0.14, @nextunicorn/icons@^0.0.14, @nextunicorn/icons@workspace:packages/nu-icons":
   version: 0.0.0-use.local
   resolution: "@nextunicorn/icons@workspace:packages/nu-icons"
   dependencies:
@@ -2499,8 +2499,8 @@ __metadata:
     "@emotion/react": ^11.10.4
     "@emotion/styled": ^11.10.4
     "@mui/material": ^5.10.3
-    "@nextunicorn/icons": "workspace:^"
-    "@nextunicorn/ui": "workspace:^"
+    "@nextunicorn/icons": 0.0.14
+    "@nextunicorn/ui": 0.0.29
     "@types/react": ^18.0.17
     "@types/react-dom": ^18.0.6
     "@vitejs/plugin-react": ^2.1.0
@@ -2529,7 +2529,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@nextunicorn/ui@workspace:^, @nextunicorn/ui@workspace:packages/nu-ui":
+"@nextunicorn/ui@0.0.29, @nextunicorn/ui@workspace:packages/nu-ui":
   version: 0.0.0-use.local
   resolution: "@nextunicorn/ui@workspace:packages/nu-ui"
   dependencies:
