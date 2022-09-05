@@ -14,6 +14,7 @@ type IsEqualCustomizer = (
 
 const COMPARE_PARTIAL_FLAG = 1 << 0;
 
+// eslint-disable-next-line max-params
 function _baseIsEqual(
   value: any,
   other: any,
@@ -33,6 +34,7 @@ function _baseIsEqual(
   return _baseIsEqualDeep(value, other, bitmask, customizer, stack);
 }
 
+// eslint-disable-next-line max-params
 function _baseIsEqualDeep(
   value: any,
   other: any,
@@ -67,7 +69,7 @@ function _baseIsEqualDeep(
     if (!isPartial && value.length !== other.length) {
       return false;
     }
-    result = other.every((v, index) => {
+    result = other.every((_v, index) => {
       const compared =
         customizer && customizer(value[index], other[index], index, value, other, stack);
       if (compared !== undefined) {
