@@ -1,39 +1,39 @@
-## Workflow name
-#name: Deploy Storybook Chromatic
-#
-## Event for the workflow
-#on: push
-#
-## List of jobs
-#jobs:
-#  chromatic-deployment:
-#    runs-on: ubuntu-latest
-#
-#    steps:
-#      - name: Checkout repository
-#        uses: actions/checkout@v3
-#        with:
-#          fetch-depth: 0
-#
-#      - name: Set up Node.js
-#        uses: actions/setup-node@master
-#        with:
-#          node-version: '18.x'
-#          cache: 'yarn'
-#          registry-url: 'https://registry.npmjs.org'
-#
-#      - name: Install dependencies
-#        run: |
-#          YARN_ENABLE_IMMUTABLE_INSTALLS=false yarn install
-#
-#      - name: Yarn Build To Main Service
-#        run: |
-#          yarn ui build:storybook
-#
-#      - name: Publish to Chromatic
-#        uses: chromaui/action@v1
-#        with:
-#          workingDir: packages/nu-ui
-#          exitZeroOnChanges: true
-#          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-#          token: ${{ secrets.GITHUB_TOKEN }}
+# Workflow name
+name: Deploy Storybook Chromatic
+
+# Event for the workflow
+on: push
+
+# List of jobs
+jobs:
+  chromatic-deployment:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@master
+        with:
+          node-version: '18.x'
+          cache: 'yarn'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Install dependencies
+        run: |
+          YARN_ENABLE_IMMUTABLE_INSTALLS=false yarn install
+
+      - name: Yarn Build To Main Service
+        run: |
+          yarn ui build:storybook
+
+      - name: Publish to Chromatic
+        uses: chromaui/action@v1
+        with:
+          workingDir: packages/nu-ui
+          exitZeroOnChanges: true
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
