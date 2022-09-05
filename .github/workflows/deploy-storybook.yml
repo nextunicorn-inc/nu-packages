@@ -2,7 +2,15 @@
 name: Deploy Storybook Chromatic
 
 # Event for the workflow
-on: push
+on:
+  schedule:
+    - cron: '55 22 * * *' # AM 07:55, South Korea!
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'warning'
 
 # List of jobs
 jobs:

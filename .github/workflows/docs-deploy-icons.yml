@@ -6,6 +6,12 @@ on:
       - master
     paths:
       - "packages/nu-icons/**"
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'
+        required: true
+        default: 'warning'
 
 jobs:
   build_deploy_dev:
