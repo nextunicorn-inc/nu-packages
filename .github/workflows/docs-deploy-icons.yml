@@ -44,7 +44,6 @@ jobs:
 
       - name: Yarn Build To Main Service
         run: |
-          cd docs/react-icons
           yarn build
 
       - name: Deploy
