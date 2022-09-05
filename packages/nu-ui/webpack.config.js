@@ -24,7 +24,10 @@ module.exports = function ({ minimize }) {
       rules: [
         {
           test: /\.tsx?$/,
-          include: [path.join(rootPath, 'packages/nu-ui')],
+          include: [
+            path.join(rootPath, 'packages/nu-types'),
+            path.join(rootPath, 'packages/nu-ui'),
+          ],
           use: [
             {
               loader: 'babel-loader',
@@ -61,6 +64,9 @@ module.exports = function ({ minimize }) {
     ],
     resolve: {
       extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
+      alias: {
+        '@nextunicorn/types': path.resolve(__dirname, '../nu-types'),
+      },
     },
     externals: {
       react: {

@@ -21,7 +21,11 @@
     "postinstall": "husky install",
     "//0": "======================================================================================================================[ run special package ]",
     "icon": "yarn workspace @nextunicorn/icons",
-    "ui": "yarn workspace @nextunicorn/ui"
+    "types": "yarn workspace @nextunicorn/types",
+    "ui": "yarn workspace @nextunicorn/ui",
+    "utils": "yarn workspace @nextunicorn/utils",
+    "//1": "========================================================================================================================[ run all workspace ]",
+    "build": "yarn workspaces foreach -vit --include \"{@nextunicorn/types,@nextunicorn/icons,@nextunicorn/utils}\" run build && yarn ui build"
   },
   "devDependencies": {
     "@babel/core": "^7.18.13",

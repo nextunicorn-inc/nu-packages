@@ -6,15 +6,34 @@
     "esModuleInterop": true,
     "strict": true,
     "target": "es6",
-    "lib": ["ES5", "ES6", "ESNext", "DOM"],
+    "lib": [
+      "ES5",
+      "ES6",
+      "ESNext",
+      "DOM"
+    ],
     "skipLibCheck": true,
     "baseUrl": ".",
     "forceConsistentCasingInFileNames": true,
     "module": "esnext",
     "isolatedModules": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "paths": {
+      "@nextunicorn/types": [
+        "./packages/nu-types/src/index"
+      ],
+      "@nextunicorn/icons": [
+        "./packages/nu-icons/src/index"
+      ],
+      "@nextunicorn/utils": [
+        "./packages/nu-utils/src/index"
+      ]
+    }
   },
-  "include": [],
+  "include": [
+    "packages/**/*.tsx",
+    "packages/**/*.ts"
+  ],
   "exclude": [
     "node_modules"
   ]

@@ -35,6 +35,8 @@
   },
   "dependencies": {
     "@babel/runtime-corejs3": "^7.18.9",
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
     "classnames": "^2.2.6"
   },
   "devDependencies": {

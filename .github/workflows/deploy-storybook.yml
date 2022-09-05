@@ -28,6 +28,7 @@ jobs:
 
       - name: Yarn Build To Main Service
         run: |
+          yarn build
           yarn ui build:storybook
 
       - name: Publish to Chromatic
