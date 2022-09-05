@@ -14,7 +14,7 @@ module.exports = {
   parserOptions: {
     ecmaVersion: 12,
     sourceType: 'module',
-    project: ['tsconfig.json', './packages/**/tsconfig.json'],
+    project: ['tsconfig.json', './docs/**/tsconfig.json', './packages/**/tsconfig.json'],
   },
   ignorePatterns: ['**/*.test.ts'],
   // common rules

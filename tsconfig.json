@@ -31,6 +31,8 @@
     }
   },
   "include": [
+    "docs/**/*/tsx",
+    "docs/**/*/ts",
     "packages/**/*.tsx",
     "packages/**/*.ts"
   ],
