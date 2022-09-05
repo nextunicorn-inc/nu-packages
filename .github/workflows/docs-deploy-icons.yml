@@ -1,0 +1,44 @@
+name: Deploy Docs - Icons
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - "packages/nu-icons/**"
+
+jobs:
+  build_deploy_dev:
+    name: Build and Deploy Dev
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: "./docs/react-icons"
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@master
+        with:
+          node-version: '16.x'
+          cache: 'yarn'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Install dependencies
+        run: |
+          YARN_ENABLE_IMMUTABLE_INSTALLS=false yarn install
+
+      - name: Yarn Build To Main Service
+        run: |
+          cd docs/react-icons
+          yarn build
+
+      - name: Deploy
+          uses: peaceiris/actions-gh-pages@v3
+          with:
+            github_token: ${{ secrets.GITHUB_TOKEN }}
+            publish_dir: ./docs/react-icons/dist
