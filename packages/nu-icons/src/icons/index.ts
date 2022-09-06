@@ -106,3 +106,5 @@ export { default as IconAttachment } from './IconAttachment';
 export { default as IconCircleArrNext } from './IconCircleArrNext';
 export { default as IconCheckSelected } from './IconCheckSelected';
 export { default as IconDash } from './IconDash';
+export { default as IconFlowUp } from './IconFlowUp';
+export { default as IconFlowDown } from './IconFlowDown';
