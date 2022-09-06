@@ -108,6 +108,7 @@ export const NextUnicornGlobalStyle = () => (
         -webkit-tap-highlight-color: transparent;
         outline: none;
         font-family: 'Spoqa Han Sans Neo', sans-serif !important;
+        box-sizing: border-box;
       }
 
       *:disabled {
