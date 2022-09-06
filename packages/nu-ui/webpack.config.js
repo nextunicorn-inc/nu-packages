@@ -25,8 +25,8 @@ module.exports = function ({ minimize }) {
         {
           test: /\.tsx?$/,
           include: [
-            path.join(rootPath, 'packages/nu-icons'),
             path.join(rootPath, 'packages/nu-types'),
+            path.join(rootPath, 'packages/nu-ui'),
           ],
           use: [
             {
@@ -66,7 +66,6 @@ module.exports = function ({ minimize }) {
       extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
       alias: {
         '@nextunicorn/types': path.resolve(__dirname, '../nu-types'),
-        '@nextunicorn/icons': path.resolve(__dirname, '../nu-icons'),
       },
     },
     externals: {
