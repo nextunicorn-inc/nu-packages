@@ -102,3 +102,7 @@ export { default as IconWaiting } from './IconWaiting';
 export { default as IconWritePR } from './IconWritePR';
 export { default as IconYoutube } from './IconYoutube';
 export { default as IconInfo } from './IconInfo';
+export { default as IconAttachment } from './IconAttachment';
+export { default as IconCircleArrNext } from './IconCircleArrNext';
+export { default as IconCheckSelected } from './IconCheckSelected';
+export { default as IconDash } from './IconDash';
