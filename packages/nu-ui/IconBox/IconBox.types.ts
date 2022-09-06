@@ -1,4 +1,4 @@
-import { IconProps, SizeTypes, StyleProps } from '@nextunicorn/types';
+import { IconProps, SizeTypes, ReactStandardProps } from '@nextunicorn/types';
 
 interface IconBoxOptions {
   text?: string;
@@ -6,4 +6,4 @@ interface IconBoxOptions {
   gap?: number;
 }
 
-export interface IconBoxProps extends IconProps, StyleProps, IconBoxOptions {}
+export interface IconBoxProps extends IconProps, ReactStandardProps, IconBoxOptions {}

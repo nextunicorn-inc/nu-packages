@@ -1,4 +1,4 @@
-import { StyleProps } from '@nextunicorn/types';
+import { ReactStandardProps } from '@nextunicorn/types';
 
 type ChipOptions = {
   text?: string;
@@ -6,4 +6,4 @@ type ChipOptions = {
   onClose?: () => void;
 };
 
-export interface ChipProps extends StyleProps, ChipOptions {}
+export interface ChipProps extends ReactStandardProps, ChipOptions {}

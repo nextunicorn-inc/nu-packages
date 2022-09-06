@@ -1,4 +1,4 @@
-import { DisableProps, StyleProps } from '@nextunicorn/types';
+import { DisableProps, ReactStandardProps } from '@nextunicorn/types';
 
 export type PaginationType = 'default' | 'extra';
 export type PaginationSize = 'large' | 'small';
@@ -22,4 +22,4 @@ export interface PaginationItemProps {
   onClick: (page: number) => void;
 }
 
-export interface PaginationProps extends DisableProps, StyleProps, PaginationOptions {}
+export interface PaginationProps extends DisableProps, ReactStandardProps, PaginationOptions {}

@@ -94,4 +94,9 @@ export const DSButtonWrapper = styled.button<LayoutProps>`
             cursor: not-allowed;
           }
         `};
+
+  &:active {
+    transform: scale(0.95);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.05);
+  }
 `;
