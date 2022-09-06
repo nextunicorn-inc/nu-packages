@@ -1,11 +1,8 @@
 name: Deploy Docs - Icons
 
 on:
-  push:
-    branches:
-      - master
-    paths:
-      - "packages/nu-icons/**"
+  schedule:
+    - cron: '55 22 * * *' # AM 07:55, South Korea!
   workflow_dispatch:
     inputs:
       logLevel:

@@ -2421,7 +2421,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nextunicorn/icons@0.0.14, @nextunicorn/icons@^0.0.14, @nextunicorn/icons@workspace:packages/nu-icons":
+"@nextunicorn/icons@0.0.15, @nextunicorn/icons@workspace:packages/nu-icons":
   version: 0.0.0-use.local
   resolution: "@nextunicorn/icons@workspace:packages/nu-icons"
   dependencies:
@@ -2461,6 +2461,18 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@nextunicorn/icons@npm:^0.0.14":
+  version: 0.0.14
+  resolution: "@nextunicorn/icons@npm:0.0.14"
+  dependencies:
+    "@babel/runtime-corejs3": ^7.18.9
+    classnames: ^2.2.6
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+  checksum: 6f33ed98a00f09ffaa862fb113fa7f056e7b220f285393f5223c8129b182642ea82b82825d6466c5ca71f31b1f43603d2d98f3fa2f6b1f30d276ff4a3da30a8d
+  languageName: node
+  linkType: hard
+
 "@nextunicorn/monorepo@workspace:.":
   version: 0.0.0-use.local
   resolution: "@nextunicorn/monorepo@workspace:."
@@ -2499,14 +2511,14 @@ __metadata:
     "@emotion/react": ^11.10.4
     "@emotion/styled": ^11.10.4
     "@mui/material": ^5.10.3
-    "@nextunicorn/icons": 0.0.14
+    "@nextunicorn/icons": 0.0.15
     "@nextunicorn/ui": 0.0.29
-    "@types/react": ^18.0.17
+    "@types/react": ^18.0.18
     "@types/react-dom": ^18.0.6
     "@vitejs/plugin-react": ^2.1.0
     react: ^18.2.0
     react-dom: ^18.2.0
-    typescript: ^4.6.4
+    typescript: ^4.8.2
     vite: ^3.1.0
   languageName: unknown
   linkType: soft
@@ -18005,7 +18017,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:^4.6.4, typescript@npm:^4.7.4, typescript@npm:^4.8.2":
+"typescript@npm:^4.7.4, typescript@npm:^4.8.2":
   version: 4.8.2
   resolution: "typescript@npm:4.8.2"
   bin:
@@ -18025,7 +18037,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@^4.6.4#~builtin<compat/typescript>, typescript@patch:typescript@^4.7.4#~builtin<compat/typescript>, typescript@patch:typescript@^4.8.2#~builtin<compat/typescript>":
+"typescript@patch:typescript@^4.7.4#~builtin<compat/typescript>, typescript@patch:typescript@^4.8.2#~builtin<compat/typescript>":
   version: 4.8.2
   resolution: "typescript@patch:typescript@npm%3A4.8.2#~builtin<compat/typescript>::version=4.8.2&hash=f456af"
   bin:

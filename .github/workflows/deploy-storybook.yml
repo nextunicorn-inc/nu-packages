@@ -3,8 +3,11 @@ name: Deploy Storybook Chromatic
 
 # Event for the workflow
 on:
-  schedule:
-    - cron: '55 22 * * *' # AM 07:55, South Korea!
+  push:
+    branches:
+      - master
+    paths:
+      - "packages/nu-icons/**"
   workflow_dispatch:
     inputs:
       logLevel:
