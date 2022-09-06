@@ -1,5 +1,3 @@
-import { GenericObject } from '@nextunicorn/types';
-
 export type Common =
   | 'surface'
   | 'disabled'
@@ -17,12 +15,10 @@ export type HelperBgColor = 'light' | 'dark';
 
 export type HelperTextColor = 'light' | 'dark' | 'gray' | 'error';
 
-interface ThemeType {
-  [category: string]: GenericObject<string>;
-
-  Common: GenericObject<string>;
-  HelperBgColor: GenericObject<string>;
-  HelperTextColor: GenericObject<string>;
-}
+type ThemeType = {
+  Common: { [key in Common]: string };
+  HelperBgColor: { [key in HelperBgColor]: string };
+  HelperTextColor: { [key in HelperTextColor]: string };
+};
 
 export default ThemeType;

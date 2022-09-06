@@ -74,7 +74,7 @@ const Color: ColorType = {
   green9: '#1D4D19',
 
   // FIXME: Overlay
-  overlay: 'hsla(0, 0%, 0%, 0.4)',
+  overlay: '#00000066', // hsla(0, 0%, 0%, 0.4)
 };
 
 export const colorList: ColorKey[] = Object.keys(Color) as ColorKey[];
