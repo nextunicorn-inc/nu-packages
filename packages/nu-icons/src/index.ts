@@ -2,4 +2,5 @@ export * from './component/Icon';
 export * from './icons';
 
 import * as Icons from './icons';
-export default Icons;
+import * as Logos from './logos';
+export default { ...Icons, ...Logos };
