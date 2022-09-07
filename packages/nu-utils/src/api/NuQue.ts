@@ -200,13 +200,4 @@ class NuQue {
   };
 }
 
-export default new NuQue({
-  headers: {
-    // 'X-Requested-With': 'XMLHttpRequest',
-    'X-NU-sid': '',
-    'x-nu-fp': '',
-    'x-transaction-id': '',
-    'x-nu-wp': '',
-  },
-  withCredentials: true,
-});
+export default new NuQue();

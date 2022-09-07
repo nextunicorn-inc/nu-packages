@@ -40,6 +40,7 @@ export type Options = Partial<{
   data: BodyInit;
   signal: AbortSignal;
   // 요청 전 / 요청 성공 / 요청 실패
+  authCallback: (...args: unknown[]) => void;
   trackerCallback: (...args: unknown[]) => void;
   errorInterceptor: (...args: unknown[]) => void;
 }>;
