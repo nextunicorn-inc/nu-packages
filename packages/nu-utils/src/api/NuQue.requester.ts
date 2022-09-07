@@ -2,7 +2,7 @@ import isomorphicFetch from 'isomorphic-fetch';
 import { Options, RequestHeaders, Response } from './NuQue.types';
 import deepMerge from '../common/deepMerge';
 
-interface Error {
+export interface NuQueError {
   name: string;
   message: string;
   stack?: string;
@@ -10,7 +10,7 @@ interface Error {
   code?: number;
 }
 
-const requester = async <T>(
+export const requester = async <T>(
   urlOrConfig: string | Options,
   config?: Options,
   _method?: string,
@@ -112,7 +112,7 @@ const requester = async <T>(
         type: 'response',
         method,
         path: url,
-        status: (err as Error).status,
+        status: (err as NuQueError).status,
         time: Date.now() - start,
       });
     }
@@ -125,5 +125,3 @@ const requester = async <T>(
     throw err;
   }
 };
-
-export default requester;

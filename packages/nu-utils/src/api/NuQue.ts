@@ -1,4 +1,4 @@
-import requester from './NuQue.requester';
+import { requester } from './NuQue.requester';
 import { Options, Response } from './NuQue.types';
 
 export class NuQue {

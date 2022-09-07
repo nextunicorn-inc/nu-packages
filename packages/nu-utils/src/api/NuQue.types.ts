@@ -1,6 +1,6 @@
 import isomorphicFetch from 'isomorphic-fetch';
 
-type RequestMethodType =
+export type RequestMethodType =
   | 'get'
   | 'post'
   | 'put'

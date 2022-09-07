@@ -1,7 +1,7 @@
 {
   "name": "@nextunicorn/utils",
   "packageManager": "yarn@3.2.2",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.esm.js",
   "types": "./dist/index.d.ts",
