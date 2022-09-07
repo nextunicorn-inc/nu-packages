@@ -46,14 +46,22 @@ export type Options = Partial<{
 }>;
 
 export type Response<T> = {
-  status: number;
-  statusText: string;
   config: Options;
   data: T | ReadableStream<Uint8Array> | null;
-  headers: RequestHeaders;
   redirect: boolean;
-  url: string;
-  type: ResponseType;
-  body: ReadableStream<Uint8Array> | null;
-  bodyUsed: boolean;
+  readonly body: ReadableStream<Uint8Array> | null;
+  readonly bodyUsed: boolean;
+  arrayBuffer(): Promise<ArrayBuffer>;
+  blob(): Promise<Blob>;
+  formData(): Promise<FormData>;
+  json(): Promise<any>;
+  text(): Promise<string>;
+  readonly headers: Headers;
+  readonly ok: boolean;
+  readonly redirected: boolean;
+  readonly status: number;
+  readonly statusText: string;
+  readonly type: ResponseType;
+  readonly url: string;
+  clone(): Response<T>;
 };
