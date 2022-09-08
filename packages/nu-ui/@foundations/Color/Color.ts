@@ -74,7 +74,55 @@ const Color: ColorType = {
   green9: '#1D4D19',
 
   // FIXME: Overlay
-  overlay: '#00000066', // hsla(0, 0%, 0%, 0.4)
+  overlay: '#00000066',
+
+  // FIXME: AngelsGray
+  angelsGray0: '#FDFDFD',
+  angelsGray1: '#F0F0F0',
+  angelsGray2: '#E1E1E1',
+  angelsGray3: '#CDCDCD',
+  angelsGray4: '#B1B1B1',
+  angelsGray5: '#989898',
+  angelsGray6: '#808080',
+  angelsGray7: '#646464',
+  angelsGray8: '#464646',
+  angelsGray9: '#202020',
+
+  // FIXME: AngelsBlue
+  angelsBlue0: '#DEFAF9',
+  angelsBlue1: '#C1F4F3',
+  angelsBlue2: '#A5EFEC',
+  angelsBlue3: '#89E9E5',
+  angelsBlue4: '#6EE2DE',
+  angelsBlue5: '#53C9CA',
+  angelsBlue6: '#3CA8AD',
+  angelsBlue7: '#29858B',
+  angelsBlue8: '#196164',
+  angelsBlue9: '#0D3B3D',
+
+  // FIXME: AngelsLightPurple
+  angelsLightPurple0: '#F7F5FF',
+  angelsLightPurple1: '#F0ECFF',
+  angelsLightPurple2: '#E9E3FF',
+  angelsLightPurple3: '#E3DAFF',
+  angelsLightPurple4: '#DCD2FF',
+  angelsLightPurple5: '#C9BCEA',
+  angelsLightPurple6: '#B7A7D4',
+  angelsLightPurple7: '#A593BF',
+  angelsLightPurple8: '#9480A9',
+  angelsLightPurple9: '#836D94',
+
+  // FIXME: AngelsLightBlue
+  angelsLightBlue0: '#F1FDFF',
+  angelsLightBlue1: '#E6F9FF',
+  angelsLightBlue2: '#DAF5FE',
+  angelsLightBlue3: '#CEEFFE',
+  angelsLightBlue4: '#C3E9FD',
+  angelsLightBlue5: '#ADD4EA',
+  angelsLightBlue6: '#99BFD4',
+  angelsLightBlue7: '#85A9BF',
+  angelsLightBlue8: '#7293A9',
+  angelsLightBlue9: '#607D94',
 };
 
 export const colorList: ColorKey[] = Object.keys(Color) as ColorKey[];

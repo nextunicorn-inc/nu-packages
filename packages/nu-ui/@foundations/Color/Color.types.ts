@@ -70,6 +70,54 @@ type GreenColor =
   | 'green8'
   | 'green9';
 
+type AngelsgrayColor =
+  | 'angelsGray0' // surface
+  | 'angelsGray1'
+  | 'angelsGray2'
+  | 'angelsGray3'
+  | 'angelsGray4' // disabled
+  | 'angelsGray5' // place-holder
+  | 'angelsGray6'
+  | 'angelsGray7' // text
+  | 'angelsGray8' // subtitle
+  | 'angelsGray9'; // title
+
+type AngelsblueColor =
+  | 'angelsBlue0'
+  | 'angelsBlue1'
+  | 'angelsBlue2'
+  | 'angelsBlue3'
+  | 'angelsBlue4' // primary
+  | 'angelsBlue5'
+  | 'angelsBlue6'
+  | 'angelsBlue7'
+  | 'angelsBlue8'
+  | 'angelsBlue9';
+
+type AngelsLightPurpleColor =
+  | 'angelsLightPurple0'
+  | 'angelsLightPurple1'
+  | 'angelsLightPurple2'
+  | 'angelsLightPurple3'
+  | 'angelsLightPurple4' // primary
+  | 'angelsLightPurple5'
+  | 'angelsLightPurple6'
+  | 'angelsLightPurple7'
+  | 'angelsLightPurple8'
+  | 'angelsLightPurple9';
+
+type AngelsLightBlueColor =
+  | 'angelsLightBlue0'
+  | 'angelsLightBlue1'
+  | 'angelsLightBlue2'
+  | 'angelsLightBlue3'
+  | 'angelsLightBlue4' // primary
+  | 'angelsLightBlue5'
+  | 'angelsLightBlue6'
+  | 'angelsLightBlue7'
+  | 'angelsLightBlue8'
+  | 'angelsLightBlue9';
+
 type OverlayColor = 'overlay';
 
 export type ColorKey =
@@ -79,6 +127,10 @@ export type ColorKey =
   | CoralColor
   | YellowOrangeColor
   | GreenColor
-  | OverlayColor;
+  | OverlayColor
+  | AngelsgrayColor
+  | AngelsblueColor
+  | AngelsLightPurpleColor
+  | AngelsLightBlueColor;
 
 export type ColorType = Record<ColorKey, string>;
