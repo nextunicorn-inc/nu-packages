@@ -19,6 +19,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       disabled = false,
       loading = false,
       style,
+      children,
       ...rest
     },
     ref,
@@ -38,7 +39,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         <Loading kind={variant} />
       ) : (
         <IconBox
-          text={text}
+          text={text || (children as string)}
           isIconOnly={isIconOnly}
           isIconAfter={isIconAfter}
           icon={icon}

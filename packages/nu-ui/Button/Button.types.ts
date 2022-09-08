@@ -7,7 +7,13 @@ import {
   ReactStandardProps,
 } from '@nextunicorn/types';
 
-export type ButtonVariant = 'primary' | 'secondary' | 'tertiary';
+export type ButtonVariant =
+  | 'primary'
+  | 'secondary'
+  | 'tertiary'
+  | 'angels-primary'
+  | 'angels-secondary'
+  | 'angels-tertiary';
 
 export type ButtonSize = SizeTypes;
 
