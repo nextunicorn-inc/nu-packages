@@ -7,7 +7,10 @@
     "sourceMap": true,
     "allowJs": true,
     "module": "es6",
-    "lib": ["es7", "dom"],
+    "lib": [
+      "es7",
+      "dom"
+    ],
     "moduleResolution": "node",
     "noImplicitAny": false,
     "jsx": "react",
@@ -17,12 +20,18 @@
     "experimentalDecorators": true,
     "noImplicitReturns": true,
     "noImplicitThis": false,
-    "strictNullChecks": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
+    "declaration": true,
+    "strictNullChecks": false,
     "strict": true,
-    "declaration": true
+    "isolatedModules": false
   },
-  "include": ["**/*.tsx", "**/*.ts"],
-  "exclude": ["node_modules"]
+  "include": [
+    "**/*.tsx",
+    "**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
