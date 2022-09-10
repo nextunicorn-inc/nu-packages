@@ -1,0 +1,35 @@
+# For more ideas, see https://github.com/actions/labeler#common-examples
+
+⚙️ SETTING:
+  - .github/**/*
+
+🖼ICONS:
+  - packages/nu-icons/**/*
+
+🛠TYPES:
+  - packages/nu-types/**/*
+
+🌱DESIGN:
+  - packages/nu-ui/**/*
+
+📂UTILS:
+  - packages/nu-utils/**/*
+
+🌊DEVOPS:
+  - .github/workflows/*
+  - .yarn/**/*
+  - .eslintignore
+  - .eslintrc.js
+  - .gitignore
+  - .nvmrc
+  - .pnp.cjs
+  - .pnp.loader.mjs
+  - .prettierignore
+  - .prettier.json
+  - .yarnrc.yml
+  - package.json
+  - tsconfig.json
+  - yarn.lock
+
+📝 DOCUMENT:
+  - README.md
