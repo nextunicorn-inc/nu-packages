@@ -1,5 +1,5 @@
-import { BREAK_POINT } from '@nextunicorn/types';
 import styled from '@emotion/styled';
+import { BREAK_POINT } from '../@constants';
 import {
   MOBILE_GLOBAL_PADDING,
   MOBILE_GUTTER,

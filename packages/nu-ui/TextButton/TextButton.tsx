@@ -4,10 +4,10 @@ import * as Styled from './TextButton.styled';
 import { TextButtonProps } from './TextButton.types';
 
 const TextButton = React.forwardRef<HTMLButtonElement, TextButtonProps>(
-  ({ text = '', size = 'large', icon, isIconAfter = false, ...rest }, ref) => (
+  ({ text = '', size = 'large', icon, isIconAfter = false, children, ...rest }, ref) => (
     <Styled.DSTextButtonWrapper {...rest} $size={size} ref={ref}>
       <IconBox
-        text={text}
+        text={text || (children as string)}
         isIconAfter={isIconAfter}
         icon={icon}
         size={size === 'small' ? 'medium' : size}

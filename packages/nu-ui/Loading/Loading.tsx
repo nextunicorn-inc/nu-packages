@@ -19,7 +19,7 @@ const LoadingTheme = {
   'angels-tertiary': <AngelsTertiaryLoading />,
 };
 
-const Loading = ({ kind }: LoadingProps) => (
+const Loading = ({ kind = 'primary' }: LoadingProps) => (
   <Styled.DSLoadingWrapper>{LoadingTheme[kind]}</Styled.DSLoadingWrapper>
 );
 

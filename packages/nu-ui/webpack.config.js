@@ -1,7 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
-const TerserPlugin = require('terser-webpack-plugin');
 const DefinePlugin = webpack.DefinePlugin;
+const TerserPlugin = require('terser-webpack-plugin');
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const getBabelConfig = require('./getBabelConfig');
 
