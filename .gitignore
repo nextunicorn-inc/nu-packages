@@ -108,3 +108,9 @@ packages/**/lib
 
 # idea
 .idea
+.idea/*.xml
+*.iml
+out
+gen
+build
+rebel.xml
