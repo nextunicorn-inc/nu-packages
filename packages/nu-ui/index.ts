@@ -8,6 +8,7 @@ export * from './Button';
 export * from './Checkbox';
 export * from './Chip';
 export * from './Dropdown';
+export * from './Dropdown_deprecated';
 export * from './HelperText';
 export * from './IconBox';
 export * from './LinkButton';

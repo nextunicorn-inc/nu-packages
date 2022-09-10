@@ -3,7 +3,7 @@ import * as Styled from './Dropdown.styled';
 import * as Icon from './Dropdown.icon';
 import { DropdownProps, ItemProps } from './Dropdown.types';
 
-const DropDownList = ({
+const DropdownList = ({
   isTop,
   searchable,
   itemSelect,
@@ -130,7 +130,7 @@ const Dropdown = ({
             />
           )}
           <Styled.DropdownScrollList>
-            <DropDownList
+            <DropdownList
               isTop={isTop}
               itemSelect={itemSelect}
               searchable={searchable as [string, string]}
