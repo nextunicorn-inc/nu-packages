@@ -1563,7 +1563,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime-corejs3@npm:^7.10.2, @babel/runtime-corejs3@npm:^7.19.0":
+"@babel/runtime-corejs3@npm:^7.10.2, @babel/runtime-corejs3@npm:^7.18.9, @babel/runtime-corejs3@npm:^7.19.0":
   version: 7.19.0
   resolution: "@babel/runtime-corejs3@npm:7.19.0"
   dependencies:
@@ -2431,7 +2431,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nextunicorn/icons@0.0.15, @nextunicorn/icons@^0.0.15, @nextunicorn/icons@workspace:packages/nu-icons":
+"@nextunicorn/icons@npm:0.0.15, @nextunicorn/icons@npm:^0.0.15":
+  version: 0.0.15
+  resolution: "@nextunicorn/icons@npm:0.0.15"
+  dependencies:
+    "@babel/runtime-corejs3": ^7.18.9
+    "@emotion/react": ^11.10.4
+    "@emotion/styled": ^11.10.4
+    classnames: ^2.2.6
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+  checksum: 6e43958420ae08d7bb1dba7caf8d015d95be8c13364699bd332d9819de12c971797071e0d067e7d91d238789ebf1aa8eb0d83923456f621e430afcc0853197c5
+  languageName: node
+  linkType: hard
+
+"@nextunicorn/icons@workspace:packages/nu-icons":
   version: 0.0.0-use.local
   resolution: "@nextunicorn/icons@workspace:packages/nu-icons"
   dependencies:
@@ -7313,7 +7327,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"classnames@npm:^2.2.1, classnames@npm:^2.3.1":
+"classnames@npm:^2.2.1, classnames@npm:^2.2.6, classnames@npm:^2.3.1":
   version: 2.3.1
   resolution: "classnames@npm:2.3.1"
   checksum: 14db8889d56c267a591f08b0834989fe542d47fac659af5a539e110cc4266694e8de86e4e3bbd271157dbd831361310a8293e0167141e80b0f03a0f175c80960
