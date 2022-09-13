@@ -207,7 +207,7 @@ function pointerCoord(ev: any): PointerCoordinates {
   if (pageX !== undefined) return { x: pageX, y: ev.pageY };
 }
 
-export default class Toggle2 extends Component<
+export default class Toggle extends Component<
   ToggleProps,
   { checked: boolean; hasFocus: boolean }
 > {
@@ -337,7 +337,7 @@ export default class Toggle2 extends Component<
     if (!icons) {
       return null;
     }
-    return icons[type] === undefined ? Toggle2.defaultProps.icons[type] : icons[type];
+    return icons[type] === undefined ? Toggle.defaultProps.icons[type] : icons[type];
   }
 
   render() {
@@ -385,9 +385,9 @@ export default class Toggle2 extends Component<
   }
 }
 
-Toggle2.displayName = 'Toggle';
+Toggle.displayName = 'Toggle';
 
-Toggle2.defaultProps = {
+Toggle.defaultProps = {
   icons: {
     checked: <Check />,
     unchecked: <X />,
