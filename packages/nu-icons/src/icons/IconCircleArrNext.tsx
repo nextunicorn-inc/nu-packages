@@ -8,8 +8,8 @@ function SvgComponent({ color = '#616161', ...rest }: React.SVGProps<SVGSVGEleme
       <path
         d="M10.5 17L15.5 12L10.5 7"
         stroke={color}
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );

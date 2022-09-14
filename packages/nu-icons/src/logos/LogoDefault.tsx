@@ -5,7 +5,7 @@ function SvgComponent(props: React.SVGProps<SVGSVGElement> & IconSize) {
   return (
     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect x="0.2" y="0.2" width="19.6" height="19.6" rx="3.8" fill="#E8EAED" />
-      <g clip-path="url(#clip0_3103_10075)">
+      <g clipPath="url(#clip0_3103_10075)">
         <path
           d="M15.1897 12.4285C15.5948 12.4285 16 12.0739 16 11.598C16 11.1524 15.6151 10.7876 15.1897 10.7876C14.7643 10.7876 14.3794 11.1524 14.3794 11.598C14.3794 12.0435 14.7441 12.4285 15.1897 12.4285Z"
           fill="#FEFEFE"
@@ -26,7 +26,7 @@ function SvgComponent(props: React.SVGProps<SVGSVGElement> & IconSize) {
         height="19.6"
         rx="3.8"
         stroke="#E8EAED"
-        stroke-width="0.4"
+        strokeWidth="0.4"
       />
       <defs>
         <clipPath id="clip0_3103_10075">

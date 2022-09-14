@@ -4,7 +4,7 @@ import { convertIcon, IconSize } from '../component/Icon';
 function SvgComponent(props: React.SVGProps<SVGSVGElement> & IconSize) {
   return (
     <svg width="48" height="22" viewBox="0 0 48 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <g clip-path="url(#clip0_2783_8512)">
+      <g clipPath="url(#clip0_2783_8512)">
         <path
           d="M44.7587 21.7139C46.3794 21.7139 48 20.2955 48 18.3918C48 16.6095 46.4602 15.1506 44.7587 15.1506C43.0572 15.1506 41.5175 16.6095 41.5175 18.3918C41.5175 20.1742 42.9764 21.7139 44.7587 21.7139V21.7139Z"
           fill="#00E4DF"

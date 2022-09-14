@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { IconBox } from '@nextunicorn/ui';
-import { icons } from '@nextunicorn/icons';
+import Icons from '@nextunicorn/icons';
 import { experimentalStyled as styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
