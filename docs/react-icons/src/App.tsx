@@ -25,10 +25,13 @@ export default function ResponsiveGrid() {
                 display: 'flex',
                 justifyContent: 'center',
                 flexDirection: 'column',
+                border: '1px solid gray',
+                borderRadius: '5px',
+                padding: '10px',
               }}
             >
               <h4 style={{ display: 'flex', justifyContent: 'center' }}>{name.substring(4)}</h4>
-              <Item>
+              <Item style={{ backgroundColor: '#e8e8e8' }}>
                 <IconBox icon={<Icon />} style={{ display: 'flex', justifyContent: 'center' }} />
               </Item>
             </div>
