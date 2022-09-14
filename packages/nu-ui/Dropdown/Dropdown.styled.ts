@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 import { BasicTransition, Color, Keyframe } from '../@foundations';
-import { size14 } from '../Typography/FontSchema/FontSize';
+import { size14 } from '../@foundations';
 
 export const DropdownWrapper = styled.nav``;
 

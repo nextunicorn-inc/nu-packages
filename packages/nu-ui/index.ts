@@ -1,4 +1,4 @@
-export * from './@constants'
+export * from './@constants';
 export * from './@foundations';
 export * from './@layout';
 export * from './@styles';
@@ -19,5 +19,5 @@ export * from './Radio';
 export * from './TextButton';
 export * from './TextField';
 export * from './Thumbnail';
-export * from './Typography';
 export * from './Toggle';
+export * from './Typography';
