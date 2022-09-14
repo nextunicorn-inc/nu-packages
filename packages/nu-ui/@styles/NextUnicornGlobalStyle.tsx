@@ -4,160 +4,179 @@ import normalize from './normalize';
 export const NextUnicornGlobalStyle = () => (
   <Global
     styles={css`
-      /* https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL */
-      @font-face {
-        font-family: 'Spoqa Han Sans Neo';
-        font-weight: 700;
-        src: local('Spoqa Han Sans Neo Bold'),
-          url('https://cdn.jsdelivr.net/gh/spoqa/spoqa-han-sans@latest/Subset/SpoqaHanSansNeo/SpoqaHanSansNeo-Bold.woff2')
-            format('woff2'),
-          url('https://cdn.jsdelivr.net/gh/spoqa/spoqa-han-sans@latest/Subset/SpoqaHanSansNeo/SpoqaHanSansNeo-Bold.woff')
-            format('woff'),
-          url('https://cdn.jsdelivr.net/gh/spoqa/spoqa-han-sans@latest/Subset/SpoqaHanSansNeo/SpoqaHanSansNeo-Bold.ttf')
-            format('truetype');
-      }
+          /* https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL */
+          @font-face {
+            font-family: 'Spoqa Han Sans Neo';
+            font-weight: 700;
+            src: local('Spoqa Han Sans Neo Bold'),
+            url('https://cdn.jsdelivr.net/gh/spoqa/spoqa-han-sans@latest/Subset/SpoqaHanSansNeo/SpoqaHanSansNeo-Bold.woff2') format('woff2'),
+            url('https://cdn.jsdelivr.net/gh/spoqa/spoqa-han-sans@latest/Subset/SpoqaHanSansNeo/SpoqaHanSansNeo-Bold.woff') format('woff'),
+            url('https://cdn.jsdelivr.net/gh/spoqa/spoqa-han-sans@latest/Subset/SpoqaHanSansNeo/SpoqaHanSansNeo-Bold.ttf') format('truetype');
+          }
 
-      @font-face {
-        font-family: 'Spoqa Han Sans Neo';
-        font-weight: 500;
-        src: local('Spoqa Han Sans Neo Regular'),
-          url('https://cdn.jsdelivr.net/gh/spoqa/spoqa-han-sans@latest/Subset/SpoqaHanSansNeo/SpoqaHanSansNeo-Medium.woff2')
-            format('woff2'),
-          url('https://cdn.jsdelivr.net/gh/spoqa/spoqa-han-sans@latest/Subset/SpoqaHanSansNeo/SpoqaHanSansNeo-Medium.woff')
-            format('woff'),
-          url('https://cdn.jsdelivr.net/gh/spoqa/spoqa-han-sans@latest/Subset/SpoqaHanSansNeo/SpoqaHanSansNeo-Medium.ttf')
-            format('truetype');
-      }
+          @font-face {
+            font-family: 'Spoqa Han Sans Neo';
+            font-weight: 500;
+            src: local('Spoqa Han Sans Neo Regular'),
+            url('https://cdn.jsdelivr.net/gh/spoqa/spoqa-han-sans@latest/Subset/SpoqaHanSansNeo/SpoqaHanSansNeo-Medium.woff2') format('woff2'),
+            url('https://cdn.jsdelivr.net/gh/spoqa/spoqa-han-sans@latest/Subset/SpoqaHanSansNeo/SpoqaHanSansNeo-Medium.woff') format('woff'),
+            url('https://cdn.jsdelivr.net/gh/spoqa/spoqa-han-sans@latest/Subset/SpoqaHanSansNeo/SpoqaHanSansNeo-Medium.ttf') format('truetype');
+          }
 
-      @font-face {
-        font-family: 'Spoqa Han Sans Neo';
-        font-weight: 400;
-        src: local('Spoqa Han Sans Neo Light'),
-          url('https://cdn.jsdelivr.net/gh/spoqa/spoqa-han-sans@latest/Subset/SpoqaHanSansNeo/SpoqaHanSansNeo-Regular.woff2')
-            format('woff2'),
-          url('https://cdn.jsdelivr.net/gh/spoqa/spoqa-han-sans@latest/Subset/SpoqaHanSansNeo/SpoqaHanSansNeo-Regular.woff')
-            format('woff'),
-          url('https://cdn.jsdelivr.net/gh/spoqa/spoqa-han-sans@latest/Subset/SpoqaHanSansNeo/SpoqaHanSansNeo-Regular.ttf')
-            format('truetype');
-      }
+          @font-face {
+            font-family: 'Spoqa Han Sans Neo';
+            font-weight: 400;
+            src: local('Spoqa Han Sans Neo Light'),
+            url('https://cdn.jsdelivr.net/gh/spoqa/spoqa-han-sans@latest/Subset/SpoqaHanSansNeo/SpoqaHanSansNeo-Regular.woff2') format('woff2'),
+            url('https://cdn.jsdelivr.net/gh/spoqa/spoqa-han-sans@latest/Subset/SpoqaHanSansNeo/SpoqaHanSansNeo-Regular.woff') format('woff'),
+            url('https://cdn.jsdelivr.net/gh/spoqa/spoqa-han-sans@latest/Subset/SpoqaHanSansNeo/SpoqaHanSansNeo-Regular.ttf') format('truetype');
+          }
 
-      ${normalize}
-      /* Override */
-      b,
-      strong {
-        font-weight: bold;
-      }
+          @font-face {
+            font-family: 'Pretendard';
+            font-weight: 800;
+            src: local('Pretendard');
+            url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraBold.woff') format('woff');
+          }
 
-      html,
-      body {
-        width: 100%;
-        height: 100%;
+          @font-face {
+            font-family: 'Pretendard';
+            font-weight: 700;
+            src: local('Pretendard');
+            url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff');
+          }
 
-        overscroll-behavior-y: none;
-      }
+          @font-face {
+            font-family: 'Pretendard';
+            font-weight: 500;
+            src: local('Pretendard');
+            url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff') format('woff');
+          }
 
-      a[href],
-      input[type='submit'],
-      input[type='image'],
-      label[for],
-      select,
-      button,
-      .pointer {
-        cursor: pointer;
-      }
+          @font-face {
+            font-family: 'Pretendard';
+            font-weight: 400;
+            src: local('Pretendard');
+            url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+          }
 
-      ol {
-        margin: 0;
-        padding: 0;
-      }
+          ${normalize}
+            /* Override */
+          b,
+          strong {
+            font-weight: bold;
+          }
 
-      li {
-        list-style: none;
-      }
+          html,
+          body {
+            width: 100%;
+            height: 100%;
 
-      ul {
-        padding-left: 0;
-        margin: 0;
-      }
+            overscroll-behavior-y: none;
+          }
 
-      p {
-        margin: 0;
-      }
+          a[href],
+          input[type='submit'],
+          input[type='image'],
+          label[for],
+          select,
+          button,
+          .pointer {
+            cursor: pointer;
+          }
 
-      textarea:focus::placeholder {
-        color: transparent;
-      }
+          ol {
+            margin: 0;
+            padding: 0;
+          }
 
-      textarea {
-        resize: none;
-      }
+          li {
+            list-style: none;
+          }
 
-      input:focus::placeholder {
-        color: transparent;
-      }
+          ul {
+            padding-left: 0;
+            margin: 0;
+          }
 
-      input {
-        color: #656565;
-      }
+          p {
+            margin: 0;
+          }
 
-      input::placeholder {
-        color: #b5b5b5;
-      }
+          textarea:focus::placeholder {
+            color: transparent;
+          }
 
-      * {
-        -webkit-tap-highlight-color: transparent;
-        outline: none;
-        font-family: 'Spoqa Han Sans Neo', sans-serif !important;
-        box-sizing: border-box;
-      }
+          textarea {
+            resize: none;
+          }
 
-      *:disabled {
-        cursor: not-allowed;
-      }
+          input:focus::placeholder {
+            color: transparent;
+          }
 
-      .mobileOnly {
-        display: none;
-      }
+          input {
+            color: #656565;
+          }
 
-      @media (max-width: 767px) {
-        .mobileOnly {
-          display: unset;
-        }
-      }
+          input::placeholder {
+            color: #b5b5b5;
+          }
 
-      .tabletOnly {
-        display: none !important;
-      }
+          * {
+            -webkit-tap-highlight-color: transparent;
+            outline: none;
+            font-family: 'Spoqa Han Sans Neo', 'Pretendard', sans-serif !important;
+            box-sizing: border-box;
+          }
 
-      .tabletBelow {
-        display: none;
-      }
+          *:disabled {
+            cursor: not-allowed;
+          }
 
-      @media (max-width: 1023px) {
-        .tabletOnly {
-          display: unset;
-        }
+          .mobileOnly {
+            display: none;
+          }
 
-        .tabletBelow {
-          display: unset;
-        }
-      }
+          @media (max-width: 767px) {
+            .mobileOnly {
+              display: unset;
+            }
+          }
 
-      @media (max-width: 767px) {
-        .tabletOnly {
-          display: none;
-        }
-      }
+          .tabletOnly {
+            display: none !important;
+          }
 
-      .pcOnly {
-        display: unset;
-      }
+          .tabletBelow {
+            display: none;
+          }
 
-      @media (max-width: 1023px) {
-        .pcOnly {
-          display: none;
-        }
-      }
-    `}
+          @media (max-width: 1023px) {
+            .tabletOnly {
+              display: unset;
+            }
+
+            .tabletBelow {
+              display: unset;
+            }
+          }
+
+          @media (max-width: 767px) {
+            .tabletOnly {
+              display: none;
+            }
+          }
+
+          .pcOnly {
+            display: unset;
+          }
+
+          @media (max-width: 1023px) {
+            .pcOnly {
+              display: none;
+            }
+          }
+        `}
   />
 );

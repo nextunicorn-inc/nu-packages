@@ -1,9 +1,4 @@
 const normalize = `
-  html,
-  body {
-    font-family: 'Spoqa Han Sans', sans-serif !important;
-  }
-
   /*! sanitize.css v7.0.3 | CC0 License | github.com/csstools/sanitize.css */
 
   /* Document

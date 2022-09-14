@@ -1,7 +1,7 @@
 {
   "name": "@nextunicorn/icons",
   "packageManager": "yarn@3.2.3",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "main": "./lib/cjs/index.js",
   "module": "./lib/es/index.js",
   "typings": "./lib/es/index.d.ts",
@@ -37,7 +37,7 @@
     "@babel/runtime-corejs3": "^7.19.0",
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
-    "classnames": "^2.3.1"
+    "classnames": "^2.3.2"
   },
   "devDependencies": {
     "@babel/core": "^7.19.0",
@@ -47,15 +47,15 @@
     "@babel/preset-react": "^7.18.6",
     "@babel/runtime": "^7.19.0",
     "@rollup/plugin-commonjs": "^22.0.2",
-    "@rollup/plugin-node-resolve": "^14.0.1",
+    "@rollup/plugin-node-resolve": "^14.1.0",
     "@rollup/plugin-typescript": "^8.5.0",
     "@types/babel__core": "^7",
     "@types/case-sensitive-paths-webpack-plugin": "^2",
-    "@types/react": "^18.0.18",
+    "@types/react": "^18.0.20",
     "@types/rollup-plugin-peer-deps-external": "^2",
     "babel-loader": "^8.2.5",
     "case-sensitive-paths-webpack-plugin": "^2.4.0",
-    "del": "^6.0.0",
+    "del": "6.0.0",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
     "gulp-replace": "^1.1.3",
