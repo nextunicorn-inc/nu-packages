@@ -39,6 +39,14 @@ jobs:
           cache: 'yarn'
           registry-url: 'https://registry.npmjs.org'
 
+      - name: Yarn Setting
+        run: |
+          yarn set version berry
+          yarn config set nodeLinker "node-modules"
+          yarn plugin import version
+          yarn plugin import typescript
+          yarn plugin import workspace-tools
+
       - name: Install dependencies
         run: |
           YARN_ENABLE_IMMUTABLE_INSTALLS=false yarn install
