@@ -2431,7 +2431,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nextunicorn/icons@0.0.17, @nextunicorn/icons@workspace:packages/nu-icons":
+"@nextunicorn/icons@npm:^0.0.15":
+  version: 0.0.15
+  resolution: "@nextunicorn/icons@npm:0.0.15"
+  dependencies:
+    "@babel/runtime-corejs3": ^7.18.9
+    "@emotion/react": ^11.10.4
+    "@emotion/styled": ^11.10.4
+    classnames: ^2.2.6
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+  checksum: 6e43958420ae08d7bb1dba7caf8d015d95be8c13364699bd332d9819de12c971797071e0d067e7d91d238789ebf1aa8eb0d83923456f621e430afcc0853197c5
+  languageName: node
+  linkType: hard
+
+"@nextunicorn/icons@workspace:^*, @nextunicorn/icons@workspace:packages/nu-icons":
   version: 0.0.0-use.local
   resolution: "@nextunicorn/icons@workspace:packages/nu-icons"
   dependencies:
@@ -2475,20 +2489,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@nextunicorn/icons@npm:^0.0.15":
-  version: 0.0.15
-  resolution: "@nextunicorn/icons@npm:0.0.15"
-  dependencies:
-    "@babel/runtime-corejs3": ^7.18.9
-    "@emotion/react": ^11.10.4
-    "@emotion/styled": ^11.10.4
-    classnames: ^2.2.6
-  peerDependencies:
-    react: ^16.8.0 || ^17.0.0 || ^18.0.0
-  checksum: 6e43958420ae08d7bb1dba7caf8d015d95be8c13364699bd332d9819de12c971797071e0d067e7d91d238789ebf1aa8eb0d83923456f621e430afcc0853197c5
-  languageName: node
-  linkType: hard
-
 "@nextunicorn/monorepo@workspace:.":
   version: 0.0.0-use.local
   resolution: "@nextunicorn/monorepo@workspace:."
@@ -2527,7 +2527,7 @@ __metadata:
     "@emotion/react": ^11.10.4
     "@emotion/styled": ^11.10.4
     "@mui/material": ^5.10.5
-    "@nextunicorn/icons": 0.0.17
+    "@nextunicorn/icons": "workspace:^*"
     "@nextunicorn/ui": 0.0.37
     "@types/react": ^18.0.20
     "@types/react-dom": ^18.0.6
