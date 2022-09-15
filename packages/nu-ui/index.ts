@@ -21,3 +21,4 @@ export * from './TextField';
 export * from './Thumbnail';
 export * from './Toggle';
 export * from './Typography';
+export * from './Viewport';
