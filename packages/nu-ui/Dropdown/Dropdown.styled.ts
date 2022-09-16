@@ -2,7 +2,9 @@ import styled from '@emotion/styled';
 import { BasicTransition, Color, Keyframe } from '../@foundations';
 import { size14 } from '../@foundations';
 
-export const DropdownWrapper = styled.nav``;
+export const DropdownWrapper = styled.nav`
+  width: max-content;
+`;
 
 export const DropdownMenus = styled.ul`
   display: flex;
