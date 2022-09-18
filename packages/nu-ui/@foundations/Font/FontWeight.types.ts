@@ -1,11 +1,5 @@
-export type FontWeightKey =
-  | 'bold'
-  | 'medium'
-  | 'regular'
-  | 'angels-extrabold'
-  | 'angels-bold'
-  | 'angels-semibold'
-  | 'angels-medium'
-  | 'angels-regular';
+import { SerializedStyles } from '@emotion/react';
 
-export type FontWeightTypes = Record<FontWeightKey, number>;
+export type FontWeightKey = 'extrabold' | 'semibold' | 'bold' | 'medium' | 'regular';
+
+export type FontWeightTypes = Record<FontWeightKey, SerializedStyles>;
