@@ -1,6 +1,7 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
 import styled from '@emotion/styled';
+import { Color } from '../@foundations';
 import Badge from './Badge';
 import { CheckCircle20Icon } from './Badge.icons';
 
@@ -37,8 +38,23 @@ const colors: BadgeColor[] = [
   'deepBlue',
   'lightGray',
   'gray',
+  'deepGray',
   'black',
 ];
+
+const iconColors = {
+  lightCoral: Color.coral4,
+  coral: Color.naturalGray0,
+  lightYellow: Color.yellowOrange5,
+  yellow: Color.naturalGray0,
+  lightBlue: Color.unicornBlue5,
+  blue: Color.naturalGray0,
+  deepBlue: Color.naturalGray0,
+  lightGray: Color.naturalGray7,
+  gray: Color.blueGray8,
+  deepGray: Color.naturalGray0,
+  black: Color.naturalGray0,
+};
 
 const Template: Story<BadgeProps> = (args) => (
   <Layout>
@@ -51,9 +67,27 @@ const Template: Story<BadgeProps> = (args) => (
         </Row>
 
         <Row>
-          <Badge {...args} text="기본 배지" size="large" icon={CheckCircle20Icon} color={color} />
-          <Badge {...args} text="기본 배지" size="medium" icon={CheckCircle20Icon} color={color} />
-          <Badge {...args} text="기본 배지" size="small" icon={CheckCircle20Icon} color={color} />
+          <Badge
+            {...args}
+            text="기본 배지"
+            size="large"
+            icon={<CheckCircle20Icon color={iconColors[color]} />}
+            color={color}
+          />
+          <Badge
+            {...args}
+            text="기본 배지"
+            size="medium"
+            icon={<CheckCircle20Icon color={iconColors[color]} />}
+            color={color}
+          />
+          <Badge
+            {...args}
+            text="기본 배지"
+            size="small"
+            icon={<CheckCircle20Icon color={iconColors[color]} />}
+            color={color}
+          />
         </Row>
 
         <Row>
@@ -61,7 +95,7 @@ const Template: Story<BadgeProps> = (args) => (
             {...args}
             text="기본 배지"
             size="large"
-            icon={CheckCircle20Icon}
+            icon={<CheckCircle20Icon color={iconColors[color]} />}
             isIconAfter
             color={color}
           />
@@ -69,7 +103,7 @@ const Template: Story<BadgeProps> = (args) => (
             {...args}
             text="기본 배지"
             size="medium"
-            icon={CheckCircle20Icon}
+            icon={<CheckCircle20Icon color={iconColors[color]} />}
             isIconAfter
             color={color}
           />
@@ -77,7 +111,7 @@ const Template: Story<BadgeProps> = (args) => (
             {...args}
             text="기본 배지"
             size="small"
-            icon={CheckCircle20Icon}
+            icon={<CheckCircle20Icon color={iconColors[color]} />}
             isIconAfter
             color={color}
           />
@@ -99,9 +133,9 @@ export const BorderBadge: Story<BadgeProps> = (args) => (
     </Row>
 
     <Row>
-      <Badge {...args} text="기본 배지" kind="border" size="large" icon={CheckCircle20Icon} />
-      <Badge {...args} text="기본 배지" kind="border" size="medium" icon={CheckCircle20Icon} />
-      <Badge {...args} text="기본 배지" kind="border" size="small" icon={CheckCircle20Icon} />
+      <Badge {...args} text="기본 배지" kind="border" size="large" icon={<CheckCircle20Icon />} />
+      <Badge {...args} text="기본 배지" kind="border" size="medium" icon={<CheckCircle20Icon />} />
+      <Badge {...args} text="기본 배지" kind="border" size="small" icon={<CheckCircle20Icon />} />
     </Row>
 
     <Row>
@@ -110,7 +144,7 @@ export const BorderBadge: Story<BadgeProps> = (args) => (
         text="기본 배지"
         kind="border"
         size="large"
-        icon={CheckCircle20Icon}
+        icon={<CheckCircle20Icon />}
         isIconAfter
       />
       <Badge
@@ -118,7 +152,7 @@ export const BorderBadge: Story<BadgeProps> = (args) => (
         text="기본 배지"
         kind="border"
         size="medium"
-        icon={CheckCircle20Icon}
+        icon={<CheckCircle20Icon />}
         isIconAfter
       />
       <Badge
@@ -126,7 +160,7 @@ export const BorderBadge: Story<BadgeProps> = (args) => (
         text="기본 배지"
         kind="border"
         size="small"
-        icon={CheckCircle20Icon}
+        icon={<CheckCircle20Icon />}
         isIconAfter
       />
     </Row>

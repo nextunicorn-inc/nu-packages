@@ -1,47 +1,52 @@
 import styled from '@emotion/styled';
+import { Color } from '../@foundations';
 import { BadgeColor, BadgeKind, BadgeSize } from './Badge.types';
-import { css } from '@emotion/react';
+import { css, SerializedStyles } from '@emotion/react';
 
-const colorCSS = {
+const colorCSS: Record<BadgeColor, SerializedStyles> = {
   lightCoral: css`
-    color: var(--color-coral);
-    background-color: var(--color-light-coral-pink);
+    color: ${Color.coral4};
+    background-color: ${Color.coral0};
   `,
   coral: css`
-    color: var(--color-naturalgray0);
-    background-color: var(--color-coral);
+    color: ${Color.naturalGray0};
+    background-color: ${Color.coral4};
   `,
   lightYellow: css`
-    color: var(--color-yellow);
-    background-color: var(--color-light-yellow);
+    color: ${Color.yellowOrange5};
+    background-color: ${Color.yellowOrange0};
   `,
   yellow: css`
-    color: var(--color-naturalgray0);
-    background-color: var(--color-yellow);
+    color: ${Color.naturalGray0};
+    background-color: ${Color.yellowOrange5};
   `,
   lightBlue: css`
-    color: var(--color-unicornblue5);
-    background-color: var(--color-unicornblue0);
+    color: ${Color.unicornBlue5};
+    background-color: ${Color.unicornBlue0};
   `,
   blue: css`
-    color: var(--color-naturalgray0);
-    background-color: var(--color-unicornblue5);
+    color: ${Color.naturalGray0};
+    background-color: ${Color.unicornBlue5};
   `,
   deepBlue: css`
-    color: var(--color-naturalgray0);
-    background-color: var(--color-unicornblue7);
+    color: ${Color.naturalGray0};
+    background-color: ${Color.unicornBlue7};
   `,
   lightGray: css`
-    color: var(--color-naturalgray0);
-    background-color: var(--color-bluegray3);
+    color: ${Color.naturalGray7};
+    background-color: ${Color.blueGray0};
   `,
   gray: css`
-    color: var(--color-naturalgray0);
-    background-color: var(--color-bluegray7);
+    color: ${Color.blueGray8};
+    background-color: ${Color.blueGray3};
+  `,
+  deepGray: css`
+    color: ${Color.naturalGray0};
+    background-color: ${Color.blueGray7};
   `,
   black: css`
-    color: var(--color-naturalgray0);
-    background-color: var(--color-unicornblue9);
+    color: ${Color.naturalGray0};
+    background-color: ${Color.blueGray9};
   `,
 };
 
@@ -76,14 +81,10 @@ export const DSBadgeWrapper = styled.div<LayoutProps>`
   ${({ $kind, $color }) =>
     $kind === 'border'
       ? css`
-          color: var(--color-naturalgray7);
+          color: ${Color.blueGray8};
+          border: 1px solid ${Color.blueGray8};
         `
       : colorCSS[$color]};
-  ${({ $kind }) =>
-    $kind === 'border' &&
-    css`
-      border: 1px solid var(--color-naturalgray7);
-    `};
   ${({ $size }) => sizeCSS[$size]};
   width: fit-content;
   border-radius: 5px;

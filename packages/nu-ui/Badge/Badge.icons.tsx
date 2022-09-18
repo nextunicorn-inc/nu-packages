@@ -1,4 +1,4 @@
-export const CheckCircle20Icon = () => (
+export const CheckCircle20Icon = ({ color = '#2581FF' }: { color?: string }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -15,7 +15,7 @@ export const CheckCircle20Icon = () => (
       <mask id="v5505euhtb" fill="#fff">
         <use xlinkHref="#ek14y9to4a" />
       </mask>
-      <use fill="#2581FF" xlinkHref="#ek14y9to4a" />
+      <use fill={color} xlinkHref="#ek14y9to4a" />
     </g>
   </svg>
 );

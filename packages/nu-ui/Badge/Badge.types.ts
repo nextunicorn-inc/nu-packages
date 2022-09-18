@@ -14,6 +14,7 @@ export type BadgeColor =
   | 'deepBlue'
   | 'lightGray'
   | 'gray'
+  | 'deepGray'
   | 'black';
 
 interface BadgeOptions {
