@@ -2528,7 +2528,7 @@ __metadata:
     "@emotion/styled": ^11.10.4
     "@mui/material": ^5.10.5
     "@nextunicorn/icons": "workspace:^*"
-    "@nextunicorn/ui": 0.0.37
+    "@nextunicorn/ui": "workspace:^*"
     "@types/react": ^18.0.20
     "@types/react-dom": ^18.0.6
     "@vitejs/plugin-react": ^2.1.0
@@ -2558,7 +2558,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@nextunicorn/ui@0.0.37, @nextunicorn/ui@workspace:packages/nu-ui":
+"@nextunicorn/ui@workspace:^*, @nextunicorn/ui@workspace:packages/nu-ui":
   version: 0.0.0-use.local
   resolution: "@nextunicorn/ui@workspace:packages/nu-ui"
   dependencies:
