@@ -1,6 +1,8 @@
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { parse } from 'svg-parser';
+import { exec } from 'child_process';
+import fs from 'fs';
 
 export const camelizeAll = (s) => s.replaceAll(/-./g, (x) => x[1].toUpperCase());
 
@@ -58,9 +60,9 @@ function extractProperties(targetKey, obj) {
   const set = new Set();
   const rec = (obj) => {
     if (obj.properties) {
-      Object.entries(obj.properties)
-        .filter(([key]) => key === targetKey)
-        .forEach(([key, value]) => set.add(value));
+      Object.keys(obj.properties)
+        .filter((key) => key === targetKey)
+        .forEach((key) => set.add(obj.properties[key]));
     }
     if (obj.children.length > 0) {
       obj.children.forEach(rec);
@@ -105,8 +107,29 @@ function createSvg(obj) {
  * */
 export const get__dirname = () => {
   const __filename = fileURLToPath(import.meta.url);
-  const __dirname = path.dirname(__filename);
-  return __dirname;
+  return path.dirname(__filename);
 };
 
 export const getSrcDir = () => `${get__dirname()}/../src`;
+
+/**
+ * prettier 실행 함수
+ * */
+export const executePrettier = (absolutePath) => {
+  exec(`prettier --write ${absolutePath}`, (error, stdout, stderr) => {
+    if (error) {
+      console.log(`error: ${error.message}`);
+      return;
+    }
+    if (stderr) {
+      console.log(`stderr: ${stderr}`);
+      return;
+    }
+    console.log(`\n\n------stdout------\n\n${stdout}`);
+  });
+};
+
+// 0.1.xx
+const VERSION_PATH = `${get__dirname()}/version.txt`;
+export const getVersion = () => fs.readFileSync(VERSION_PATH).toString();
+getVersion.VERSION_PATH = VERSION_PATH;
