@@ -122,9 +122,9 @@ const decorateBackupIcons = (callback) => {
     });
   }
 
-  const to = `${getSrcDir()}/icons4Backup_${new Date().toISOString().slice(0, 10)}`;
+  const to = `${getSrcDir()}/iconsBackup_${new Date().toISOString().slice(0, 10)}`;
 
-  copyFolderSync(`${getSrcDir()}/icons4`, to);
+  copyFolderSync(`${getSrcDir()}/icons`, to);
   try {
     callback();
     // readme 만들고 문제 없으면
