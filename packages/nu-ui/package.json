@@ -1,7 +1,7 @@
 {
   "name": "@nextunicorn/ui",
   "packageManager": "yarn@3.2.3",
-  "version": "0.0.39",
+  "version": "0.0.40",
   "main": "./lib/cjs/index.js",
   "module": "./lib/es/index.js",
   "typings": "./lib/es/index.d.ts",
