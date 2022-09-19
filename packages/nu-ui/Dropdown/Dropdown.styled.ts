@@ -1,152 +1,103 @@
 import styled from '@emotion/styled';
-import { Color } from '../@foundations';
+import { BasicTransition, Color, Keyframe } from '../@foundations';
+import { size14 } from '../@foundations';
 
-export const DSDropdownWrapper = styled.div<{ $width: string; $isOpen: boolean; $isTop: boolean }>`
-  position: relative;
-  min-width: 100px;
-  ${({ $width }) => $width && `width: ${$width}`};
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 20px;
-  user-select: none;
-  border: 1px solid ${Color.blueGray2};
-  border-radius: ${({ $isOpen, $isTop }) =>
-    $isOpen && $isTop ? '0 0 5px 5px' : $isOpen && !$isTop ? '5px 5px 0 0' : '5px'};
-
-  button {
-    width: 100%;
-    overflow: visible;
-    margin: inherit;
-    border: none;
-    padding: 10px 12px;
-    background: inherit;
-    font: inherit;
-    line-height: normal;
-    color: inherit;
-    text-align: inherit;
-    -webkit-appearance: none;
-    display: flex;
-  }
-
-  ul,
-  li {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-
-  p {
-    margin: 0;
-    padding: 0;
-  }
-
-  * {
-    box-sizing: border-box;
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    text-rendering: optimizeLegibility;
-  }
+export const DropdownWrapper = styled.nav`
+  width: max-content;
 `;
 
-export const DropdownButton = styled.button`
+export const DropdownMenus = styled.ul`
+  display: flex;
+
+  list-style: none;
+`;
+
+export const DropdownMenuButton = styled.button`
+  height: 36px;
+
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  cursor: pointer;
-  gap: 2em;
+  justify-content: center;
+  gap: 4px;
 
-  div {
-    display: flex;
-  }
+  padding: 8px 12px;
 
-  svg {
-    user-select: none;
-    pointer-events: none;
-  }
-`;
+  border-radius: 4px;
 
-export const DropdownTitle = styled.div``;
-
-export const DropdownScrollList = styled.div`
-  height: 100%;
-`;
-
-export const DropdownList = styled.div<{ $isTop: boolean }>`
-  position: absolute;
-  left: -1px;
-  ${({ $isTop }) => $isTop && 'bottom: 40px'};
-  z-index: 10;
-  width: calc(100% + 2px);
-  padding: 0 1px;
-  border: 1px solid ${Color.blueGray2};
-  ${({ $isTop }) =>
-    $isTop
-      ? `border-bottom: none;
-        border-radius: 5px 5px 0 0;`
-      : `border-top: none;
-        border-radius: 0 0 5px 5px;`};
-  background-color: white;
-  text-align: left;
-  -webkit-overflow-scrolling: touch;
-
-  &.searchable {
-    overflow-y: hidden;
-    padding: 0;
-  }
-
-  ${DropdownScrollList} {
-    //padding: 10px 0;
-  }
-
-  &::before {
-    content: '';
-    position: absolute;
-    left: 12px;
-    ${({ $isTop }) => ($isTop ? 'bottom: 0;' : 'top: 0;')};
-    width: calc(100% - 24px);
-    border-top: 1px solid ${Color.blueGray2};
-    height: 1px;
-    border-radius: 1px;
-  }
-`;
-
-export const DropdownListItem = styled.button<{ $isSelected: boolean }>`
-  display: inline-block;
-  overflow: hidden;
-  width: 100%;
-  padding: 10px;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 20px;
-  white-space: nowrap;
-  ${({ $isSelected }) => $isSelected && `color: ${Color.unicornBlue6} !important`};
-
-  &.no-result {
-    font-weight: normal;
-    cursor: default;
-
-    &:hover {
-      background-color: transparent;
-      color: black;
-    }
-  }
+  font-weight: 700;
+  ${size14}
 
   &:hover {
-    & > span > svg > path {
-      fill: white;
-    }
+    background-color: ${Color.angelsGray1};
+  }
+`;
+export const DropdownMenuTitle = styled.span`
+  width: 100%;
+`;
+
+export const DropdownArea = styled.li`
+  position: relative;
+
+  font-size: 14px;
+`;
+
+export const DropdownMenuItems = styled.ul`
+  position: absolute;
+  right: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 4px 0;
+  height: fit-content;
+
+  margin-top: 8px;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  font-size: 0.875rem;
+  z-index: 10000;
+  list-style: none;
+  background-color: #fff;
+  border-radius: 5px;
+
+  animation: ${Keyframe['slideInUp']} ${BasicTransition};
+
+  &.dropdown-submenu {
+    position: absolute;
+    left: 100%;
+    top: -7px;
   }
 `;
 
-export const DropdownListSearchBar = styled.input`
-  width: 100%;
+export const DropdownMenuItemWrapper = styled.li`
+  width: 142px;
   height: 40px;
-  padding: 0 10px;
-  border: none;
-  border-bottom: 1px solid #dfdfdf;
-  font-size: inherit;
 
-  &::placeholder {
-    color: rgb(200, 200, 200);
+  a {
+    color: inherit;
+    font-size: inherit;
+    text-decoration: none;
+  }
+
+  button {
+    color: inherit;
+    font-size: inherit;
+    background-color: transparent;
+  }
+
+  a,
+  button {
+    width: 100%;
+    text-align: left;
+    padding: 10px 18px;
+  }
+
+  a:hover,
+  button:hover {
+    cursor: pointer;
+    font-weight: 700;
+    background-color: ${Color.angelsGray1};
   }
 `;

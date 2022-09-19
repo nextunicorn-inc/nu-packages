@@ -1,6 +1,6 @@
 import isomorphicFetch from 'isomorphic-fetch';
 
-type RequestMethodType =
+export type RequestMethodType =
   | 'get'
   | 'post'
   | 'put'
@@ -40,19 +40,28 @@ export type Options = Partial<{
   data: BodyInit;
   signal: AbortSignal;
   // 요청 전 / 요청 성공 / 요청 실패
+  authCallback: (...args: unknown[]) => void;
   trackerCallback: (...args: unknown[]) => void;
   errorInterceptor: (...args: unknown[]) => void;
 }>;
 
 export type Response<T> = {
-  status: number;
-  statusText: string;
   config: Options;
   data: T | ReadableStream<Uint8Array> | null;
-  headers: RequestHeaders;
   redirect: boolean;
-  url: string;
-  type: ResponseType;
-  body: ReadableStream<Uint8Array> | null;
-  bodyUsed: boolean;
+  readonly body: ReadableStream<Uint8Array> | null;
+  readonly bodyUsed: boolean;
+  arrayBuffer(): Promise<ArrayBuffer>;
+  blob(): Promise<Blob>;
+  formData(): Promise<FormData>;
+  json(): Promise<any>;
+  text(): Promise<string>;
+  readonly headers: Headers;
+  readonly ok: boolean;
+  readonly redirected: boolean;
+  readonly status: number;
+  readonly statusText: string;
+  readonly type: ResponseType;
+  readonly url: string;
+  clone(): Response<T>;
 };

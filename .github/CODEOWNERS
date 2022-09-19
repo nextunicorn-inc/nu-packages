@@ -1,0 +1,36 @@
+# ----------------------------------------------------------------------------
+# Nextunicorn Content CODEOWNERS
+# ----------------------------------------------------------------------------
+# Order is important. The last matching pattern takes precedence. For more
+# detailed information, see:
+# https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/about-code-owners
+# ----------------------------------------------------------------------------
+
+# ----------------------------------------------------------------------------
+# DEFAULT OWNERS
+# ----------------------------------------------------------------------------
+*    @nextunicorn-inc @InSeong-So
+
+# ----------------------------------------------------------------------------
+# PACKAGE OWNER(S)
+# ----------------------------------------------------------------------------
+/packages/nu-icons      @brillante06 @SINHOLEE
+/packages/nu-types      @InSeong-So
+/packages/nu-ui         @InSeong-So
+/packages/nu-utils      @moraeso
+
+# ----------------------------------------------------------------------------
+# STATIC PAGE OWNER(S)
+# ----------------------------------------------------------------------------
+/docs/                  @InSeong-So
+
+# ----------------------------------------------------------------------------
+# CONTROL FILES OWNER(S)
+# ----------------------------------------------------------------------------
+# These should be the last matches in this file, since any pull request that
+# tries to change any one or more of these files should be escalated to the
+# owners specified here.
+# ----------------------------------------------------------------------------
+/.github/               @InSeong-So
+/*                      @InSeong-So
+/*.md                   @InSeong-So

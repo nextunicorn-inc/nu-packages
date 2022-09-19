@@ -1,5 +1,5 @@
 import React from 'react';
-import { DisableProps, IconProps, LoadingProps } from '@nextunicorn/types';
+import { DisableProps, IconProps, LoadingProps, ReactStandardProps } from '@nextunicorn/types';
 
 export type AssistiveButtonColor = 'blue' | 'coral' | 'gray';
 
@@ -13,4 +13,5 @@ export interface AssistiveButtonProps
     DisableProps,
     LoadingProps,
     IconProps,
+    ReactStandardProps,
     AssistiveButtonOptions {}

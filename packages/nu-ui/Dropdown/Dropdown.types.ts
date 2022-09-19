@@ -1,18 +1,13 @@
-import { ReactNode } from 'react';
+import { HTMLAttributes } from 'react';
 
-export type ItemProps = { value: string | number; label: string };
-
-export type DropdownProps = Partial<{
-  id: string;
-  name: string;
-  width: string;
-  onChange: ({ value, label }: ItemProps) => void;
-  onClickOpen: () => void;
+export type DropdownItemType = {
   title: string;
-  list: ItemProps[];
-  searchable: [string, string];
-  selected: ItemProps;
-  isTop: boolean;
-  arrowUpIcon: ReactNode;
-  arrowDownIcon: ReactNode;
-}>;
+  href?: string;
+  submenu?: { title: string; href?: string }[];
+};
+
+export interface DropdownItemsProps extends HTMLAttributes<HTMLDivElement> {
+  data: DropdownItemType;
+  onChange?: (...args: unknown[]) => void;
+  onClose?: () => void;
+}

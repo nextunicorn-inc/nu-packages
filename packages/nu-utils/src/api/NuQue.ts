@@ -1,7 +1,7 @@
-import requester from './NuQue.requester';
+import { requester } from './NuQue.requester';
 import { Options, Response } from './NuQue.types';
 
-class NuQue {
+export class NuQue {
   constructor(public defaults: Options = {}) {
     // 어떤 props도 없다면 withCredentials 설정
     if (Object.keys(this.defaults).length < 1) {
@@ -200,13 +200,4 @@ class NuQue {
   };
 }
 
-export default new NuQue({
-  headers: {
-    // 'X-Requested-With': 'XMLHttpRequest',
-    'X-NU-sid': '',
-    'x-nu-fp': '',
-    'x-transaction-id': '',
-    'x-nu-wp': '',
-  },
-  withCredentials: true,
-});
+export const nuq = new NuQue();

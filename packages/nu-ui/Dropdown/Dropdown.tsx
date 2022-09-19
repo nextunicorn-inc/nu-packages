@@ -1,148 +1,156 @@
-import { ChangeEvent, useCallback, useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import * as Styled from './Dropdown.styled';
-import * as Icon from './Dropdown.icon';
-import { DropdownProps, ItemProps } from './Dropdown.types';
+import { DropdownItemsProps, DropdownItemType } from './Dropdown.types';
 
-const DropDownList = ({
-  isTop,
-  searchable,
-  itemSelect,
-  list,
-  selectedItem,
-  keyword,
-}: {
-  isTop: boolean;
-  searchable: [string, string];
-  itemSelect: ({ value, label }: ItemProps) => void;
-  list: ItemProps[];
-  selectedItem: ItemProps;
-  keyword: string;
-}) => {
-  let tempList = [...list];
-
-  if (keyword.length) {
-    tempList = list.filter((item) => item.label.toLowerCase().includes(keyword.toLowerCase()));
-  }
-
-  if (tempList.length) {
-    const listITem = isTop ? tempList.slice().reverse() : tempList;
-    return (
-      <>
-        {listITem.map((item) => (
-          <Styled.DropdownListItem
-            type="button"
-            key={item.value}
-            onClick={() => itemSelect(item)}
-            $isSelected={item.value === selectedItem.value}
-          >
-            {item.label}
-          </Styled.DropdownListItem>
-        ))}
-      </>
-    );
-  }
-
-  if (searchable) {
-    return <div className="dd-list-item no-result">{searchable[1]}</div>;
-  }
-
-  return <></>;
-};
-
-const Dropdown = ({
-  width = '100%',
-  onChange = (e) => console.log(e),
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  onClickOpen = () => {},
-  title = '선택해주세요',
-  list = [],
-  searchable,
-  selected = { value: '', label: '' },
-  isTop = false,
-  arrowUpIcon,
-  arrowDownIcon,
-}: DropdownProps) => {
-  const [isListOpen, setListOpen] = useState(false);
-  const [selectedItem, setSelectedItem] = useState<ItemProps>(selected);
-  const [keyword, setKeyword] = useState('');
-  const dropdownRef = useRef<HTMLDivElement>(null);
-  // const searchFieldRef = useRef<HTMLInputElement>(null);
-
-  const close = () => setListOpen(false);
-
-  const handleClick = useCallback((e: MouseEvent) => {
-    if (dropdownRef.current && !dropdownRef.current.contains(e.target as HTMLElement)) {
-      close();
-    }
-  }, []);
-
+const DropdownItems = ({ data, onChange, onClose }: DropdownItemsProps) => {
+  const Component = data.href ? 'a' : 'button';
+  const [isShownSubMenu, setToggleSubMenu] = useState(false);
+  const ref = useRef<null | HTMLLIElement>(null);
+  const handleClickEvent = {
+    toggleSubMenu: (data: DropdownItemType) => (event: any) => {
+      if (!data.submenu || (data.submenu && data.submenu.length === 0)) {
+        onChange && onChange(event.target.textContent, data);
+        onClose && onClose();
+      }
+      setToggleSubMenu(!isShownSubMenu);
+    },
+    selectMenu: (data: DropdownItemType) => (event: any) => {
+      onChange && onChange(event.target.textContent, data);
+      onClose && onClose();
+    },
+    closeSubMenu: (event: any) => {
+      if (ref.current && !ref.current.contains(event.target)) {
+        setToggleSubMenu(false);
+      }
+    },
+  };
   useEffect(() => {
-    document.addEventListener('click', handleClick);
-
+    document.addEventListener('click', handleClickEvent.closeSubMenu);
     return () => {
-      document.removeEventListener('click', handleClick);
+      document.removeEventListener('click', handleClickEvent.closeSubMenu);
     };
-  }, [handleClick]);
-
-  const itemSelect = ({ value, label }: ItemProps) => {
-    setSelectedItem({ value, label });
-    setListOpen(false);
-
-    if (selectedItem.value !== value) onChange({ value, label });
-  };
-
-  const toggleList = () => {
-    if (!isListOpen) {
-      onClickOpen();
-    }
-    setListOpen(!isListOpen);
-    setKeyword('');
-  };
-
-  const filterList = (event: ChangeEvent<HTMLInputElement>) => {
-    setKeyword(event.target.value.toLowerCase());
-  };
-
+  }, []);
   return (
-    <Styled.DSDropdownWrapper
-      ref={dropdownRef}
-      onClick={toggleList}
-      $width={width}
-      $isOpen={isListOpen}
-      $isTop={isTop}
-    >
-      <Styled.DropdownButton type="button">
-        <Styled.DropdownTitle>{selectedItem.label || title}</Styled.DropdownTitle>
-        {isTop ? (
-          <div>{arrowUpIcon || <Icon.UpArrow />}</div>
-        ) : (
-          <div>{arrowDownIcon || <Icon.DownArrow />}</div>
+    <Styled.DropdownMenuItemWrapper ref={ref}>
+      <Component
+        href={Component === 'a' && data.href}
+        type="button"
+        aria-haspopup="menu"
+        aria-expanded="false"
+        onClick={handleClickEvent.toggleSubMenu(data)}
+      >
+        <span>{data.title}</span>
+        {data.submenu && (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="13"
+            height="8"
+            viewBox="0 0 13 8"
+            fill="none"
+            className="right-arrow"
+          >
+            <path
+              d="M1.06348 1.04015L6.98625 5.95435L12.3167 1.04015"
+              stroke="#616166"
+              strokeWidth="2"
+            ></path>
+          </svg>
         )}
-      </Styled.DropdownButton>
-      {isListOpen && (
-        <Styled.DropdownList $isTop={isTop}>
-          {searchable && (
-            <Styled.DropdownListSearchBar
-              // ref={searchFieldRef}
-              placeholder={searchable[0]}
-              onClick={(e) => e.stopPropagation()}
-              onChange={filterList}
-            />
-          )}
-          <Styled.DropdownScrollList>
-            <DropDownList
-              isTop={isTop}
-              itemSelect={itemSelect}
-              searchable={searchable as [string, string]}
-              selectedItem={selectedItem}
-              list={list}
-              keyword={keyword}
-            />
-          </Styled.DropdownScrollList>
-        </Styled.DropdownList>
+      </Component>
+      {isShownSubMenu && data.submenu && data.submenu.length !== 0 && (
+        <Styled.DropdownArea className="dropdown-submenu">
+          {data.submenu.map((item, index) => {
+            return (
+              <Styled.DropdownMenuItems key={index.toString()}>
+                <button
+                  type="button"
+                  aria-haspopup="menu"
+                  aria-expanded="false"
+                  onClick={handleClickEvent.selectMenu(item)}
+                >
+                  <span>{item.title}</span>
+                </button>
+              </Styled.DropdownMenuItems>
+            );
+          })}
+        </Styled.DropdownArea>
       )}
-    </Styled.DSDropdownWrapper>
+    </Styled.DropdownMenuItemWrapper>
   );
 };
 
-export default Dropdown;
+interface DropdownMenuProps {
+  selectedValue?: string;
+  data?: DropdownItemType[];
+  onChange?: (event: any) => void;
+  className?: string;
+}
+
+const DropdownMenu = ({ selectedValue = '전체', data, onChange }: DropdownMenuProps) => {
+  const [isShownDropdown, setToggleDropdown] = useState(false);
+  const ref = useRef<null | HTMLElement>(null);
+  const handleClickEvent = {
+    toggleDropdown: () => setToggleDropdown(!isShownDropdown),
+    closeDropdown: (event: any) => {
+      if (ref.current && !ref.current.contains(event.target)) {
+        setToggleDropdown(false);
+      }
+    },
+    closeDropdownAction: () => {
+      setToggleDropdown(false);
+    },
+  };
+  useEffect(() => {
+    document.addEventListener('click', handleClickEvent.closeDropdown);
+    return () => {
+      document.removeEventListener('click', handleClickEvent.closeDropdown);
+    };
+  }, []);
+  return (
+    <Styled.DropdownWrapper ref={ref}>
+      <Styled.DropdownMenus>
+        <Styled.DropdownArea>
+          <Styled.DropdownMenuButton
+            type="button"
+            aria-haspopup="menu"
+            aria-expanded="false"
+            onClick={handleClickEvent.toggleDropdown}
+          >
+            <Styled.DropdownMenuTitle>{selectedValue}</Styled.DropdownMenuTitle>
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M11.5 6L8 10L4.5 6"
+                stroke="#424242"
+                strokeWidth="1.5"
+                strokeLinecap="square"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </Styled.DropdownMenuButton>
+          {data && data.length !== 0 && isShownDropdown && (
+            <Styled.DropdownMenuItems>
+              {data.map((item, index) => {
+                return (
+                  <DropdownItems
+                    data={item}
+                    onChange={onChange}
+                    onClose={handleClickEvent.closeDropdownAction}
+                    key={index.toString()}
+                  />
+                );
+              })}
+            </Styled.DropdownMenuItems>
+          )}
+        </Styled.DropdownArea>
+      </Styled.DropdownMenus>
+    </Styled.DropdownWrapper>
+  );
+};
+
+export default DropdownMenu;

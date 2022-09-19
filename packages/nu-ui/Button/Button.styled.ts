@@ -2,6 +2,35 @@ import styled from '@emotion/styled';
 import { ButtonSize, ButtonVariant } from './Button.types';
 import { Color } from '../@foundations';
 
+const variantCSS = {
+  primary: `
+    background-color: ${Color.unicornBlue6};
+    color: ${Color.naturalGray0};
+  `,
+  secondary: `
+    background-color: ${Color.naturalGray0};
+    color: ${Color.unicornBlue6};
+    border: 1px solid ${Color.unicornBlue6};
+  `,
+  tertiary: `
+    background-color: ${Color.blueGray0};
+    color: ${Color.naturalGray7};
+  `,
+  'angels-primary': `
+    background-color: ${Color.angelsGray9};
+    color: ${Color.angelsGray0};
+  `,
+  'angels-secondary': `
+    background-color: ${Color.angelsGray0};
+    color: ${Color.angelsGray8};
+    border: 1px solid ${Color.angelsGray8};
+  `,
+  'angels-tertiary': `
+    background-color: ${Color.blueGray0};
+    color: ${Color.naturalGray7};
+  `,
+};
+
 const hoverVariantCSS = {
   primary: `
     &:hover {
@@ -19,21 +48,21 @@ const hoverVariantCSS = {
       background-color: ${Color.blueGray1};
     }
   `,
-};
-
-const variantCSS = {
-  primary: `
-    background-color: ${Color.unicornBlue6};
-    color: ${Color.naturalGray0};
+  'angels-primary': `
+    &:hover {
+      background-color: ${Color.angelsGray7};
+    }
   `,
-  secondary: `
-    background-color: ${Color.naturalGray0};
-    color: ${Color.unicornBlue6};
-    border: 1px solid ${Color.unicornBlue6};
+  'angels-secondary': `
+    &:hover {
+      background-color: ${Color.angelsGray1};
+      border: 1px solid ${Color.angelsGray8};
+    }
   `,
-  tertiary: `
-    background-color: ${Color.blueGray0};
-    color: ${Color.naturalGray7};
+  'angels-tertiary': `
+    &:hover {
+      background-color: ${Color.blueGray1};
+    }
   `,
 };
 
@@ -57,6 +86,16 @@ const disabledCSS = {
     opacity: 0.5;
   `,
   tertiary: `
+    opacity: 0.5;
+    color: ${Color.naturalGray3};
+  `,
+  'angels-primary': `
+    opacity: 0.3;
+  `,
+  'angels-secondary': `
+    opacity: 0.5;
+  `,
+  'angels-tertiary': `
     opacity: 0.5;
     color: ${Color.naturalGray3};
   `,
@@ -97,6 +136,6 @@ export const DSButtonWrapper = styled.button<LayoutProps>`
 
   &:active {
     transform: scale(0.95);
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
   }
 `;

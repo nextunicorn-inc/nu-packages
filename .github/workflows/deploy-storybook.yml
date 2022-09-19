@@ -7,7 +7,7 @@ on:
     branches:
       - master
     paths:
-      - "packages/nu-icons/**"
+      - "packages/nu-ui/**"
   workflow_dispatch:
     inputs:
       logLevel:
@@ -38,6 +38,14 @@ jobs:
           node-version: '16.x'
           cache: 'yarn'
           registry-url: 'https://registry.npmjs.org'
+
+      - name: Yarn Setting
+        run: |
+          yarn set version berry
+          yarn config set nodeLinker "node-modules"
+          yarn plugin import version
+          yarn plugin import typescript
+          yarn plugin import workspace-tools
 
       - name: Install dependencies
         run: |

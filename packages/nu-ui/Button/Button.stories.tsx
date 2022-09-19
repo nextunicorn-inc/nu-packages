@@ -11,6 +11,7 @@ export default {
   component: Button,
   parameters: {
     layout: 'centered',
+    viewport: 'responsive',
   },
 } as Meta;
 
@@ -30,9 +31,26 @@ const Row = styled.div`
 const Template: Story<ButtonProps> = (args) => (
   <Layout>
     <Row>
-      <Button {...args} variant="primary" size="large" text="텍스트 버튼" />
-      <Button {...args} variant="secondary" size="large" text="텍스트 버튼" />
-      <Button {...args} variant="tertiary" size="large" text="텍스트 버튼" />
+      <Button {...args} variant="primary" size="large">
+        텍스트 버튼
+      </Button>
+      <Button {...args} variant="secondary" size="large">
+        텍스트 버튼
+      </Button>
+      <Button {...args} variant="tertiary" size="large">
+        텍스트 버튼
+      </Button>
+    </Row>
+    <Row style={{ marginBottom: '1em' }}>
+      <Button {...args} variant="angels-primary" size="large">
+        텍스트 버튼
+      </Button>
+      <Button {...args} variant="angels-secondary" size="large">
+        텍스트 버튼
+      </Button>
+      <Button {...args} variant="angels-tertiary" size="large">
+        텍스트 버튼
+      </Button>
     </Row>
 
     <Row>
@@ -55,6 +73,32 @@ const Template: Story<ButtonProps> = (args) => (
       <Button
         {...args}
         variant="tertiary"
+        size="large"
+        text="공유하기 버튼"
+        icon={Icon20Share}
+        isIconAfter
+      />
+    </Row>
+    <Row style={{ marginBottom: '1em' }}>
+      <Button
+        {...args}
+        variant="angels-primary"
+        size="large"
+        text="NU User 버튼"
+        icon={Icon24NUUser}
+        isIconAfter
+      />
+      <Button
+        {...args}
+        variant="angels-secondary"
+        size="large"
+        text="북마크 버튼"
+        icon={Icon20BookmarkSelected}
+        isIconAfter
+      />
+      <Button
+        {...args}
+        variant="angels-tertiary"
         size="large"
         text="공유하기 버튼"
         icon={Icon20Share}
@@ -73,8 +117,31 @@ const Template: Story<ButtonProps> = (args) => (
       />
       <Button {...args} variant="tertiary" size="large" text="공유하기 버튼" icon={Icon20Share} />
     </Row>
+    <Row style={{ marginBottom: '1em' }}>
+      <Button
+        {...args}
+        variant="angels-primary"
+        size="large"
+        text="NU User 버튼"
+        icon={Icon24NUUser}
+      />
+      <Button
+        {...args}
+        variant="angels-secondary"
+        size="large"
+        text="북마크 버튼"
+        icon={Icon20BookmarkSelected}
+      />
+      <Button
+        {...args}
+        variant="angels-tertiary"
+        size="large"
+        text="공유하기 버튼"
+        icon={Icon20Share}
+      />
+    </Row>
 
-    <Row>
+    <Row style={{ marginBottom: '1em' }}>
       <Button
         {...args}
         variant="primary"
@@ -94,6 +161,30 @@ const Template: Story<ButtonProps> = (args) => (
       <Button
         {...args}
         variant="tertiary"
+        size="large"
+        text="공유하기 버튼"
+        icon={Icon20Share}
+        isIconOnly
+      />
+      <Button
+        {...args}
+        variant="angels-primary"
+        size="large"
+        text="NU User 버튼"
+        icon={Icon24NUUser}
+        isIconOnly
+      />
+      <Button
+        {...args}
+        variant="angels-secondary"
+        size="large"
+        text="북마크 버튼"
+        icon={Icon20BookmarkSelected}
+        isIconOnly
+      />
+      <Button
+        {...args}
+        variant="angels-tertiary"
         size="large"
         text="공유하기 버튼"
         icon={Icon20Share}
@@ -123,6 +214,33 @@ const Template: Story<ButtonProps> = (args) => (
       <Button
         {...args}
         variant="tertiary"
+        size="large"
+        text="로딩 버튼"
+        icon={Icon20Share}
+        isIconOnly
+        loading
+      />
+      <Button
+        {...args}
+        variant="angels-primary"
+        size="large"
+        text="로딩 버튼"
+        icon={Icon24NUUser}
+        isIconOnly
+        loading
+      />
+      <Button
+        {...args}
+        variant="angels-secondary"
+        size="large"
+        text="로딩 버튼"
+        icon={Icon20BookmarkSelected}
+        isIconOnly
+        loading
+      />
+      <Button
+        {...args}
+        variant="angels-tertiary"
         size="large"
         text="로딩 버튼"
         icon={Icon20Share}
