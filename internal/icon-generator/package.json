@@ -6,8 +6,5 @@
     "@types/svg-parser": "^2",
     "node-fetch": "^3.2.10",
     "svg-parser": "^2.0.4"
-  },
-  "scripts": {
-
   }
 }
