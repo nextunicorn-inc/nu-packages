@@ -4,7 +4,8 @@
   "version": "0.0.1",
   "workspaces": [
     "docs/*",
-    "packages/*"
+    "packages/*",
+    "internal/*"
   ],
   "homepage": "https://github.com/nextunicorn-inc/nu-packages",
   "bugs": "https://github.com/nextunicorn-inc/nu-packages/issues",
