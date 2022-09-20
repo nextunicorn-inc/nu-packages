@@ -1,11 +1,15 @@
 import React from 'react';
-import { convertIcon, IconSize } from '../component/Icon';
+import { convertIcon } from '../component/Icon';
+interface OverrideIconSize32 {
+  size: '32';
+}
+type OverrideIconSize = OverrideIconSize32;
 
-function SvgComponent({
+const SvgComponent = ({
+  size,
   color = '#616161',
-  size = '24',
   ...rest
-}: React.SVGProps<SVGSVGElement> & IconSize) {
+}: React.SVGProps<SVGSVGElement> & OverrideIconSize) => {
   if (size === '32') {
     return (
       <svg
@@ -24,18 +28,13 @@ function SvgComponent({
       </svg>
     );
   }
-
-  return (
-    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M16.364 3.63604C14.6066 1.87868 11.7574 1.87868 10 3.63604L8.23223 5.4038C8.03697 5.59907 8.03697 5.91565 8.23223 6.11091C8.42749 6.30617 8.74407 6.30617 8.93934 6.11091L10.7071 4.34314C12.0739 2.97631 14.29 2.97631 15.6569 4.34314C17.0237 5.70998 17.0237 7.92606 15.6569 9.29289L13.8891 11.0607C13.6938 11.2559 13.6938 11.5725 13.8891 11.7678C14.0843 11.963 14.4009 11.963 14.5962 11.7678L16.364 10C18.1213 8.24264 18.1213 5.3934 16.364 3.63604ZM6.11091 8.93934C6.30617 8.74408 6.30617 8.42749 6.11091 8.23223C5.91565 8.03697 5.59906 8.03697 5.4038 8.23223L3.63603 10C1.87868 11.7574 1.87868 14.6066 3.63603 16.364C5.39339 18.1213 8.24264 18.1213 10 16.364L11.7678 14.5962C11.963 14.4009 11.963 14.0843 11.7678 13.8891C11.5725 13.6938 11.2559 13.6938 11.0607 13.8891L9.29289 15.6569C7.92605 17.0237 5.70998 17.0237 4.34314 15.6569C2.97631 14.29 2.97631 12.0739 4.34314 10.7071L6.11091 8.93934ZM12.8284 7.17157C12.6332 6.97631 12.3166 6.97631 12.1213 7.17157L7.17157 12.1213C6.97631 12.3166 6.97631 12.6332 7.17157 12.8284C7.36683 13.0237 7.68341 13.0237 7.87868 12.8284L12.8284 7.87868C13.0237 7.68341 13.0237 7.36683 12.8284 7.17157Z"
-        fill={color}
-      />
-    </svg>
-  );
-}
-
-const IconComponent = convertIcon(SvgComponent, 'url');
+  return <div></div>;
+};
+/**
+ * 컬러 주입 가능여부: 가능,
+ * 기본컬러:#616161
+ * 사용가능한 사이즈는 32 입니다.
+ * 20(디폴트)사이즈가 없으므로 size prop은 required 입니다.
+ */
+const IconComponent = convertIcon<OverrideIconSize>(SvgComponent, 'url');
 export default IconComponent;
