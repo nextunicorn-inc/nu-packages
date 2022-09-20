@@ -3,11 +3,15 @@
   "packageManager": "yarn@3.2.3",
   "type": "module",
   "devDependencies": {
+    "@types/prettier": "^2",
     "@types/svg-parser": "^2",
     "node-fetch": "^3.2.10",
+    "prettier": "^2.7.1",
     "svg-parser": "^2.0.4"
   },
   "scripts": {
-
+    "0": "node .env/index.js",
+    "1": "node createParsedFigmaJson.js",
+    "2": "node fileGenerator.js"
   }
 }

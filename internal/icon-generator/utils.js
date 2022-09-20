@@ -25,14 +25,6 @@ export function extractOneColor(values) {
     const colorSet = new Set([...res1, ...res2]);
     colorSet.delete('none');
 
-    // @siny 임시코드, 피그마에서 디자이너가 해결하면 지울 것
-    if (colorSet.has('#FEFEFE')) {
-      colorSet.delete('#FEFEFE');
-    }
-
-    if (colorSet.has('white')) {
-      colorSet.delete('white');
-    }
     // 한개의 컬러만 남아있다는 가정하에 동작하는 코드이므로 첫번째 결과만 반환
     return [...colorSet.values()][0];
   });

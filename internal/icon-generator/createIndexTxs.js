@@ -1,11 +1,19 @@
 import fs from 'fs';
-import {getSrcDir} from './utils.js';
+import { getSrcDir } from './utils.js';
 
-const fileNames = fs.readdirSync(`${getSrcDir()}/icons4`);
+const fileNames = fs.readdirSync(`${getSrcDir()}/icons`);
 
 const template = (fileName) => {
   const [name] = fileName.split('.');
   return `export { default as ${name} } from './${name}'`;
 };
 
-fs.writeFileSync(`${getSrcDir()}/icons4/index.ts`, fileNames.filter(a => a !== 'index.ts').map(template).join('\n'));
+export const runCreateIndexTs = () => {
+  fs.writeFileSync(
+    `${getSrcDir()}/icons/index.ts`,
+    fileNames
+      .filter((a) => a !== 'index.ts')
+      .map(template)
+      .join('\n'),
+  );
+};
