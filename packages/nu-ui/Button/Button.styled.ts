@@ -101,14 +101,14 @@ const disabledCSS = {
   `,
 };
 
-type LayoutProps = {
+type ButtonProps = {
   $size: ButtonSize;
   $variant: ButtonVariant;
   $isBlock: boolean;
   $disabled: boolean;
 };
 
-export const DSButtonWrapper = styled.button<LayoutProps>`
+export const DSButtonWrapper = styled.button<ButtonProps>`
   ${({ $size }) => paddingSizeCSS[$size]};
   ${({ $variant, $disabled }) => ($disabled ? disabledCSS[$variant] : '')};
   ${({ $variant }) => variantCSS[$variant]};

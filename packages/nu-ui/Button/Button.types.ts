@@ -22,6 +22,7 @@ type ButtonOptions = {
   variant?: ButtonVariant;
   size?: ButtonSize;
   isBlock?: boolean;
+  href?: string;
 };
 
 export interface ButtonProps

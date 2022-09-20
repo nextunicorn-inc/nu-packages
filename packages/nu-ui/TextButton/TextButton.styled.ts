@@ -1,24 +1,26 @@
 import styled from '@emotion/styled';
-import { Color } from '../@foundations';
+import { Color, FontSize, FontWeight } from '../@foundations';
 
 const sizeCSS = {
   large: `
     padding: 10px 12px;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 20px;
+    ${FontSize.p2};
+    
   `,
   small: `
     padding: 8px 10px;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 18px;
+    ${FontSize.p3};
   `,
 };
 
-export const DSTextButtonWrapper = styled.button<{
+type TextButtonProps = {
   $size: 'large' | 'small';
-}>`
+  $isBlock: boolean;
+  $disabled: boolean;
+};
+
+export const DSTextButtonWrapper = styled.button<TextButtonProps>`
+  ${({ $isBlock }) => ($isBlock ? 'width: 100%' : 'width: fit-content')};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -26,9 +28,12 @@ export const DSTextButtonWrapper = styled.button<{
   transition: all 0.2s ease-in-out;
   white-space: pre;
   color: ${Color.naturalGray7};
+  ${FontWeight.regular};
   ${({ $size }) => sizeCSS[$size]};
+  background-color: ${({ $disabled }) => $disabled && Color.blueGray1};
 
   &:hover {
     background-color: ${Color.blueGray0};
+    ${({ $disabled }) => $disabled && `cursor: not-allowed;`};
   }
 `;
