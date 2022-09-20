@@ -1,11 +1,18 @@
 import React from 'react';
-import { convertIcon, IconSize } from '../component/Icon';
+import { convertIcon } from '../component/Icon';
+interface OverrideIconSize24 {
+  size: '24';
+}
+interface OverrideIconSize20 {
+  size?: '20';
+}
+type OverrideIconSize = OverrideIconSize24 | OverrideIconSize20;
 
-function SvgComponent({
-  size = '24',
+const SvgComponent = ({
+  size = '20',
   color = '#616161',
   ...rest
-}: React.SVGProps<SVGSVGElement> & IconSize) {
+}: React.SVGProps<SVGSVGElement> & OverrideIconSize) => {
   if (size === '24') {
     return (
       <svg
@@ -24,17 +31,31 @@ function SvgComponent({
       </svg>
     );
   }
-  return (
-    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M17.8536 9.64487C18.0488 9.84014 18.0488 10.1567 17.8536 10.352L15.0251 13.1804C14.8299 13.3757 14.5133 13.3757 14.318 13.1804C14.1228 12.9851 14.1228 12.6686 14.318 12.4733L16.2929 10.4984L7.5 10.4984C7.22386 10.4984 7 10.2746 7 9.99843C7 9.72229 7.22386 9.49843 7.5 9.49843L16.2929 9.49843L14.318 7.52355C14.1228 7.32829 14.1228 7.01171 14.318 6.81645C14.5133 6.62118 14.8299 6.62118 15.0251 6.81645L17.8536 9.64487ZM10.5 4C10.7761 4 11 4.22386 11 4.5L11 7C11 7.27614 11.2239 7.5 11.5 7.5C11.7761 7.5 12 7.27614 12 7L12 4.5C12 3.67157 11.3284 3 10.5 3L4.5 3C3.67157 3 3 3.67157 3 4.5L3 15.5C3 16.3284 3.67157 17 4.5 17L10.5 17C11.3284 17 12 16.3284 12 15.5L12 13C12 12.7239 11.7761 12.5 11.5 12.5C11.2239 12.5 11 12.7239 11 13L11 15.5C11 15.7761 10.7761 16 10.5 16L4.5 16C4.22386 16 4 15.7761 4 15.5L4 4.5C4 4.22386 4.22386 4 4.5 4L10.5 4Z"
-        fill={color}
-      />
-    </svg>
-  );
-}
-
-const IconComponent = convertIcon(SvgComponent, 'logout');
+  if (size === '20') {
+    return (
+      <svg
+        width="20"
+        height="20"
+        viewBox="0 0 20 20"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fillRule="evenodd"
+          clipRule="evenodd"
+          d="M17.8536 9.64487C18.0488 9.84014 18.0488 10.1567 17.8536 10.352L15.0251 13.1804C14.8299 13.3757 14.5133 13.3757 14.318 13.1804C14.1228 12.9851 14.1228 12.6686 14.318 12.4733L16.2929 10.4984L7.5 10.4984C7.22386 10.4984 7 10.2746 7 9.99843C7 9.72229 7.22386 9.49843 7.5 9.49843L16.2929 9.49843L14.318 7.52355C14.1228 7.32829 14.1228 7.01171 14.318 6.81645C14.5133 6.62118 14.8299 6.62118 15.0251 6.81645L17.8536 9.64487ZM10.5 4C10.7761 4 11 4.22386 11 4.5L11 7C11 7.27614 11.2239 7.5 11.5 7.5C11.7761 7.5 12 7.27614 12 7L12 4.5C12 3.67157 11.3284 3 10.5 3L4.5 3C3.67157 3 3 3.67157 3 4.5L3 15.5C3 16.3284 3.67157 17 4.5 17L10.5 17C11.3284 17 12 16.3284 12 15.5L12 13C12 12.7239 11.7761 12.5 11.5 12.5C11.2239 12.5 11 12.7239 11 13L11 15.5C11 15.7761 10.7761 16 10.5 16L4.5 16C4.22386 16 4 15.7761 4 15.5L4 4.5C4 4.22386 4.22386 4 4.5 4L10.5 4Z"
+          fill={color}
+        />
+      </svg>
+    );
+  }
+  return <div></div>;
+};
+/**
+ * 컬러 주입 가능여부: 가능,
+ * 기본컬러:#616161
+ * 사용가능한 사이즈는 20, 24 입니다.
+ *
+ */
+const IconComponent = convertIcon<OverrideIconSize>(SvgComponent, 'logout');
 export default IconComponent;
