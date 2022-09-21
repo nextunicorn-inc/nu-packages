@@ -5,13 +5,23 @@ import { TextButtonProps } from './TextButton.types';
 
 const TextButton = React.forwardRef<HTMLButtonElement, TextButtonProps>(
   (
-    { text = '', size = 'large', icon, isIconAfter = false, children, disabled, isBlock, ...rest },
+    {
+      text = '',
+      size = 'large',
+      icon,
+      isIconAfter = false,
+      children,
+      disabled = false,
+      isBlock = false,
+      ...rest
+    },
     ref,
   ) => (
     <Styled.DSTextButtonWrapper
       {...rest}
       $size={size}
       $disabled={disabled}
+      disabled={disabled}
       $isBlock={isBlock}
       ref={ref}
     >

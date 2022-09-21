@@ -1,13 +1,13 @@
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { Color, FontSize, FontWeight } from '../@foundations';
 
 const sizeCSS = {
-  large: `
+  large: css`
     padding: 10px 12px;
     ${FontSize.p2};
-    
   `,
-  small: `
+  small: css`
     padding: 8px 10px;
     ${FontSize.p3};
   `,
@@ -20,7 +20,7 @@ type TextButtonProps = {
 };
 
 export const DSTextButtonWrapper = styled.button<TextButtonProps>`
-  ${({ $isBlock }) => ($isBlock ? 'width: 100%' : 'width: fit-content')};
+  width: ${({ $isBlock }) => ($isBlock ? '100%' : 'fit-content')};
   display: flex;
   justify-content: center;
   align-items: center;
