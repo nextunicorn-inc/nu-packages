@@ -149,6 +149,7 @@
 - IconNuUser.tsx / size: 24
 
 ## 3.대소문자 변경된 사항
+> git 대소문자 인식 문제로 인해 반영되지 않음. Before 이름으로 검색하면 나옵니다.
 
 <div style="display: flex;  justify-content: space-around">
   <div style="display: flex; flex-direction: column; justify-content: center; align-items: center">
