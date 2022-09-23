@@ -27,15 +27,15 @@ const Color: ColorType = {
 
   // FIXME: UnicornBlue
   unicornBlue0: '#F0F6FF',
-  unicornBlue1: '#D6E7FF',
-  unicornBlue2: '#B8D6FF',
+  unicornBlue1: '#D6E8FF',
+  unicornBlue2: '#B8D7FF',
   unicornBlue3: '#99C4FF',
-  unicornBlue4: '#66A7FF',
-  unicornBlue5: '#3389FF',
-  unicornBlue6: '#006CFF', // primary
-  unicornBlue7: '#0057CE',
-  unicornBlue8: '#004099',
-  unicornBlue9: '#002B66',
+  unicornBlue4: '#66A8FF',
+  unicornBlue5: '#338BFF',
+  unicornBlue6: '#006EFF', // primary
+  unicornBlue7: '#0052CE',
+  unicornBlue8: '#003899',
+  unicornBlue9: '#001E5F',
 
   // FIXME: Coral
   coral0: '#FFF0F0',
@@ -72,6 +72,18 @@ const Color: ColorType = {
   green7: '#3B9933',
   green8: '#2C7326',
   green9: '#1D4D19',
+
+  // FIXME: LightPurple
+  lightPurple: '#DCD2FF',
+
+  // FIXME: CoolGray
+  coolGray: '#E1E6F5',
+
+  // FIXME: ShineBlue
+  shineBlue: '#00EBE6',
+
+  // FIXME: LightBlue
+  lightBlue: '#BEF0FF',
 
   // FIXME: Overlay
   overlay: '#00000066',

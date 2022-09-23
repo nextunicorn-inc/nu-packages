@@ -70,6 +70,13 @@ type GreenColor =
   | 'green8'
   | 'green9';
 
+type LightPurpleColor = 'lightPurple';
+type CoolGrayColor = 'coolGray';
+type ShineBlueColor = 'shineBlue';
+type LightBlueColor = 'lightBlue';
+
+type OverlayColor = 'overlay';
+
 type AngelsgrayColor =
   | 'angelsGray0' // surface
   | 'angelsGray1'
@@ -118,8 +125,6 @@ type AngelsLightBlueColor =
   | 'angelsLightBlue8'
   | 'angelsLightBlue9';
 
-type OverlayColor = 'overlay';
-
 export type ColorKey =
   | NaturalGrayColor
   | BlueGrayColor
@@ -127,6 +132,10 @@ export type ColorKey =
   | CoralColor
   | YellowOrangeColor
   | GreenColor
+  | LightPurpleColor
+  | CoolGrayColor
+  | ShineBlueColor
+  | LightBlueColor
   | OverlayColor
   | AngelsgrayColor
   | AngelsblueColor
