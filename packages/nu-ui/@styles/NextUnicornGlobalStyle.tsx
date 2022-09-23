@@ -4,7 +4,7 @@ import normalize from './normalize';
 export const NextUnicornGlobalStyle = () => (
   <Global
     styles={css`
-      @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css');
+      @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.0/dist/web/variable/pretendardvariable.css');
 
       /* https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL */
       @font-face {
