@@ -1,13 +1,6 @@
 import fs from 'fs';
 import path from 'path';
 
-/**
- * @todo
- * 1. 사이즈가 없을경우 에러를 throw 하지 말고, 타입체킹으로 관리하도록 한다.
- * 2. 주석으로 설명한다.
- * */
-
-
 import {
   camelizeAll,
   executePrettier,
@@ -17,6 +10,27 @@ import {
   getVersion,
   kebabToPascalCase,
 } from './utils.js';
+import { runCreateIndexTs } from './createIndexTxs.js';
+import { runCreateReadme } from './createReadme.js';
+
+/**
+ * @todo
+ * 1. 사이즈가 없을경우 에러를 throw 하지 말고, 타입체킹으로 관리하도록 한다.
+ * 2. 주석으로 설명한다.
+ * */
+
+const getSizes = (() => {
+  const memo = new Map();
+  return (values) => {
+    const key = values[0].key;
+    if (memo.has(key)) {
+      return memo.get(key);
+    }
+    const sizeSet = new Set(values.map(({ size }) => size));
+    memo.set(key, [...sizeSet.values()]);
+    return memo.get(key);
+  };
+})();
 
 /**
  * values: {
@@ -32,36 +46,64 @@ const templateSvgComponentTsx = (values) => {
 ${importTemplate().trim()}
 ${headerTemplate(values).trim()}
 ${bodyTemplate(values).trim()}
-${tailTemplate(values[0].key).trim()}
+${tailTemplate(values).trim()}
 `.trim();
 };
 const importTemplate = () =>
   `
 import React from 'react';
-import { convertIcon, IconSize } from '../component/Icon';
+import { convertIcon } from '../component/Icon';
 `.trim();
 
 const headerTemplate = (values) => {
+  const sizes = getSizes(values);
+  const has20Size = sizes.includes('20');
+
+  const interfacesBySizeTemplate = (sizes) => {
+    const fragmentTemplate = (size) => {
+      return `
+      interface OverrideIconSize${size} {
+        size${size === '20' ? '?' : ''}: '${size}';
+      };
+      `.trim();
+    };
+
+    return `
+    ${sizes.map(fragmentTemplate).join('\n')}
+    type OverrideIconSize = ${sizes.map((size) => `OverrideIconSize${size}`).join(' | ')};
+  `;
+  };
+  const sizePropsTemplate = (sizes, has20Size) =>
+    `
+  ${has20Size ? "size = '20'," : 'size,'}
+  `.trim();
+
   const onlySizePropsHeaderTemplate = () =>
     `
-function SvgComponent({
-  size = '20',
+const SvgComponent = ({
+${sizePropsTemplate(sizes, has20Size)}
   ...rest
-}: React.SVGProps<SVGSVGElement> & IconSize) {
+}: React.SVGProps<SVGSVGElement> & OverrideIconSize) => {
 `.trim();
 
   const sizeAndColorPropsHeaderTemplate = (defaultColor) =>
     `
-function SvgComponent({
-  size = '20',
+const SvgComponent = ({
+${sizePropsTemplate(sizes, has20Size)}
   color = '${defaultColor}',
   ...rest
-}: React.SVGProps<SVGSVGElement> & IconSize) {
+}: React.SVGProps<SVGSVGElement> & OverrideIconSize) => {
 `.trim();
 
-  return values[0].colorCount === 'one'
-    ? sizeAndColorPropsHeaderTemplate(extractOneColor(values)).trim()
-    : onlySizePropsHeaderTemplate().trim();
+  return `
+  
+  ${interfacesBySizeTemplate(sizes)}
+  ${
+    values[0].colorCount === 'one'
+      ? sizeAndColorPropsHeaderTemplate(extractOneColor(values)).trim()
+      : onlySizePropsHeaderTemplate().trim()
+  }
+    `;
 };
 
 const bodyTemplate = (values) => {
@@ -100,13 +142,25 @@ const bodyTemplate = (values) => {
   }
   throw new Error('bodyTemplate 에서 colorCount 가 의도한 값이 아닙니다.');
 };
-const tailTemplate = (key) =>
-  `
-  throw new Error(\`${key}에서 size: \$\{size \} 해당 사이즈를 지원하지 않습니다.\`)
+const tailTemplate = (values) => {
+  const key = values[0].key;
+  const sizes = getSizes(values);
+  const hasChangeableColor = values[0].colorCount === 'one';
+  const has20Size = sizes.includes('20');
+
+  return `
+  return (<div></div>)
   }
-const IconComponent = convertIcon(SvgComponent, '${key.replaceAll('/', '-')}');
+  /**
+  * 컬러 주입 가능여부: ${hasChangeableColor ? '가능' : '불가능'}, 
+  * ${hasChangeableColor ? `기본컬러:${extractOneColor(values)}` : ''}
+  * 사용가능한 사이즈는 ${sizes.sort().join(', ')} 입니다.
+  * ${!has20Size ? '20(디폴트)사이즈가 없으므로 size prop은 required 입니다.' : ''}
+  */
+const IconComponent = convertIcon<OverrideIconSize>(SvgComponent, '${key.replaceAll('/', '-')}');
 export default IconComponent;
   `.trim();
+};
 const decorateBackupIcons = (callback) => {
   // 백업
   const rmFolderSync = (dir) => fs.rmSync(dir, { recursive: true, force: true });
@@ -147,11 +201,11 @@ const createIcons = () => {
   const maps = fs.readFileSync(`${get__dirname()}/parsedFigma.json`, { encoding: 'utf-8' });
   const obj = JSON.parse(maps);
 
-  Object.entries(obj).forEach(([key, val]) => {
+  Object.entries(obj).forEach(([key, values]) => {
     // 파일 만들기
     fs.writeFileSync(
-      `${getSrcDir()}/icons4/Icon${kebabToPascalCase(key.replaceAll('/', '-'))}.tsx`,
-      templateSvgComponentTsx(val),
+      `${getSrcDir()}/icons/Icon${kebabToPascalCase(key.replaceAll('/', '-'))}.tsx`,
+      templateSvgComponentTsx(values),
     );
     console.log(key, 'create done');
   });
@@ -167,11 +221,15 @@ const increaseVersion = () => {
 };
 
 try {
-  decorateBackupIcons(createIcons);
-  increaseVersion();
+  decorateBackupIcons(() => {
+    createIcons();
+    runCreateIndexTs();
+    increaseVersion();
+    runCreateReadme();
+  });
 } catch (e) {
   console.log(e);
 }
 
 // 프리티어해서 이뻐짐
-executePrettier(`${getSrcDir()}/icons4`);
+executePrettier(`${getSrcDir()}/icons`);
