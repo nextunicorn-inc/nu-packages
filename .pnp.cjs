@@ -6749,10 +6749,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/case-sensitive-paths-webpack-plugin", "npm:2.1.6"],\
             ["@types/react", "npm:18.0.20"],\
             ["@types/rollup-plugin-peer-deps-external", "npm:2.2.1"],\
-            ["@types/svg-parser", "npm:2.0.3"],\
             ["babel-loader", "virtual:a1bcf94fa76d432b55ab132923989abaf2e64a7b21927f11aa88a4177a2196121a4ce4c479cf2a18469c4d73c5ddb87eb8d6c274e01339d82a5c3b746a2403ec#npm:8.2.5"],\
             ["case-sensitive-paths-webpack-plugin", "npm:2.4.0"],\
-            ["classnames", "npm:2.3.2"],\
             ["del", "npm:6.0.0"],\
             ["gulp", "npm:4.0.2"],\
             ["gulp-babel", "virtual:0e4fc2ec7a611c2c68dd1a7af211bd34b48f206f1ff6b49e233dfed1f1c2a99f32e7dde35c65e47e07bed9c7e6e9edb9c1d4a36d6437509f649380f47cb461b7#npm:8.0.0"],\
@@ -6797,10 +6795,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/case-sensitive-paths-webpack-plugin", "npm:2.1.6"],\
             ["@types/react", "npm:18.0.20"],\
             ["@types/rollup-plugin-peer-deps-external", "npm:2.2.1"],\
-            ["@types/svg-parser", "npm:2.0.3"],\
             ["babel-loader", "virtual:a1bcf94fa76d432b55ab132923989abaf2e64a7b21927f11aa88a4177a2196121a4ce4c479cf2a18469c4d73c5ddb87eb8d6c274e01339d82a5c3b746a2403ec#npm:8.2.5"],\
             ["case-sensitive-paths-webpack-plugin", "npm:2.4.0"],\
-            ["classnames", "npm:2.3.2"],\
             ["del", "npm:6.0.0"],\
             ["gulp", "npm:4.0.2"],\
             ["gulp-babel", "virtual:0e4fc2ec7a611c2c68dd1a7af211bd34b48f206f1ff6b49e233dfed1f1c2a99f32e7dde35c65e47e07bed9c7e6e9edb9c1d4a36d6437509f649380f47cb461b7#npm:8.0.0"],\

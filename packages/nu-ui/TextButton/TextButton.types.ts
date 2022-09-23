@@ -6,6 +6,8 @@ export type TextButtonSize = 'large' | 'small';
 type TextButtonOptions = {
   text?: string;
   size?: TextButtonSize;
+  isBlock?: boolean;
+  href?: string;
 };
 
 export interface TextButtonProps

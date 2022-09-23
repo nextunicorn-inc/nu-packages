@@ -38,4 +38,23 @@ export const Keyframe: KeyframeType = {
         transform: translateY(0);
       }
     `,
+  rotate: keyframes`
+      100% {
+        transform: rotate(360deg);
+      }
+  `,
+  dash: keyframes`
+      0% {
+        stroke-dasharray: 1, 150;
+        stroke-dashoffset: 0;
+      }
+      50% {
+        stroke-dasharray: 90, 150;
+        stroke-dashoffset: -35;
+      }
+      100% {
+        stroke-dasharray: 90, 150;
+        stroke-dashoffset: -124;
+      }
+  `,
 };
