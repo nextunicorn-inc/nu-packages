@@ -125,3 +125,35 @@ export const executePrettier = (absolutePath) => {
 const VERSION_PATH = `${get__dirname()}/version.txt`;
 export const getVersion = () => fs.readFileSync(VERSION_PATH).toString();
 getVersion.VERSION_PATH = VERSION_PATH;
+
+export const sleep = (ms = 60 * 1000) => new Promise((res) => setTimeout(res, ms));
+
+export const runPromisesUntilAllSuccess = async (data, promisify, options = {
+  limitedRetryCount: 3,
+  currentRetryCount: 0,
+  delaySeconds: 60,
+}) => {
+  const promises = data.map(promisify);
+  const res = await Promise.allSettled(promises);
+  const rejectResults = res.map((item, idx) => ({ ...item, idx })).filter(({ status }) => status === 'rejected');
+  const fulfilledResults = res.filter(({ status }) => status === 'fulfilled');
+  ;
+  
+  if (rejectResults.length === 0) {
+    return fulfilledResults;
+  }
+  if (options.currentRetryCount >= options.limitedRetryCount) {
+    throw new Error('제한한 시도횟수보다 더 많은 재시도를 했습니다.');
+  }
+  const rejectIndexes = rejectResults.map((item) => item.idx);
+  const willRetryData = data.filter((item, idx) => rejectIndexes.includes(idx));
+  
+  await sleep(1000 * options.delaySeconds);
+  
+  return [...fulfilledResults, await runPromisesUntilAllSuccess(willRetryData, promisify, {
+    ...options,
+    currentRetryCount: options.currentRetryCount + 1,
+  })].map(({ value }) => value);
+  
+  
+};
