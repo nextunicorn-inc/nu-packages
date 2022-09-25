@@ -251,12 +251,7 @@ const Template: Story<ButtonProps> = (args) => (
   </Layout>
 );
 
-export const DefaultAndHover = Template.bind({});
-
-export const DefaultAndHoverIsBlock = Template.bind({});
-DefaultAndHoverIsBlock.args = {
-  isBlock: true,
-};
+export const Default = Template.bind({});
 
 export const Disabled = Template.bind({});
 Disabled.args = {

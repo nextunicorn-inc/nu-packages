@@ -1,33 +1,64 @@
+import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { ButtonSize, ButtonVariant } from './Button.types';
-import { Color } from '../@foundations';
+import { Color, FontSize, FontWeight } from '../@foundations';
 
 const variantCSS = {
-  primary: `
-    background-color: ${Color.unicornBlue6};
+  primary: css`
+    border-radius: 5px;
+
     color: ${Color.naturalGray0};
+    ${FontSize.p2};
+    ${FontWeight.regular};
+
+    background-color: ${Color.unicornBlue6};
   `,
-  secondary: `
-    background-color: ${Color.naturalGray0};
-    color: ${Color.unicornBlue6};
+  secondary: css`
+    border-radius: 5px;
     border: 1px solid ${Color.unicornBlue6};
+
+    color: ${Color.unicornBlue6};
+    ${FontSize.p2};
+    ${FontWeight.regular};
+
+    background-color: ${Color.naturalGray0};
   `,
-  tertiary: `
-    background-color: ${Color.blueGray0};
+  tertiary: css`
+    border-radius: 5px;
+
     color: ${Color.naturalGray7};
+    ${FontSize.p2};
+    ${FontWeight.regular};
+
+    background-color: ${Color.blueGray0};
   `,
-  'angels-primary': `
-    background-color: ${Color.angelsGray9};
+  'angels-primary': css`
+    border-radius: 2px;
+
     color: ${Color.angelsGray0};
+    ${FontSize['angels-p2']};
+    ${FontWeight.medium};
+
+    background-color: ${Color.angelsGray9};
   `,
-  'angels-secondary': `
-    background-color: ${Color.angelsGray0};
-    color: ${Color.angelsGray8};
+  'angels-secondary': css`
+    border-radius: 2px;
     border: 1px solid ${Color.angelsGray8};
+
+    color: ${Color.angelsGray8};
+    ${FontSize['angels-p2']};
+    ${FontWeight.medium};
+
+    background-color: ${Color.angelsGray0};
   `,
-  'angels-tertiary': `
-    background-color: ${Color.blueGray0};
+  'angels-tertiary': css`
+    border-radius: 2px;
+
     color: ${Color.naturalGray7};
+    ${FontSize['angels-p2']};
+    ${FontWeight.medium};
+
+    background-color: ${Color.blueGray0};
   `,
 };
 
@@ -39,8 +70,9 @@ const hoverVariantCSS = {
   `,
   secondary: `
     &:hover {
+      border: 1px solid ${Color.unicornBlue6};
+      
       background-color: ${Color.unicornBlue0};
-      border: 1px solid ${Color.unicornBlue7};
     }
   `,
   tertiary: `
@@ -55,8 +87,9 @@ const hoverVariantCSS = {
   `,
   'angels-secondary': `
     &:hover {
-      background-color: ${Color.angelsGray1};
       border: 1px solid ${Color.angelsGray8};
+      
+      background-color: ${Color.angelsGray1};
     }
   `,
   'angels-tertiary': `
@@ -80,24 +113,32 @@ const paddingSizeCSS = {
 
 const disabledCSS = {
   primary: `
-    opacity: 0.3;
+    background-color: ${Color.unicornBlue2};
   `,
   secondary: `
-    opacity: 0.5;
+    border: 1px solid ${Color.unicornBlue3};
+    
+    color: ${Color.unicornBlue3};
   `,
   tertiary: `
-    opacity: 0.5;
     color: ${Color.naturalGray3};
+    
+    background-color: ${Color.blueGray0};
   `,
   'angels-primary': `
-    opacity: 0.3;
+    background-color: ${Color.angelsGray3};
   `,
   'angels-secondary': `
-    opacity: 0.5;
+    border: 1px solid ${Color.angelsGray3};
+
+    color: ${Color.angelsGray3};
+
+    background-color: ${Color.naturalGray0};
   `,
   'angels-tertiary': `
-    opacity: 0.5;
-    color: ${Color.naturalGray3};
+    color: ${Color.angelsGray2};
+
+    background-color: ${Color.angelsGray1};
   `,
 };
 
@@ -109,33 +150,27 @@ type ButtonProps = {
 };
 
 export const DSButtonWrapper = styled.button<ButtonProps>`
-  ${({ $size }) => paddingSizeCSS[$size]};
-  ${({ $variant, $disabled }) => ($disabled ? disabledCSS[$variant] : '')};
   ${({ $variant }) => variantCSS[$variant]};
   ${({ $isBlock }) => ($isBlock ? 'width: 100%' : 'width: fit-content')};
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 20px;
   height: fit-content;
+
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 5px;
+
+  ${({ $size }) => paddingSizeCSS[$size]};
+
   transition: all 0.2s ease-in-out;
+
   white-space: pre;
+
   ${({ $variant, $disabled }) =>
     !$disabled
-      ? `
-          ${hoverVariantCSS[$variant]};
-        `
+      ? hoverVariantCSS[$variant]
       : `
+          ${disabledCSS[$variant]}
           &:hover {
             cursor: not-allowed;
           }
         `};
-
-  &:active {
-    transform: scale(0.95);
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
-  }
 `;
