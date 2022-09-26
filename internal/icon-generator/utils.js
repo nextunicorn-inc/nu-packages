@@ -128,6 +128,12 @@ getVersion.VERSION_PATH = VERSION_PATH;
 
 export const sleep = (ms = 60 * 1000) => new Promise((res) => setTimeout(res, ms));
 
+
+
+/**
+ * 단위시간당 limit call이 정해져있는 api를 한번에 여려개 호출할 때 필요한 함수
+ * figma get api 의 경우 디도스 공격을 제한하기 위해 1분에 최대 60~70회 정도의 콜을 수용하고 1분의 쿨다운이 필요함.
+ * */
 export const runPromisesUntilAllSuccess = async (data, promisify, options = {
   limitedRetryCount: 3,
   currentRetryCount: 0,
