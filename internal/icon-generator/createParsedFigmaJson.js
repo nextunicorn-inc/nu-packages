@@ -40,7 +40,7 @@ const collectFailLog = (aDebugFailMap) => fn => (...args) => {
       cnt: (aDebugFailMap.get(item.id.toString()).cnt ?? 0) + 1,
       errorMessage: JSON.stringify(e),
     });
-    console.log('fail', args[0], e,aDebugFailMap)
+    console.log('fail', args[0], e, aDebugFailMap)
     throw new Error(e);
 
   });
@@ -150,16 +150,18 @@ const nameParser = (name) => {
   };
 };
 
-const getFigmaObjSources = (aFileMap, theFiles) => {
+const getFigmaObjSources = (theFiles) => {
+  const fileMap = new Map()
+
   theFiles.forEach(({id, name}) => {
     try {
-      appendFileMapForSize({...nameParser(name), id, fileMap: aFileMap});
+      appendFileMapForSize({...nameParser(name), id, fileMap});
     } catch (e) {
       console.log(e);
     }
   });
 
-  return [...aFileMap.values()]
+  return [...fileMap.values()]
     .map((lis) => {
       return lis.map((item) => ({...item, fetcher: () => fetchSvgText(item.id)}));
     })
@@ -174,8 +176,7 @@ const getFigmaObjSources = (aFileMap, theFiles) => {
     throw new Error('토큰 설정해주세요.');
   }
   const files = await getIconsIdAndNameList();
-
-  const figmaSources = getFigmaObjSources(new Map(), files);
+  const figmaSources = getFigmaObjSources(files);
 
 
   /**
@@ -207,7 +208,7 @@ const getFigmaObjSources = (aFileMap, theFiles) => {
   };
   const figmaResolvedList = await runPromisesUntilAllSuccess(figmaSources, logger(promisify));
 
-  // svgText + key + size 생성
+  // svgText + key + size 생성, value를 받는 이유는 settledAll 로 받기 때문에
   const figmaMetaMap = figmaResolvedList.reduce((aMap, {value}) => {
     appendFileMapForSize({...value, fileMap: aMap});
     return aMap
