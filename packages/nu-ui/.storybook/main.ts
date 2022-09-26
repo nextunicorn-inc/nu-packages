@@ -7,15 +7,7 @@ module.exports = {
   reactOptions: {
     fastRefresh: true,
   },
-  addons: [
-    '@storybook/core-common',
-    '@storybook/addon-docs',
-    '@storybook/addon-links',
-    '@storybook/addon-essentials',
-    '@storybook/addon-interactions',
-    '@storybook/addon-a11y',
-    '@storybook/addon-controls',
-  ],
+  addons: ['@storybook/addon-essentials', '@storybook/addon-interactions'],
   framework: '@storybook/react',
   typescript: {
     check: true,
