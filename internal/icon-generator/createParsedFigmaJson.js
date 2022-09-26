@@ -1,18 +1,18 @@
 import fs from 'fs';
 import fetch from 'node-fetch';
-import { get__dirname, runPromisesUntilAllSuccess } from './utils.js';
+import {get__dirname, runPromisesUntilAllSuccess} from './utils.js';
 
 /**
  * 현재 진행상황을 추적하는 함수
  * */
 const logForCheckProcess = (aSet, aData) => fn => (...args) => {
   return fn(...args)
-  .then(item => {
-    aSet.add(item.id);
-    console.log(`${aSet.size.toString()}/${aData.length}`);
-    return item;
-  });
-  
+    .then(item => {
+      aSet.add(item.id);
+      console.log(`${aSet.size.toString()}/${aData.length}`);
+      return item;
+    });
+
 };
 
 /**
@@ -20,7 +20,7 @@ const logForCheckProcess = (aSet, aData) => fn => (...args) => {
  * log for debugFailMap 과 추후에 비교하기 위해 남겨놓기 위해 데이터를 수집하는 용도.
  * */
 const collectSuccessLog = (aDebugSuccessMap) => fn => (...args) => {
-  
+
   return fn(...args).then(item => {
     aDebugSuccessMap.set(item.id.toString(), (aDebugSuccessMap.get(item.id.toString()) ?? 0) + 1);
     return item;
@@ -33,15 +33,16 @@ const collectSuccessLog = (aDebugSuccessMap) => fn => (...args) => {
  * */
 
 const collectFailLog = (aDebugFailMap) => fn => (...args) => {
-  
-  return fn(...args).catch(e => {
+
+  return fn(...args).then(res => res).catch(e => {
     const item = args[0];
     aDebugFailMap.set(item.id.toString(), {
       cnt: (aDebugFailMap.get(item.id.toString()).cnt ?? 0) + 1,
       errorMessage: JSON.stringify(e),
     });
+    console.log('fail', args[0], e,aDebugFailMap)
     throw new Error(e);
-    
+
   });
 };
 /**
@@ -67,20 +68,20 @@ const getIconsIdAndNameList = async (fileId = 'mEP5h03npmCq01GPdpGHjO', nodeId =
       throw new Error('아이콘 fetch 경로가 잘못되어있습니다.');
     }
     return children
-      .filter(({ type }) => type === 'COMPONENT')
-      .filter(({ name }) => !isRectangle(name))
-      .map((item) => ({ id: item.id, name: item.name }));
+      .filter(({type}) => type === 'COMPONENT')
+      .filter(({name}) => !isRectangle(name))
+      .map((item) => ({id: item.id, name: item.name}));
   }
   throw new Error('피그마 파일정보 가져오는데 문제 있음');
 };
 
-const appendFileMapForSize = ({ key, size, id, fileMap, ...rest }) => {
+const appendFileMapForSize = ({key, size, id, fileMap, ...rest}) => {
   if (fileMap.has(key)) {
     const res = fileMap.get(key);
-    res.push({ key, size, id, ...rest });
+    res.push({key, size, id, ...rest});
     fileMap.set(key, res);
   } else {
-    fileMap.set(key, [{ key, size, id, ...rest }]);
+    fileMap.set(key, [{key, size, id, ...rest}]);
   }
   return fileMap
 };
@@ -93,7 +94,7 @@ const fetchSvgText = async (id) => {
    *     }
    *   },
    * */
-  
+
   const fetchSvg = () => fetch(
     `https://api.figma.com/v1/images/mEP5h03npmCq01GPdpGHjO?ids=${encodeURIComponent(
       id,
@@ -114,7 +115,7 @@ const fetchSvgText = async (id) => {
 
   if (!svgRes.ok) {
     console.error(svgRes.statusText);
-  
+
     // throw new Error('imageUrl fetch error');
   }
   const svgText = svgRes.text();
@@ -141,7 +142,7 @@ const nameParser = (name) => {
       colorCount: colorCount ? colorCount : 'one',
     };
   }
-  
+
   return {
     key: `${key}/${state}`,
     size,
@@ -150,21 +151,21 @@ const nameParser = (name) => {
 };
 
 const getFigmaObjSources = (aFileMap, theFiles) => {
-  theFiles.forEach(({ id, name }) => {
+  theFiles.forEach(({id, name}) => {
     try {
-      appendFileMapForSize({ ...nameParser(name), id, fileMap: aFileMap });
+      appendFileMapForSize({...nameParser(name), id, fileMap: aFileMap});
     } catch (e) {
       console.log(e);
     }
   });
-  
+
   return [...aFileMap.values()]
-  .map((lis) => {
-    return lis.map((item) => ({ ...item, fetcher: () => fetchSvgText(item.id) }));
-  })
-  .flat();
-  
-  
+    .map((lis) => {
+      return lis.map((item) => ({...item, fetcher: () => fetchSvgText(item.id)}));
+    })
+    .flat();
+
+
 };
 
 (async () => {
@@ -173,10 +174,10 @@ const getFigmaObjSources = (aFileMap, theFiles) => {
     throw new Error('토큰 설정해주세요.');
   }
   const files = await getIconsIdAndNameList();
-  
+
   const figmaSources = getFigmaObjSources(new Map(), files);
-  
-  
+
+
   /**
    * data를 순회하면서 svgText fetcer를 요청하는 함수
    * pigma obj를 만들기 위해 수집하는
@@ -184,36 +185,36 @@ const getFigmaObjSources = (aFileMap, theFiles) => {
   const promisify = async (item, idx) => {
     try {
       const svgText = await item.fetcher();
-      
-      return { ...item, svgText };
-      
+
+      return {...item, svgText};
+
     } catch (e) {
-      console.log(`promise:error`, { idx, id: item.id });
+      console.log(`promise:error`, {idx, id: item.id});
       throw new Error(e);
     }
   };
-  
+
   const debugSuccessMap = new Map();
   const debugFailMap = new Map();
-  
-  
+
+
   const loggerForCheckProcess = logForCheckProcess(new Set(), figmaSources);
   const loggerForSuccess = collectSuccessLog(debugSuccessMap);
   const loggerForFail = collectFailLog(debugFailMap);
-  
+
   const logger = (fn) => {
     return loggerForCheckProcess(loggerForSuccess(loggerForFail(fn)));
   };
   const figmaResolvedList = await runPromisesUntilAllSuccess(figmaSources, logger(promisify));
-  
+
   // svgText + key + size 생성
-  const figmaMetaMap = figmaResolvedList.reduce((aMap,item) => {
-    appendFileMapForSize({ ...item, fileMap: aMap });
+  const figmaMetaMap = figmaResolvedList.reduce((aMap, {value}) => {
+    appendFileMapForSize({...value, fileMap: aMap});
     return aMap
   }, new Map());
   console.log(debugFailMap);
   console.log(debugSuccessMap);
-  
+
   fs.writeFileSync(
     `${get__dirname()}/fail.json`,
     JSON.stringify(Object.fromEntries(debugFailMap)),

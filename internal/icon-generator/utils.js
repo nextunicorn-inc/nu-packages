@@ -150,10 +150,10 @@ export const runPromisesUntilAllSuccess = async (data, promisify, options = {
   
   await sleep(1000 * options.delaySeconds);
   
-  return [...fulfilledResults, await runPromisesUntilAllSuccess(willRetryData, promisify, {
+  return [...fulfilledResults, ...await runPromisesUntilAllSuccess(willRetryData, promisify, {
     ...options,
     currentRetryCount: options.currentRetryCount + 1,
-  })].map(({ value }) => value);
+  })];
   
   
 };
