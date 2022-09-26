@@ -28,6 +28,7 @@ const Select = () => {
     defaultIsOpen,
     ClearSelectedIcon,
     closeOnChangedValue,
+    direction = 'bottom',
   } = useMultiSelect();
 
   useEffect(() => {
@@ -131,7 +132,7 @@ const Select = () => {
         <FinalArrow expanded={expanded} />
       </Styled.SelectHeadArea>
       {expanded && (
-        <Styled.SelectContent>
+        <Styled.SelectContent $direction={direction}>
           <Styled.PanelContent>
             <SelectPanel />
           </Styled.PanelContent>

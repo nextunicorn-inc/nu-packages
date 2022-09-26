@@ -35,6 +35,7 @@ export const Example = () => {
           selectSomeItems: '자격증을 선택해주세요',
         }}
         ClearSelectedIcon={null}
+        direction="top"
       />
     </div>
   );

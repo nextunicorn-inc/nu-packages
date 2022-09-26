@@ -141,12 +141,21 @@ export const SelectHeadArea = styled.div`
   }
 `;
 
-export const SelectContent = styled.div`
+export const SelectContent = styled.div<{ $direction: 'top' | 'bottom' }>`
   position: absolute;
   z-index: 1;
-  top: 100%;
   width: 100%;
-  padding-top: 8px;
+
+  ${({ $direction }) =>
+    $direction === 'bottom'
+      ? `
+          top: 100%;
+          padding-top: 8px;
+  `
+      : `
+          bottom: 100%;
+          padding-bottom: 8px;
+  `};
 `;
 
 export const PanelContent = styled.div`

@@ -32,4 +32,5 @@ export interface SelectProps {
   isCreatable?: boolean;
   onCreateOption?;
   closeOnChangedValue?: boolean;
+  direction?: 'top' | 'bottom';
 }
