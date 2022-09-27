@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
+import { Divider, DropdownMenuItemWrapper } from './Dropdown.styled';
 import * as Styled from './Dropdown.styled';
-import { DropdownItemsProps, DropdownItemType } from './Dropdown.types';
+import { DropdownItemsProps, DropdownItemType, DropdownMenuProps } from './Dropdown.types';
 
 const DropdownItems = ({ data, onChange, onClose }: DropdownItemsProps) => {
   const Component = data.href ? 'a' : 'button';
@@ -79,14 +80,7 @@ const DropdownItems = ({ data, onChange, onClose }: DropdownItemsProps) => {
   );
 };
 
-interface DropdownMenuProps {
-  selectedValue?: string;
-  data?: DropdownItemType[];
-  onChange?: (event: any) => void;
-  className?: string;
-}
-
-const DropdownMenu = ({ selectedValue = '전체', data, onChange }: DropdownMenuProps) => {
+const DropdownMenu = ({ selectedValue = '전체', data, onChange, children }: DropdownMenuProps) => {
   const [isShownDropdown, setToggleDropdown] = useState(false);
   const ref = useRef<null | HTMLElement>(null);
   const handleClickEvent = {
@@ -135,6 +129,14 @@ const DropdownMenu = ({ selectedValue = '전체', data, onChange }: DropdownMenu
           </Styled.DropdownMenuButton>
           {data && data.length !== 0 && isShownDropdown && (
             <Styled.DropdownMenuItems>
+              {children && (
+                <>
+                  <Styled.DropdownMenuItemWrapper $hasChildren>
+                    {children}
+                  </Styled.DropdownMenuItemWrapper>
+                  <Styled.Divider />
+                </>
+              )}
               {data.map((item, index) => {
                 return (
                   <DropdownItems

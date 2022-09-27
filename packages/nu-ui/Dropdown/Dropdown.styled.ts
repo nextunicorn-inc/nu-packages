@@ -71,9 +71,18 @@ export const DropdownMenuItems = styled.ul`
   }
 `;
 
-export const DropdownMenuItemWrapper = styled.li`
+export const Divider = styled.span`
+  width: 75%;
+  height: 1px;
+
+  border-bottom: 1px solid ${Color.angelsGray2};
+
+  margin: 16px 0;
+`;
+
+export const DropdownMenuItemWrapper = styled.li<{ $hasChildren?: boolean }>`
   width: 142px;
-  height: 40px;
+  height: ${({ $hasChildren }) => ($hasChildren ? 'auto' : '40px')};
 
   a {
     color: inherit;
