@@ -92,6 +92,18 @@ export const FontSize: FontSizeTypes = {
     font-size: 10px;
     line-height: 14px;
   `,
+  'angels-h1': css`
+    font-size: 42px;
+    line-height: 140%;
+  `,
+  'angels-h2': css`
+    font-size: 30px;
+    line-height: 140%;
+  `,
+  'angels-h3': css`
+    font-size: 24px;
+    line-height: 140%;
+  `,
   'angels-h4': css`
     font-size: 18px;
     line-height: 140%;
