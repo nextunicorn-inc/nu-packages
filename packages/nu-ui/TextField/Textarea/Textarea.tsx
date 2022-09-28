@@ -24,6 +24,7 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
       onBlur,
       onChange,
       onFocus,
+      applyMaxLength = false,
       ...rest
     },
     ref,
@@ -34,6 +35,7 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
     const length = inputValue.length || 0;
     const hasError = isError || !!(charLimit && length > charLimit);
     const hasFooterText = helperText || hasError;
+    if (applyMaxLength) rest = { ...rest, maxLength: charLimit };
 
     const handleChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
       setInputValue(event.target.value);

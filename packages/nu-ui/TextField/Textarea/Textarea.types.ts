@@ -16,6 +16,7 @@ interface TextareaOptions extends React.TextareaHTMLAttributes<HTMLTextAreaEleme
   mustInput?: boolean;
   isError?: boolean;
   hasScrollBar?: boolean;
+  applyMaxLength?: boolean;
 }
 
 export interface TextareaProps extends DisableProps, TextareaOptions {}

@@ -48,6 +48,7 @@ const Template: Story<TextareaProps> = (args) => {
           charLimit={1000}
           helperText="Helper text"
           onChange={onChangeMessage}
+          applyMaxLength
         />
         <Textarea
           {...args}
