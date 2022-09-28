@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { useMultiSelect } from '../Select.hooks';
-import * as Styled from '../Select.styled';
+import { useMultiSelect } from '../MultiSelect.hooks';
+import * as Styled from '../MultiSelect.styled';
 
 export const DropdownHeader = () => {
   const { t, value, options, valueRenderer } = useMultiSelect();

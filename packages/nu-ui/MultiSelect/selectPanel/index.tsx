@@ -4,13 +4,11 @@
  * Select-all item, and the list of options.
  */
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { NoOptionsItem, SelectItemWrapper } from '../Select.styled';
-
-import * as Styled from '../Select.styled';
-import { useMultiSelect } from '../Select.hooks';
-import { KEY } from '../Select.constants';
-import { simpleFilterOptions } from '../Select.utils';
-import { CrossIcon } from '../Select.icons';
+import * as Styled from '../MultiSelect.styled';
+import { useMultiSelect } from '../MultiSelect.hooks';
+import { KEY } from '../MultiSelect.constants';
+import { simpleFilterOptions } from '../MultiSelect.utils';
+import { CrossIcon } from '../MultiSelect.icons';
 import SelectItem from '../selectItem';
 import SelectList from '../selectList';
 import { useKey } from '../../@hooks';
@@ -37,6 +35,8 @@ const SelectPanel = () => {
     debounceDuration,
     isCreatable,
     onCreateOption,
+    isCheckboxShowing,
+    closeOnChangedValue,
   } = useMultiSelect();
 
   const listRef = useRef<any>();
@@ -96,7 +96,9 @@ const SelectPanel = () => {
     searchInputRef?.current?.focus();
   };
 
-  const handleItemClicked = (index: number) => setFocusIndex(index);
+  const handleItemClicked = (index: number) => {
+    setFocusIndex(index);
+  };
 
   // Arrow Key Navigation
   const handleKeyDown = (e) => {
@@ -207,14 +209,17 @@ const SelectPanel = () => {
             onClick={() => handleItemClicked(1)}
             itemRenderer={ItemRenderer}
             disabled={disabled}
+            isCheckboxShowing={isCheckboxShowing}
           />
         )}
 
         {filteredOptions.length ? (
           <SelectList
+            isCheckboxShowing={isCheckboxShowing}
             skipIndex={skipIndex}
             options={filteredOptions}
             onClick={(_e, index) => handleItemClicked(index)}
+            closeOnChangedValue={closeOnChangedValue}
           />
         ) : showCreatable ? (
           <Styled.SelectItemWrapper onClick={handleOnCreateOption} tabIndex={1} ref={creationRef}>

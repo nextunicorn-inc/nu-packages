@@ -33,4 +33,5 @@ export interface SelectProps {
   onCreateOption?;
   closeOnChangedValue?: boolean;
   direction?: 'top' | 'bottom';
+  isCheckboxShowing?: boolean;
 }

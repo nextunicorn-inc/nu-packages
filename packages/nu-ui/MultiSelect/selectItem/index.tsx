@@ -3,9 +3,9 @@
  */
 import React, { useRef } from 'react';
 
-import * as Styled from '../Select.styled';
-import { KEY } from '../Select.constants';
-import { Option } from '../Select.types';
+import * as Styled from '../MultiSelect.styled';
+import { KEY } from '../MultiSelect.constants';
+import { Option } from '../MultiSelect.types';
 import DefaultItemRenderer from '../defaultItem';
 import { useKey } from '../../@hooks';
 
@@ -17,6 +17,7 @@ interface ISelectItemProps {
   disabled?: boolean;
   onSelectionChanged: (checked: boolean) => void;
   onClick;
+  isCheckboxShowing?: boolean;
 }
 
 const SelectItem = ({
@@ -27,6 +28,7 @@ const SelectItem = ({
   disabled,
   onSelectionChanged,
   onClick,
+  isCheckboxShowing,
 }: ISelectItemProps) => {
   const itemRef: any = useRef();
 
@@ -56,7 +58,13 @@ const SelectItem = ({
       tabIndex={tabIndex}
       ref={itemRef}
     >
-      <ItemRenderer option={option} checked={checked} onClick={handleClick} disabled={disabled} />
+      <ItemRenderer
+        option={option}
+        checked={checked}
+        onClick={handleClick}
+        disabled={disabled}
+        isCheckboxShowing={isCheckboxShowing}
+      />
     </Styled.SelectItemWrapper>
   );
 };

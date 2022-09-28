@@ -1,9 +1,9 @@
 import { Meta } from '@storybook/react';
 import { useState } from 'react';
-import MultiSelect from './Select.multi';
+import MultiSelect from './MultiSelect';
 
 export default {
-  title: 'Components/Select',
+  title: 'Components/MultiSelect',
   component: MultiSelect,
   parameters: {
     layout: 'centered',
@@ -36,6 +36,8 @@ export const Example = () => {
         }}
         ClearSelectedIcon={null}
         direction="top"
+        isCheckboxShowing={false}
+        closeOnChangedValue={true}
       />
     </div>
   );

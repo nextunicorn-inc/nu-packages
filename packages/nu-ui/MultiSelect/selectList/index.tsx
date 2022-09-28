@@ -3,22 +3,33 @@
  */
 import React from 'react';
 
-import { useMultiSelect } from '../Select.hooks';
-import { Option } from '../Select.types';
+import { useMultiSelect } from '../MultiSelect.hooks';
+import { Option } from '../MultiSelect.types';
 import SelectItem from '../selectItem';
 
 interface ISelectListProps {
   options: Option[];
   onClick;
   skipIndex: number;
+  isCheckboxShowing?: boolean;
+  closeOnChangedValue?: boolean;
 }
 
-const SelectList = ({ options, onClick, skipIndex }: ISelectListProps) => {
+const SelectList = ({
+  options,
+  onClick,
+  skipIndex,
+  isCheckboxShowing,
+  closeOnChangedValue,
+}: ISelectListProps) => {
   const { disabled, value, onChange, ItemRenderer } = useMultiSelect();
 
   const handleSelectionChanged = (option: Option, checked: boolean) => {
     if (disabled) return;
 
+    if (!isCheckboxShowing && closeOnChangedValue) {
+      return onChange([option]);
+    }
     onChange(checked ? [...value, option] : value.filter((o: any) => o.value !== option.value));
   };
 
@@ -37,6 +48,7 @@ const SelectList = ({ options, onClick, skipIndex }: ISelectListProps) => {
               onClick={(e) => onClick(e, tabIndex)}
               itemRenderer={ItemRenderer}
               disabled={o.disabled || disabled}
+              isCheckboxShowing={isCheckboxShowing}
             />
           </li>
         );

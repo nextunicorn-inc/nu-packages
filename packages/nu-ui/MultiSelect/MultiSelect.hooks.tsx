@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-import { Option, SelectProps } from './Select.types';
+import { Option, SelectProps } from './MultiSelect.types';
 
 const defaultStrings = {
   allItemsAreSelected: 'All items are selected.',

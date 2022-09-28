@@ -1,5 +1,5 @@
 import React from 'react';
-import { SVG } from './Select.styled';
+import { SVG } from './MultiSelect.styled';
 
 export const LoadingIcon = ({ size = 24 }) => (
   <span

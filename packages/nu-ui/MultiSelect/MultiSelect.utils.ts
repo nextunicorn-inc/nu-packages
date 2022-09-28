@@ -1,4 +1,4 @@
-import { Option } from './Select.types';
+import { Option } from './MultiSelect.types';
 
 /**
  * A collection of string matching algorithms built with React Select in mind.

@@ -7,13 +7,13 @@ import React, { useEffect, useRef, useState } from 'react';
 
 import SelectPanel from './selectPanel';
 import { DropdownHeader } from './header';
-import { useMultiSelect } from './Select.hooks';
-import * as Styled from './Select.styled';
-import { KEY } from './Select.constants';
-import { LoadingIcon, ArrowIcon, CrossIcon } from './Select.icons';
+import { useMultiSelect } from './MultiSelect.hooks';
+import * as Styled from './MultiSelect.styled';
+import { KEY } from './MultiSelect.constants';
+import { LoadingIcon, ArrowIcon, CrossIcon } from './MultiSelect.icons';
 import { useDidUpdateEffect, useKey } from '../@hooks';
 
-const Select = () => {
+const MultiSelectSelect = () => {
   const {
     t,
     onMenuToggle,
@@ -32,9 +32,7 @@ const Select = () => {
   } = useMultiSelect();
 
   useEffect(() => {
-    if (closeOnChangedValue) {
-      setExpanded(false);
-    }
+    if (closeOnChangedValue) setExpanded(false);
   }, [value]);
 
   const [isInternalExpand, setIsInternalExpand] = useState(true);
@@ -142,4 +140,4 @@ const Select = () => {
   );
 };
 
-export default Select;
+export default MultiSelectSelect;

@@ -19,7 +19,7 @@ export * from './Loading';
 export * from './Pagination';
 export * from './Radio';
 export * from './TextButton';
-export * from './Select';
+export * from './MultiSelect';
 export * from './TextField';
 export * from './Thumbnail';
 export * from './Toggle';
