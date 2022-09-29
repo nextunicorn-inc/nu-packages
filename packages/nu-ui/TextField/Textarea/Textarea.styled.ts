@@ -59,6 +59,8 @@ export const Textarea = styled.textarea<{
 `;
 
 export const DSTextareaWrapper = styled.div<{ $width: string }>`
+  position: relative;
+
   min-width: 320px;
   width: ${({ $width }) => $width};
   display: flex;
@@ -66,6 +68,9 @@ export const DSTextareaWrapper = styled.div<{ $width: string }>`
 `;
 
 export const LabelWrapper = styled.div<{ $noLabel: boolean }>`
+  position: absolute;
+  top: -15px;
+
   width: 100%;
   display: flex;
   justify-content: ${({ $noLabel }) => ($noLabel ? 'flex-end' : 'space-between')};
