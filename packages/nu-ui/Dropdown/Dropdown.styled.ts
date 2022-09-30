@@ -13,7 +13,7 @@ export const DropdownMenus = styled.ul`
 `;
 
 export const DropdownMenuButton = styled.button`
-  height: 36px;
+  min-height: 36px;
 
   display: flex;
   align-items: center;
@@ -33,6 +33,10 @@ export const DropdownMenuButton = styled.button`
 `;
 export const DropdownMenuTitle = styled.span`
   width: 100%;
+  height: 100%;
+  position: relative;
+
+  display: flex;
 `;
 
 export const DropdownArea = styled.li`

@@ -15,7 +15,16 @@ export const Default = () => {
   return (
     <div>
       <DropdownMenu
-        selectedValue="행사/콘텐츠"
+        selectedValue={
+          <span
+            style={{
+              width: '42px',
+              height: '42px',
+              borderRadius: '50%',
+              backgroundColor: Color.angelsGray1,
+            }}
+          ></span>
+        }
         data={[
           {
             title: '행사/이벤트',

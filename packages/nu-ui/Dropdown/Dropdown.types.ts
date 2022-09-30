@@ -1,5 +1,5 @@
 import { ChildrenProps } from '@nextunicorn/types';
-import { HTMLAttributes } from 'react';
+import { HTMLAttributes, ReactElement } from 'react';
 
 export type DropdownItemType = {
   title: string;
@@ -15,7 +15,7 @@ export interface DropdownItemsProps extends HTMLAttributes<HTMLDivElement>, Chil
 }
 
 export interface DropdownMenuProps extends HTMLAttributes<HTMLDivElement>, ChildrenProps {
-  selectedValue?: string;
+  selectedValue?: ReactElement | string;
   data?: DropdownItemType[];
   onChange?: (event: any) => void;
   className?: string;
