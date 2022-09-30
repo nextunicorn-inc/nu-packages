@@ -5,6 +5,7 @@ import { DropdownItemsProps, DropdownItemType, DropdownMenuProps } from './Dropd
 
 const DropdownItems = ({ data, onChange, onClose }: DropdownItemsProps) => {
   const Component = data.href ? 'a' : 'button';
+  const hrefProps = Component === 'a' && { href: data.href, target: data.target };
   const [isShownSubMenu, setToggleSubMenu] = useState(false);
   const ref = useRef<null | HTMLLIElement>(null);
   const handleClickEvent = {
@@ -34,7 +35,7 @@ const DropdownItems = ({ data, onChange, onClose }: DropdownItemsProps) => {
   return (
     <Styled.DropdownMenuItemWrapper ref={ref}>
       <Component
-        href={Component === 'a' && data.href}
+        {...hrefProps}
         type="button"
         aria-haspopup="menu"
         aria-expanded="false"

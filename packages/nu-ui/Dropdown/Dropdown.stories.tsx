@@ -20,6 +20,7 @@ export const Default = () => {
           {
             title: '행사/이벤트',
             href: 'https://www.nextunicorn.kr/',
+            target: '_blank',
           },
           {
             title: '인사이트/콘텐츠',

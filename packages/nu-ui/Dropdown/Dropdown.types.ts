@@ -4,6 +4,7 @@ import { HTMLAttributes } from 'react';
 export type DropdownItemType = {
   title: string;
   href?: string;
+  target?: string;
   submenu?: { title: string; href?: string }[];
 };
 
