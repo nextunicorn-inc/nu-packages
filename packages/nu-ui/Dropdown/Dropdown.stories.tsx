@@ -13,49 +13,66 @@ export default {
 
 export const Default = () => {
   return (
-    <div>
-      <DropdownMenu
-        selectedValue={
-          <span
-            style={{
-              width: '42px',
-              height: '42px',
-              borderRadius: '50%',
-              backgroundColor: Color.angelsGray1,
-            }}
-          ></span>
-        }
-        data={[
-          {
-            title: '행사/이벤트',
-            href: 'https://www.nextunicorn.kr/',
-            target: '_blank',
-          },
-          {
-            title: '인사이트/콘텐츠',
-            href: 'https://www.nextunicorn.kr/program',
-          },
-        ]}
-      >
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '4px',
-            padding: '10px 18px 0 18px',
-          }}
+    <>
+      <div>
+        <DropdownMenu
+          selectedValue={
+            <span
+              style={{
+                width: '42px',
+                height: '42px',
+                borderRadius: '50%',
+                backgroundColor: Color.angelsGray1,
+              }}
+            ></span>
+          }
+          data={[
+            {
+              title: '행사/이벤트',
+              href: 'https://www.nextunicorn.kr/',
+              target: '_blank',
+            },
+            {
+              title: '인사이트/콘텐츠',
+              href: 'https://www.nextunicorn.kr/program',
+            },
+          ]}
         >
-          <span
+          <div
             style={{
-              width: '32px',
-              height: '32px',
-              borderRadius: '50%',
-              backgroundColor: Color.angelsGray1,
+              display: 'flex',
+              alignItems: 'center',
+              gap: '4px',
+              padding: '10px 18px 0 18px',
             }}
-          ></span>
-          <span>박아리님</span>
-        </div>
-      </DropdownMenu>
-    </div>
+          >
+            <span
+              style={{
+                width: '32px',
+                height: '32px',
+                borderRadius: '50%',
+                backgroundColor: Color.angelsGray1,
+              }}
+            ></span>
+            <span>박아리님</span>
+          </div>
+        </DropdownMenu>
+      </div>
+      <div>
+        <DropdownMenu
+          selectedValue="행사/콘텐츠"
+          data={[
+            {
+              title: '행사/이벤트',
+              href: 'https://www.nextunicorn.kr/',
+            },
+            {
+              title: '인사이트/콘텐츠',
+              href: 'https://www.nextunicorn.kr/program',
+            },
+          ]}
+        />
+      </div>
+    </>
   );
 };

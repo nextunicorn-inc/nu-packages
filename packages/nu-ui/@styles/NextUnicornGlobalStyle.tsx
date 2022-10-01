@@ -140,8 +140,6 @@ export const NextUnicornGlobalStyle = () => (
       }
 
       * {
-        position: relative;
-
         box-sizing: border-box;
 
         outline: none;

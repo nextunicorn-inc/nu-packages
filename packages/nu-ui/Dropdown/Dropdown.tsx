@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react';
-import { Divider, DropdownMenuItemWrapper } from './Dropdown.styled';
 import * as Styled from './Dropdown.styled';
 import { DropdownItemsProps, DropdownItemType, DropdownMenuProps } from './Dropdown.types';
 
