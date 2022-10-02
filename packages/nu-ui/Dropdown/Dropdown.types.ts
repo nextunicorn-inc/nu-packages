@@ -5,6 +5,7 @@ export type DropdownItemType = {
   title: string;
   href?: string;
   target?: string;
+  onClick?: () => void;
   submenu?: { title: string; href?: string }[];
 };
 

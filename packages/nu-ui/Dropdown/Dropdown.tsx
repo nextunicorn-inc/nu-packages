@@ -12,6 +12,7 @@ const DropdownItems = ({ data, onChange, onClose }: DropdownItemsProps) => {
       if (!data.submenu || (data.submenu && data.submenu.length === 0)) {
         onChange && onChange(event.target.textContent, data);
         onClose && onClose();
+        data.onClick && data.onClick();
       }
       setToggleSubMenu(!isShownSubMenu);
     },
@@ -144,6 +145,7 @@ const DropdownMenu = ({ selectedValue = '전체', data, onChange, children }: Dr
                     onChange={onChange}
                     onClose={handleClickEvent.closeDropdownAction}
                     key={index.toString()}
+                    onClick={item.onClick}
                   />
                 );
               })}

@@ -68,7 +68,7 @@ export const Default = () => {
             },
             {
               title: '인사이트/콘텐츠',
-              href: 'https://www.nextunicorn.kr/program',
+              onClick: () => alert(),
             },
           ]}
         />
