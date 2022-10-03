@@ -4,40 +4,6 @@ import normalize from './normalize';
 export const NextUnicornGlobalStyle = () => (
   <Global
     styles={css`
-      @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
-
-      @font-face {
-        font-family: 'Pretendard-Regular';
-        src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.3/Pretendard-Regular.woff')
-          format('woff');
-        font-weight: 400;
-        font-style: normal;
-      }
-
-      @font-face {
-        font-family: 'Pretendard-Medium';
-        src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.3/Pretendard-Medium.woff')
-          format('woff');
-        font-weight: 500;
-        font-style: normal;
-      }
-
-      @font-face {
-        font-family: 'Pretendard-SemiBold';
-        src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.3/Pretendard-SemiBold.woff')
-          format('woff');
-        font-weight: 600;
-        font-style: normal;
-      }
-
-      @font-face {
-        font-family: 'Pretendard-ExtraBold';
-        src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.3/Pretendard-ExtraBold.woff')
-          format('woff');
-        font-weight: 800;
-        font-style: normal;
-      }
-
       /* https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL */
       @font-face {
         font-family: 'Spoqa Han Sans Neo';
