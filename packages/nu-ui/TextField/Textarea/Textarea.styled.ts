@@ -8,20 +8,23 @@ export const TextareaBorder = styled.div<{
   $isExistsValue: boolean;
   $disabled: boolean;
 }>`
+  position: relative;
+
   display: flex;
   align-items: center;
-  position: relative;
+
   border: 1px solid ${Color.naturalGray3};
   border-radius: 5px;
   ${({ $isExistsValue }) => $isExistsValue && `border: 1px solid ${Color.blueGray6}`};
   ${({ $isError }) => $isError && `border: 1px solid ${Color.coral6}`};
+
   ${({ $disabled }) => $disabled && 'cursor: not-allowed;'};
 
   &:focus-within {
     border: 1px solid ${Color.unicornBlue6};
   }
 
-  :not(div:first-of-type) {
+  &:not(div:first-of-type) {
     margin-top: 8px;
   }
 `;
@@ -33,21 +36,25 @@ export const Textarea = styled.textarea<{
 }>`
   width: 100%;
   height: 168px;
+
   padding: 10px 12px;
+  border-radius: 5px;
+
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
-  border-radius: 5px;
+
   ${ThinScrollBar};
+
   ${({ $isError }) =>
     $isError &&
     css`
       color: ${Color.coral6} !important;
       -webkit-text-fill-color: ${Color.coral6} !important;
     `};
-  ${({ $disabled }) => $disabled && 'cursor: not-allowed'};
   ${({ $hasScrollBar }) => !$hasScrollBar && 'overflow: hidden;'};
   ${({ $disabled }) => css`
+    cursor: not-allowed;
     background-color: ${Color.naturalGray0};
     color: ${$disabled ? Color.blueGray6 : Color.naturalGray7};
     -webkit-text-fill-color: ${$disabled ? Color.blueGray6 : Color.naturalGray7};
@@ -60,18 +67,18 @@ export const Textarea = styled.textarea<{
 
 export const DSTextareaWrapper = styled.div<{ $width: string }>`
   position: relative;
-
   min-width: 320px;
   width: ${({ $width }) => $width};
+
   display: flex;
   flex-direction: column;
 `;
 
 export const LabelWrapper = styled.div<{ $noLabel: boolean }>`
   position: absolute;
+  width: 100%;
   top: -15px;
 
-  width: 100%;
   display: flex;
   justify-content: ${({ $noLabel }) => ($noLabel ? 'flex-end' : 'space-between')};
 `;
