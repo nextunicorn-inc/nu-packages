@@ -500,6 +500,11 @@ export type Overwrite<
 > = Pick<I, keyof I>;
 
 /**
+ * 재귀탐색하며 Readonly 프로퍼티를 제거합니다.
+ */
+export type Writeable<T> = { -readonly [P in keyof T]: Writeable<T[P]> };
+
+/**
  * PromiseType
  * @desc 프로미스 객체를 resolve한 타입으로 변경합니다.
  * @example
