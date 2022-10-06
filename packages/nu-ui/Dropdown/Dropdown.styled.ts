@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { BasicTransition, Color, Keyframe } from '../@foundations';
+import { BasicTransition, Color, FontSize, FontWeight, Keyframe } from '../@foundations';
 import { size14 } from '../@foundations';
 
 export const DropdownWrapper = styled.nav`
@@ -24,10 +24,14 @@ export const DropdownMenuButton = styled.button`
 
   border-radius: 4px;
 
-  font-weight: 700;
-  ${size14}
+  ${FontSize['angels-p2']};
+  color: ${Color.angelsGray8};
 
-  &:hover {
+  transition: all 0.2s ease-in-out;
+
+  &:hover,
+  &:active {
+    ${FontWeight.bold};
     background-color: ${Color.angelsGray1};
   }
 `;
