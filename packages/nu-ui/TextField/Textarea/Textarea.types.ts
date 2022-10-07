@@ -1,9 +1,11 @@
-import React from 'react';
-import { DisableProps } from '@nextunicorn/types';
+import type { TextareaHTMLAttributes } from 'react';
+import type { DisableProps, ReactStandardProps } from '@nextunicorn/types';
+//
+import type EmotionCSSProps from '../../@utils/types';
 
 export type TextareaBorderProps = 'inactive' | 'focus' | 'active' | 'alert';
 
-interface TextareaOptions extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
+interface TextareaOptions extends TextareaHTMLAttributes<HTMLTextAreaElement> {
   defaultValue?: string;
   label?: string;
   state?: TextareaBorderProps;
@@ -19,4 +21,8 @@ interface TextareaOptions extends React.TextareaHTMLAttributes<HTMLTextAreaEleme
   applyMaxLength?: boolean;
 }
 
-export interface TextareaProps extends DisableProps, TextareaOptions {}
+export interface TextareaProps
+  extends DisableProps,
+    ReactStandardProps,
+    EmotionCSSProps,
+    TextareaOptions {}

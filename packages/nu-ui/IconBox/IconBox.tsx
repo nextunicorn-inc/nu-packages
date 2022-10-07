@@ -57,12 +57,14 @@ const IconBox = ({
   icon,
   gap,
   style,
+  ...rest
 }: IconBoxProps) => {
   if (!icon) return <>{text}</>;
-  if (isIconOnly) return <OnlyIcon size={size} icon={icon} isIconOnly={isIconOnly} style={style} />;
+  if (isIconOnly)
+    return <OnlyIcon size={size} icon={icon} isIconOnly={isIconOnly} style={style} {...rest} />;
   if (isIconAfter)
-    return <TextAfterIcon size={size} text={text} icon={icon} gap={gap} style={style} />;
-  return <TextBeforeIcon size={size} text={text} icon={icon} gap={gap} style={style} />;
+    return <TextAfterIcon size={size} text={text} icon={icon} gap={gap} style={style} {...rest} />;
+  return <TextBeforeIcon size={size} text={text} icon={icon} gap={gap} style={style} {...rest} />;
 };
 
 export default IconBox;

@@ -1,5 +1,7 @@
-import { InputHTMLAttributes, FC, SVGProps } from 'react';
-import { ReactStandardProps } from '@nextunicorn/types';
+import type { InputHTMLAttributes, FC, SVGProps } from 'react';
+import type { ReactStandardProps } from '@nextunicorn/types';
+//
+import type EmotionCSSProps from '../../@utils/types';
 
 export interface InputOptions extends InputHTMLAttributes<HTMLInputElement> {
   label?: string;
@@ -21,4 +23,4 @@ export interface InputOptions extends InputHTMLAttributes<HTMLInputElement> {
   suffixIcon?: FC<SVGProps<SVGSVGElement>>;
 }
 
-export interface InputProps extends ReactStandardProps, InputOptions {}
+export interface InputProps extends ReactStandardProps, EmotionCSSProps, InputOptions {}

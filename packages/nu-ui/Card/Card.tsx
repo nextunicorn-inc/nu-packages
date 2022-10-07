@@ -9,9 +9,10 @@ const Card = ({
   viewCount,
   isInvest = false,
   isBookmarked = false,
+  ...rest
 }: CardProps) => {
   return (
-    <Styled.CardWrapper>
+    <Styled.CardWrapper {...rest}>
       <Styled.ProfileImage>
         <Styled.ProfileThumbnail />
       </Styled.ProfileImage>

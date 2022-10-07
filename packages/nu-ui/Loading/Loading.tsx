@@ -6,8 +6,9 @@ import {
   DefaultLoading,
   SecondaryLoading,
 } from './Loading.icons';
+//
 import * as Styled from './Loading.styled';
-
+//
 import type { LoadingProps } from './Loading.types';
 
 const LoadingTheme = {

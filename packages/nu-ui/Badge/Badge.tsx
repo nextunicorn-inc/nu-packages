@@ -13,8 +13,9 @@ const Badge = ({
   isIconOnly = false,
   isIconAfter = false,
   style,
+  ...rest
 }: BadgeProps) => (
-  <Styled.DSBadgeWrapper $kind={kind} $size={size} $color={color} style={style}>
+  <Styled.DSBadgeWrapper $kind={kind} $size={size} $color={color} style={style} {...rest}>
     <IconBox
       text={text}
       size={size}

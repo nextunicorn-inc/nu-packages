@@ -1,4 +1,7 @@
-import React from 'react';
+import type { BaseHTMLAttributes, ReactElement, ReactNode } from 'react';
+import type { ReactStandardProps } from '@nextunicorn/types';
+//
+import type EmotionCSSProps from '../@utils/types';
 
 export type ThumbnailCategory = '1by1' | '2by3' | '16by9';
 
@@ -16,7 +19,7 @@ type ThumbnailOptions = {
   width?: string;
   category?: ThumbnailCategory;
   size?: ThumbnailSize;
-  cover?: React.ReactNode;
+  cover?: ReactNode | ReactElement;
   alt?: string;
   hasBadge?: boolean;
   isPlay?: boolean;
@@ -24,5 +27,7 @@ type ThumbnailOptions = {
 };
 
 export interface ThumbnailProps
-  extends React.BaseHTMLAttributes<HTMLDivElement>,
+  extends BaseHTMLAttributes<HTMLDivElement>,
+    ReactStandardProps,
+    EmotionCSSProps,
     ThumbnailOptions {}

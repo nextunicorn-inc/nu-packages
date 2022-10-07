@@ -1,7 +1,11 @@
-import { DisableProps, ReactStandardProps } from '@nextunicorn/types';
+import type { DisableProps, ReactStandardProps } from '@nextunicorn/types';
+//
+import type EmotionCSSProps from '../@utils/types';
 
 export type PaginationType = 'default' | 'extra';
+
 export type PaginationSize = 'large' | 'small';
+
 export type PaginationAction = 'page' | 'prev' | 'next';
 
 interface PaginationOptions {
@@ -13,8 +17,6 @@ interface PaginationOptions {
   onChangePage: (page: number, type: PaginationAction) => void;
 }
 
-export type PaginationItemState = 'default' | 'hover' | 'focused';
-
 export interface PaginationItemProps {
   size: PaginationSize;
   currentPageNumber: number;
@@ -22,4 +24,8 @@ export interface PaginationItemProps {
   onClick: (page: number) => void;
 }
 
-export interface PaginationProps extends DisableProps, ReactStandardProps, PaginationOptions {}
+export interface PaginationProps
+  extends DisableProps,
+    ReactStandardProps,
+    EmotionCSSProps,
+    PaginationOptions {}

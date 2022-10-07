@@ -40,7 +40,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
       suffixIcon,
       style,
       autoComplete,
-      ...props
+      ...rest
     },
     ref,
   ) => {
@@ -124,7 +124,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           <Styled.InputContents>
             {showInnerLabel && <Styled.InnerLabel>{innerLabel}</Styled.InnerLabel>}
             <Styled.Input
-              {...props}
+              {...rest}
               ref={ref}
               value={value ?? inputValue}
               type={type}

@@ -1,5 +1,7 @@
-import React from 'react';
-import { DisableProps, IconProps, LoadingProps, ReactStandardProps } from '@nextunicorn/types';
+import type { ButtonHTMLAttributes } from 'react';
+import type { DisableProps, IconProps, LoadingProps, ReactStandardProps } from '@nextunicorn/types';
+//
+import EmotionCSSProps from '../@utils/types';
 
 export type TextButtonSize = 'large' | 'small';
 
@@ -11,9 +13,10 @@ type TextButtonOptions = {
 };
 
 export interface TextButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+  extends ButtonHTMLAttributes<HTMLButtonElement>,
     DisableProps,
     LoadingProps,
     IconProps,
     ReactStandardProps,
+    EmotionCSSProps,
     TextButtonOptions {}

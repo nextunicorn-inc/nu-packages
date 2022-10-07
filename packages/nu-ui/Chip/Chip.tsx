@@ -42,11 +42,11 @@ const Chip = React.forwardRef<HTMLDivElement, ChipProps>(
       onClose = () => {
         console.log();
       },
-      style,
+      ...rest
     },
     ref,
   ) => (
-    <Styled.DSChipWrapper ref={ref} style={style}>
+    <Styled.DSChipWrapper ref={ref} {...rest}>
       <Styled.Text $closeable={closeable}>{text}</Styled.Text>
       {closeable && <CloseButton onClose={onClose} />}
     </Styled.DSChipWrapper>

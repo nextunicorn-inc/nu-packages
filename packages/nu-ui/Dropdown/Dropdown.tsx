@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import * as Styled from './Dropdown.styled';
 import { DropdownItemsProps, DropdownItemType, DropdownMenuProps } from './Dropdown.types';
 
-const DropdownItems = ({ data, onChange, onClose }: DropdownItemsProps) => {
+const DropdownItems = ({ data, style, onChange, onClose }: DropdownItemsProps) => {
   const Component = data.href ? 'a' : 'button';
   const hrefProps = Component === 'a' && { href: data.href, target: data.target };
   const [isShownSubMenu, setToggleSubMenu] = useState(false);
@@ -33,7 +33,7 @@ const DropdownItems = ({ data, onChange, onClose }: DropdownItemsProps) => {
     };
   }, []);
   return (
-    <Styled.DropdownMenuItemWrapper ref={ref}>
+    <Styled.DropdownMenuItemWrapper style={style} ref={ref}>
       <Component
         {...hrefProps}
         type="button"
@@ -81,7 +81,13 @@ const DropdownItems = ({ data, onChange, onClose }: DropdownItemsProps) => {
   );
 };
 
-const DropdownMenu = ({ selectedValue = '전체', data, onChange, children }: DropdownMenuProps) => {
+const DropdownMenu = ({
+  selectedValue = '전체',
+  data,
+  cx,
+  onChange,
+  children,
+}: DropdownMenuProps) => {
   const [isShownDropdown, setToggleDropdown] = useState(false);
   const ref = useRef<null | HTMLElement>(null);
   const handleClickEvent = {
@@ -102,7 +108,7 @@ const DropdownMenu = ({ selectedValue = '전체', data, onChange, children }: Dr
     };
   }, []);
   return (
-    <Styled.DropdownWrapper ref={ref}>
+    <Styled.DropdownWrapper ref={ref} css={cx}>
       <Styled.DropdownMenus>
         <Styled.DropdownArea>
           <Styled.DropdownMenuButton

@@ -5,7 +5,9 @@ export type ButtonVariant =
   | 'angels-primary'
   | 'angels-secondary'
   | 'angels-tertiary';
+
 export type ButtonColor = 'blue' | 'coral' | 'gray';
+
 export type LoadingProps = {
   kind?: ButtonVariant | ButtonColor;
 };

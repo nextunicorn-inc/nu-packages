@@ -63,6 +63,7 @@ const Pagination = ({
   totalPage = 1,
   visiblePageList = 5,
   onChangePage,
+  ...rest
 }: React.PropsWithChildren<PaginationProps>) => {
   const totalVisiblePage = parseTotalPage(totalPage, page);
 
@@ -112,7 +113,7 @@ const Pagination = ({
   const disabledNextBtn = page + 1 > totalVisiblePage;
 
   return (
-    <Styled.DSPaginationWrapper $type={type} $size={size}>
+    <Styled.DSPaginationWrapper $type={type} $size={size} {...rest}>
       <Styled.PrevButton $disabled={disabledPrevBtn} onClick={handleClickPrev}>
         <Icon20NavigationArrPrev />
       </Styled.PrevButton>

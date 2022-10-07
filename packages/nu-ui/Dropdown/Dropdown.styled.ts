@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { css } from '@emotion/react';
 import { BasicTransition, Color, FontSize, FontWeight, Keyframe } from '../@foundations';
 import { size14 } from '../@foundations';
 

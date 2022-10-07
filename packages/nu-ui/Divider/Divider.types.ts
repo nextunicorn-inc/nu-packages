@@ -1,5 +1,7 @@
-import React from 'react';
-import { ReactStandardProps } from '@nextunicorn/types';
+import type { HTMLAttributes } from 'react';
+import type { ReactStandardProps } from '@nextunicorn/types';
+//
+import EmotionCSSProps from '../@utils/types';
 
 type DividerOptions = {
   type?: 'hr';
@@ -7,6 +9,7 @@ type DividerOptions = {
 };
 
 export default interface DividerProps
-  extends React.HTMLAttributes<HTMLDivElement>,
+  extends HTMLAttributes<HTMLDivElement>,
     ReactStandardProps,
-    DividerOptions {}
+    DividerOptions,
+    EmotionCSSProps {}

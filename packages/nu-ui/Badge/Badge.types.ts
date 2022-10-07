@@ -1,4 +1,6 @@
-import { IconProps, ReactStandardProps } from '@nextunicorn/types';
+import type { IconProps, ReactStandardProps } from '@nextunicorn/types';
+//
+import type EmotionCSSProps from '../@utils/types';
 
 export type BadgeKind = 'border';
 
@@ -24,4 +26,4 @@ interface BadgeOptions {
   color: BadgeColor;
 }
 
-export interface BadgeProps extends IconProps, ReactStandardProps, BadgeOptions {}
+export interface BadgeProps extends IconProps, ReactStandardProps, EmotionCSSProps, BadgeOptions {}

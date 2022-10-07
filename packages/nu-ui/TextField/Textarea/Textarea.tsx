@@ -3,7 +3,7 @@ import * as Styled from './Textarea.styled';
 import { CharLimit } from '../CharLimit';
 import { Asterisk } from '../../Asterisk';
 import { HelperText } from '../../HelperText';
-
+//
 import type { TextareaProps } from './Textarea.types';
 
 const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(

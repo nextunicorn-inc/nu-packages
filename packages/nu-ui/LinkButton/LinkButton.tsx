@@ -1,6 +1,7 @@
 import { IconBox } from '../IconBox';
 import * as Styled from './LinkButton.styled';
-import { LinkButtonProps } from './LinkButton.types';
+//
+import LinkButtonProps from './LinkButton.types';
 
 const LinkButton = ({
   text = '',

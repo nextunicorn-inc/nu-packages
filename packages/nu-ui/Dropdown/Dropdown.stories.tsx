@@ -1,3 +1,4 @@
+import { css } from '@emotion/react';
 import { Meta } from '@storybook/react';
 import { Color } from '../@foundations';
 import DropdownMenu from './Dropdown';
@@ -60,6 +61,11 @@ export const Default = () => {
       </div>
       <div>
         <DropdownMenu
+          cx={css`
+            button:hover {
+              background-color: unset;
+            }
+          `}
           selectedValue="행사/콘텐츠"
           data={[
             {

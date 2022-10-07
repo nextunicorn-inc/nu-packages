@@ -1,10 +1,17 @@
-import React from 'react';
+import type { AnchorHTMLAttributes, FC, SVGProps } from 'react';
+import type { ReactStandardProps } from '@nextunicorn/types';
+//
+import type EmotionCSSProps from '../@utils/types';
 
-type LinkButtonTypes = {
+type LinkButtonOptions = {
   text?: string;
   size?: 'large' | 'small';
-  icon?: React.FC<React.SVGProps<SVGSVGElement>>;
+  icon?: FC<SVGProps<SVGSVGElement>>;
   isIconAfter?: boolean;
 };
 
-export type LinkButtonProps = React.AnchorHTMLAttributes<HTMLAnchorElement> & LinkButtonTypes;
+export default interface LinkButtonProps
+  extends AnchorHTMLAttributes<HTMLAnchorElement>,
+    ReactStandardProps,
+    EmotionCSSProps,
+    LinkButtonOptions {}

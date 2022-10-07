@@ -1,8 +1,16 @@
-import React from 'react';
+import type { ReactNode } from 'react';
+import type { ReactStandardProps } from '@nextunicorn/types';
+//
+import type EmotionCSSProps from '../@utils/types';
 
-export type NotiBadgeProps = {
+type NotiBadgeOptions = {
   count?: number;
   color?: 'blue' | 'red';
   size?: 'large' | 'small';
-  children?: React.ReactNode;
+  children?: ReactNode;
 };
+
+export default interface NotiBadgeProps
+  extends ReactStandardProps,
+    EmotionCSSProps,
+    NotiBadgeOptions {}

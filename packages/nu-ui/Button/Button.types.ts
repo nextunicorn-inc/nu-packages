@@ -1,11 +1,13 @@
 import React from 'react';
-import {
+import type {
   DisableProps,
   IconProps,
   LoadingProps,
   SizeTypes,
   ReactStandardProps,
 } from '@nextunicorn/types';
+//
+import type EmotionCSSProps from '../@utils/types';
 
 export type ButtonVariant =
   | 'primary'
@@ -31,4 +33,5 @@ export interface ButtonProps
     LoadingProps,
     IconProps,
     ReactStandardProps,
+    EmotionCSSProps,
     ButtonOptions {}

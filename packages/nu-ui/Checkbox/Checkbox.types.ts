@@ -1,4 +1,12 @@
-import React from 'react';
+import type {
+  CSSProperties,
+  KeyboardEventHandler,
+  MouseEventHandler,
+  ReactElement,
+  ReactNode,
+} from 'react';
+//
+import EmotionCSSProps from '../@utils/types';
 
 export type RequiredMark = boolean | 'optional';
 
@@ -40,9 +48,9 @@ export interface ConfigConsumerProps {
 export type CheckboxValueType = string | number | boolean;
 
 export interface CheckboxOptionType {
-  label: React.ReactNode;
+  label: ReactNode | ReactElement;
   value: CheckboxValueType;
-  style?: React.CSSProperties;
+  style?: CSSProperties;
   disabled?: boolean;
   onChange?: (e: CheckboxChangeEvent) => void;
 }
@@ -55,7 +63,7 @@ export interface FormItemStatusContextProps {
   isFormItemInput?: boolean;
   status?: ValidateStatus;
   hasFeedback?: boolean;
-  feedbackIcon?: React.ReactNode;
+  feedbackIcon?: ReactNode;
 }
 
 export interface AbstractCheckboxProps<T> {
@@ -63,18 +71,18 @@ export interface AbstractCheckboxProps<T> {
   className?: string;
   defaultChecked?: boolean;
   checked?: boolean;
-  style?: React.CSSProperties;
+  style?: CSSProperties;
   disabled?: boolean;
   onChange?: (e: T) => void;
-  onClick?: React.MouseEventHandler<HTMLElement>;
-  onMouseEnter?: React.MouseEventHandler<HTMLElement>;
-  onMouseLeave?: React.MouseEventHandler<HTMLElement>;
-  onKeyPress?: React.KeyboardEventHandler<HTMLElement>;
-  onKeyDown?: React.KeyboardEventHandler<HTMLElement>;
+  onClick?: MouseEventHandler<HTMLElement>;
+  onMouseEnter?: MouseEventHandler<HTMLElement>;
+  onMouseLeave?: MouseEventHandler<HTMLElement>;
+  onKeyPress?: KeyboardEventHandler<HTMLElement>;
+  onKeyDown?: KeyboardEventHandler<HTMLElement>;
   value?: any;
   tabIndex?: number;
   name?: string;
-  children?: React.ReactNode;
+  children?: ReactNode;
   id?: string;
   autoFocus?: boolean;
   type?: string;
@@ -92,7 +100,7 @@ export interface CheckboxChangeEvent {
   nativeEvent: MouseEvent;
 }
 
-export interface CheckboxProps extends AbstractCheckboxProps<CheckboxChangeEvent> {
+export interface CheckboxProps extends AbstractCheckboxProps<CheckboxChangeEvent>, EmotionCSSProps {
   indeterminate?: boolean;
 }
 
@@ -101,7 +109,7 @@ export interface AbstractCheckboxGroupProps {
   className?: string;
   options?: Array<CheckboxOptionType | string | number>;
   disabled?: boolean;
-  style?: React.CSSProperties;
+  style?: CSSProperties;
 }
 
 export interface CheckboxGroupProps extends AbstractCheckboxGroupProps {
@@ -109,5 +117,5 @@ export interface CheckboxGroupProps extends AbstractCheckboxGroupProps {
   defaultValue?: Array<CheckboxValueType>;
   value?: Array<CheckboxValueType>;
   onChange?: (checkedValue: Array<CheckboxValueType>) => void;
-  children?: React.ReactNode;
+  children?: ReactNode;
 }

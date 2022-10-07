@@ -1,5 +1,6 @@
-import { ChildrenProps } from '@nextunicorn/types';
-import { HTMLAttributes, ReactElement } from 'react';
+import type { HTMLAttributes, ReactElement } from 'react';
+import type { SerializedStyles } from '@emotion/react';
+import type { ChildrenProps, ReactStandardProps } from '@nextunicorn/types';
 
 export type DropdownItemType = {
   title: string;
@@ -15,9 +16,13 @@ export interface DropdownItemsProps extends HTMLAttributes<HTMLDivElement>, Chil
   onClose?: () => void;
 }
 
-export interface DropdownMenuProps extends HTMLAttributes<HTMLDivElement>, ChildrenProps {
+export interface DropdownMenuProps
+  extends HTMLAttributes<HTMLDivElement>,
+    ChildrenProps,
+    ReactStandardProps {
   selectedValue?: ReactElement | string;
   data?: DropdownItemType[];
   onChange?: (event: any) => void;
   className?: string;
+  cx?: SerializedStyles;
 }
