@@ -6,6 +6,6 @@ export type KeyframeKey =
   | 'slideInUp'
   | 'slideInDown'
   | 'rotate'
-  | 'dash';
+  | 'dash'
 
 export type KeyframeType = Record<KeyframeKey, Keyframes>;

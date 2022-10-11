@@ -2,7 +2,7 @@ import React from 'react';
 import { Meta, Story } from '@storybook/react';
 import styled from '@emotion/styled';
 import LinkButton from './LinkButton';
-import { LinkButtonProps } from './LinkButton.types';
+import LinkButtonProps from './LinkButton.types';
 
 export default {
   title: 'Components/Buttons/LinkButton',

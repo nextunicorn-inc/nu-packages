@@ -34,4 +34,5 @@ export interface SelectProps {
   closeOnChangedValue?: boolean;
   direction?: 'top' | 'bottom';
   isCheckboxShowing?: boolean;
+  isError?: boolean;
 }

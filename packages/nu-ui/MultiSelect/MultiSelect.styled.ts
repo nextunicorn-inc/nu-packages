@@ -27,12 +27,15 @@ export const DropdownHeaderWrapper = styled.span<{ $none?: boolean }>`
 
 export const SelectItemWrapper = styled.label<{ $selected?: boolean }>`
   display: block;
-  box-sizing: border-box;
-  cursor: pointer;
+
   padding: 10px;
+
+  border-radius: 2px;
+
   outline-offset: -1px;
   outline-color: red;
-  border-radius: 2px;
+
+  cursor: pointer;
 
   &:hover {
     background-color: ${Color.angelsGray1};
@@ -48,12 +51,16 @@ export const SearchArea = styled.div`
   border-bottom: 1px solid #ccc;
 
   input {
-    background: none;
-    min-height: 48px;
-    padding: 0 10px;
     width: 100%;
-    outline: 0;
+    min-height: 48px;
+
+    background: none;
+
     border: 0;
+    padding: 0 10px;
+
+    outline: 0;
+
     ${FontSize.p2};
     ${FontWeight.regular};
     color: ${Color.angelsGray8};
@@ -97,7 +104,7 @@ export const NoOptionsItem = styled.li`
   color: ${Color.angelsGray1};
 `;
 
-export const DSSelectWrapper = styled.div`
+export const DSSelectWrapper = styled.div<{ $error?: boolean }>`
   position: relative;
   width: 320px;
 
@@ -113,6 +120,8 @@ export const DSSelectWrapper = styled.div`
   &:focus-within {
     border-color: ${Color.angelsGray9};
   }
+
+  ${({ $error }) => $error && `border-color: ${Color.coral6} !important`};
 `;
 
 export const SelectHeadArea = styled.div`
@@ -120,7 +129,7 @@ export const SelectHeadArea = styled.div`
   padding: 14px 12px;
   display: flex;
   align-items: center;
-  min-width: 320px;
+  width: 100%;
   min-height: 48px;
   cursor: default;
   outline: 0;

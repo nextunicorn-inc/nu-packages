@@ -29,6 +29,7 @@ const MultiSelectSelect = () => {
     ClearSelectedIcon,
     closeOnChangedValue,
     direction = 'bottom',
+    isError,
   } = useMultiSelect();
 
   useEffect(() => {
@@ -109,6 +110,7 @@ const MultiSelectSelect = () => {
       aria-readonly={true}
       aria-disabled={disabled}
       ref={wrapper}
+      $error={isError}
       onFocus={handleFocus}
       onBlur={handleBlur}
       onMouseEnter={handleMouseEnter}

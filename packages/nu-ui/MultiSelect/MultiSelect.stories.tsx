@@ -38,6 +38,7 @@ export const Example = () => {
         direction="top"
         isCheckboxShowing={false}
         closeOnChangedValue={true}
+        isError={true}
       />
     </div>
   );
