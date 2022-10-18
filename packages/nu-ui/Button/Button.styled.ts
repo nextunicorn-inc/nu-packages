@@ -152,7 +152,6 @@ type ButtonProps = {
 export const DSButtonWrapper = styled.button<ButtonProps>`
   ${({ $variant }) => variantCSS[$variant]};
   ${({ $isBlock }) => ($isBlock ? 'width: 100%' : 'width: fit-content')};
-  height: fit-content;
 
   display: flex;
   justify-content: center;
