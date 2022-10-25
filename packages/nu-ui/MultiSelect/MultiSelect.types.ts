@@ -13,7 +13,7 @@ export interface SelectProps {
   onChange?;
   valueRenderer?: (selected: Option[], options: Option[]) => ReactNode;
   ItemRenderer?;
-  ArrowRenderer?: ({ expanded }) => JSX.Element;
+  ArrowRenderer?: () => JSX.Element;
   isLoading?: boolean;
   disabled?: boolean;
   disableSearch?: boolean;

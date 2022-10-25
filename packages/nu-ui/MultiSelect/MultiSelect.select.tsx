@@ -1,10 +1,4 @@
-/**
- * A generic dropdown component.  It takes the children of the component
- * and hosts it in the component.  When the component is selected, it
- * drops-down the contentComponent and applies the contentProps.
- */
-import React, { useEffect, useRef, useState } from 'react';
-
+import { useEffect, useRef, useState } from 'react';
 import SelectPanel from './selectPanel';
 import { DropdownHeader } from './header';
 import { useMultiSelect } from './MultiSelect.hooks';
@@ -75,8 +69,8 @@ const MultiSelectSelect = () => {
     target: wrapper,
   });
 
-  const handleHover = (iexpanded: boolean) => {
-    isInternalExpand && shouldToggleOnHover && setExpanded(iexpanded);
+  const handleHover = (isExpanded: boolean) => {
+    isInternalExpand && shouldToggleOnHover && setExpanded(isExpanded);
   };
 
   const handleFocus = () => !hasFocus && setHasFocus(true);
@@ -129,7 +123,9 @@ const MultiSelectSelect = () => {
             {ClearSelectedIcon || <CrossIcon />}
           </button>
         )}
-        <FinalArrow expanded={expanded} />
+        <Styled.SelectArrowWrapper $isOpen={expanded}>
+          <FinalArrow />
+        </Styled.SelectArrowWrapper>
       </Styled.SelectHeadArea>
       {expanded && (
         <Styled.SelectContent $direction={direction}>

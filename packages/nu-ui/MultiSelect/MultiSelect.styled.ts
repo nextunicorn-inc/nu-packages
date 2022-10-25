@@ -37,6 +37,8 @@ export const SelectItemWrapper = styled.label<{ $selected?: boolean }>`
 
   cursor: pointer;
 
+  ${({ $selected }) => $selected && `background-color: ${Color.angelsGray2}`};
+
   &:hover {
     background-color: ${Color.angelsGray1};
   }
@@ -128,6 +130,7 @@ export const SelectHeadArea = styled.div`
   position: relative;
   padding: 14px 12px;
   display: flex;
+  justify-content: space-around;
   align-items: center;
   width: 100%;
   min-height: 48px;
@@ -148,6 +151,16 @@ export const SelectHeadArea = styled.div`
     border: 0;
     padding: 0;
   }
+
+  &:hover {
+    cursor: pointer;
+  }
+`;
+
+export const SelectArrowWrapper = styled.span<{ $isOpen: boolean }>`
+  transition: all 0.3s ease-in-out;
+
+  transform: ${({ $isOpen }) => ($isOpen ? 'rotate(0deg)' : 'rotate(180deg)')};
 `;
 
 export const SelectContent = styled.div<{ $direction: 'top' | 'bottom' }>`

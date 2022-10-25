@@ -19,15 +19,8 @@ export const LoadingIcon = ({ size = 24 }) => (
   </span>
 );
 
-export const ArrowIcon = ({ expanded = false }) => (
-  <svg
-    width="16"
-    height="16"
-    transform={expanded ? 'rotate(0)' : 'rotate(180)'}
-    viewBox="0 0 16 16"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
+export const ArrowIcon = () => (
+  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M13 11L3 11L8 4L13 11Z" fill="#202020" />
   </svg>
 );
