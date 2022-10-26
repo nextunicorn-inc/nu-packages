@@ -158,6 +158,8 @@ export const SelectHeadArea = styled.div`
 `;
 
 export const SelectArrowWrapper = styled.span<{ $isOpen: boolean }>`
+  width: unset;
+
   transition: all 0.3s ease-in-out;
 
   transform: ${({ $isOpen }) => ($isOpen ? 'rotate(0deg)' : 'rotate(180deg)')};
