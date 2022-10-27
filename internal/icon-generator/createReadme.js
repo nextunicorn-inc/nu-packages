@@ -41,14 +41,14 @@ export const runCreateReadme = () => {
     );
     return oldFileNames.filter((fileName) => fileName !== 'index.ts');
   };
-  const getFigmaObj = () => {
+  const getFigmaObj = (() => {
     let obj;
     if (!obj) {
       const maps = fs.readFileSync(`${get__dirname()}/parsedFigma.json`, { encoding: 'utf-8' });
       obj = JSON.parse(maps);
     }
-    return (() => obj)();
-  };
+    return ()=> obj;
+  })();
 
   const getNewFileCollection = () => {
     const figmaObj = getFigmaObj();
@@ -225,6 +225,8 @@ ${onlyLetterChangedFileNamesTemplate(getOverlappedCollection())}
 ${noInFigmaFileNamesTemplate(onlyOldFileNames)}
 `.trim();
 
-  fs.writeFileSync(`${get__dirname()}/README.md`, makeReadme());
+  fs.writeFileSync(`${get__dirname()}/README.md`, makeReadme(),(e)=> {
+    if (e) console.error(e);
+  });
   executePrettier(`${get__dirname()}/README.md`);
 };

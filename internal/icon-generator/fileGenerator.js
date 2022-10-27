@@ -140,6 +140,7 @@ const bodyTemplate = (values) => {
       .join('\n')
       .trim();
   }
+  console.log({ colorCount,values })
   throw new Error('bodyTemplate 에서 colorCount 가 의도한 값이 아닙니다.');
 };
 const tailTemplate = (values) => {
