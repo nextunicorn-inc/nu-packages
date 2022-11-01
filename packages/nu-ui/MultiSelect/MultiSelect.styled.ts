@@ -108,7 +108,7 @@ export const NoOptionsItem = styled.li`
 
 export const DSSelectWrapper = styled.div<{ $error?: boolean }>`
   position: relative;
-  width: 320px;
+  min-width: 320px;
 
   outline: 0;
   background-color: ${Color.angelsGray0};
@@ -130,7 +130,7 @@ export const SelectHeadArea = styled.div`
   position: relative;
   padding: 14px 12px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
   min-height: 48px;

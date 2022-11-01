@@ -21,7 +21,7 @@ export const Example = () => {
   const [selected, setSelected] = useState([]);
 
   return (
-    <div>
+    <div style={{ display: 'flex', flexDirection: 'column', width: '1000px' }}>
       <h1>자격증 유/무</h1>
       <pre>{JSON.stringify(selected, null, 2)}</pre>
       <MultiSelect
