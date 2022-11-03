@@ -88,8 +88,11 @@ const Color: ColorType = {
   // FIXME: Overlay
   overlay: '#00000066',
 
+  // FIXME: Surface
+  surface: '#F8F8F8',
+
   // FIXME: AngelsGray
-  angelsGray0: '#F8F8F8',
+  angelsGray0: '#FDFDFD',
   angelsGray1: '#F2F2F2',
   angelsGray2: '#E1E1E1',
   angelsGray3: '#CDCDCD',

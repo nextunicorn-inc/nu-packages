@@ -77,8 +77,10 @@ type LightBlueColor = 'lightBlue';
 
 type OverlayColor = 'overlay';
 
+type SurfaceColor = 'surface';
+
 type AngelsgrayColor =
-  | 'angelsGray0' // surface
+  | 'angelsGray0'
   | 'angelsGray1'
   | 'angelsGray2'
   | 'angelsGray3'
@@ -137,6 +139,7 @@ export type ColorKey =
   | ShineBlueColor
   | LightBlueColor
   | OverlayColor
+  | SurfaceColor
   | AngelsgrayColor
   | AngelsblueColor
   | AngelsLightPurpleColor
