@@ -89,8 +89,8 @@ const Color: ColorType = {
   overlay: '#00000066',
 
   // FIXME: AngelsGray
-  angelsGray0: '#FDFDFD',
-  angelsGray1: '#F0F0F0',
+  angelsGray0: '#F8F8F8',
+  angelsGray1: '#F2F2F2',
   angelsGray2: '#E1E1E1',
   angelsGray3: '#CDCDCD',
   angelsGray4: '#B1B1B1',
@@ -101,16 +101,16 @@ const Color: ColorType = {
   angelsGray9: '#202020',
 
   // FIXME: AngelsBlue
-  angelsBlue0: '#DEFAF9',
-  angelsBlue1: '#C1F4F3',
-  angelsBlue2: '#A5EFEC',
-  angelsBlue3: '#89E9E5',
-  angelsBlue4: '#6EE2DE',
-  angelsBlue5: '#53C9CA',
-  angelsBlue6: '#3CA8AD',
-  angelsBlue7: '#29858B',
-  angelsBlue8: '#196164',
-  angelsBlue9: '#0D3B3D',
+  angelsBlue0: '#D9FFFF',
+  angelsBlue1: '#A3FEFC',
+  angelsBlue2: '#6CFAF7',
+  angelsBlue3: '#36F4F0',
+  angelsBlue4: '#00EBE6',
+  angelsBlue5: '#00C6C2',
+  angelsBlue6: '#00A29E',
+  angelsBlue7: '#007D7A',
+  angelsBlue8: '#005857',
+  angelsBlue9: '#003433',
 
   // FIXME: AngelsLightPurple
   angelsLightPurple0: '#F7F5FF',
