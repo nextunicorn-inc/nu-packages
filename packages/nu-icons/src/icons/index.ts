@@ -63,6 +63,7 @@ export { default as IconGraphicNoResult } from './IconGraphicNoResult';
 export { default as IconHeartCircle } from './IconHeartCircle';
 export { default as IconHeartDeselected } from './IconHeartDeselected';
 export { default as IconHeartSelected } from './IconHeartSelected';
+export { default as IconHRFinder } from './IconHRFinder';
 export { default as IconHome } from './IconHome';
 export { default as IconInfo } from './IconInfo';
 export { default as IconInsight } from './IconInsight';
