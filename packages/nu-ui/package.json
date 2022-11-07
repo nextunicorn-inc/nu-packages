@@ -1,7 +1,7 @@
 {
   "name": "@nextunicorn/ui",
   "packageManager": "yarn@3.2.3",
-  "version": "0.2.8",
+  "version": "0.2.14",
   "main": "./lib/cjs/index.js",
   "module": "./lib/es/index.js",
   "typings": "./lib/es/index.d.ts",
@@ -17,10 +17,13 @@
     "registry": "https://registry.npmjs.org/"
   },
   "files": [
-    "lib",
+    "dist/*",
+    "lib/*",
     "variable.css"
   ],
   "sideEffects": [
+    "*.scss",
+    "*.css",
     "lib/es/index.js",
     "./index.ts"
   ],
@@ -28,6 +31,11 @@
     ".": {
       "import": "./lib/es/index.js",
       "require": "./lib/cjs/index.js"
+    },
+    "./lib/": {
+      "import": "./lib/es/",
+      "require": "./lib/cjs/",
+      "types": "./lib/es/"
     },
     "./css": {
       "import": "./lib/variables.css",
