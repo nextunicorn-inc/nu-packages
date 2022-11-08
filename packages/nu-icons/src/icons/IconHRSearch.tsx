@@ -11,7 +11,10 @@ const SvgComponent = ({
                           size,
                       }: React.SVGProps<SVGSVGElement> & OverrideIconSize) => {
     if (size === '24') {
-        return (<svg fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        return (<svg fill="none"
+                     width="24"
+                     height="24"
+                     viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path
                     d="m20.632 21.368c0.2031 0.2031 0.5323 0.2031 0.7354 0s0.2031-0.5323 0-0.7354l-0.7354 0.7354zm-4-4 4 4 0.7354-0.7354-4-4-0.7354 0.7354z"
                     fill="#616161"/>
@@ -30,5 +33,5 @@ const SvgComponent = ({
  * 사용가능한 사이즈는 24 입니다.
  * 20(디폴트)사이즈가 없으므로 size prop은 required 입니다.
  */
-const IconComponent = convertIcon<OverrideIconSize>(SvgComponent, 'alert');
+const IconComponent = convertIcon<OverrideIconSize>(SvgComponent, 'HRSearch');
 export default IconComponent;
