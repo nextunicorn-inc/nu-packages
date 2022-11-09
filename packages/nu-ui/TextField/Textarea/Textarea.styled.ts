@@ -44,6 +44,9 @@ export const Textarea = styled.textarea<{
   font-size: 14px;
   line-height: 20px;
 
+  color: ${Color.naturalGray7};
+  -webkit-text-fill-color: ${Color.naturalGray7};
+
   ${ThinScrollBar};
 
   ${({ $isError }) =>
@@ -52,17 +55,24 @@ export const Textarea = styled.textarea<{
       color: ${Color.coral6} !important;
       -webkit-text-fill-color: ${Color.coral6} !important;
     `};
+
   ${({ $hasScrollBar }) => !$hasScrollBar && 'overflow: hidden;'};
-  ${({ $disabled }) => css`
-    cursor: not-allowed;
-    background-color: ${Color.naturalGray0};
-    color: ${$disabled ? Color.blueGray6 : Color.naturalGray7};
-    -webkit-text-fill-color: ${$disabled ? Color.blueGray6 : Color.naturalGray7};
-    &::placeholder {
-      color: ${Color.naturalGray4} !important;
-      -webkit-text-fill-color: ${Color.naturalGray4};
-    }
-  `}
+
+  ${({ $disabled }) =>
+    $disabled &&
+    css`
+      color: ${Color.blueGray6};
+      -webkit-text-fill-color: ${Color.blueGray6};
+
+      background-color: ${Color.naturalGray0};
+
+      cursor: not-allowed;
+
+      &::placeholder {
+        color: ${Color.naturalGray4} !important;
+        -webkit-text-fill-color: ${Color.naturalGray4};
+      }
+    `}
 `;
 
 export const DSTextareaWrapper = styled.div<{ $width: string }>`
