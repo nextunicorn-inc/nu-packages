@@ -16,6 +16,11 @@ export const size24 = css`
   line-height: 36px;
 `;
 
+export const size20 = css`
+  font-size: 20px;
+  line-height: 28px;
+`;
+
 export const size18 = css`
   font-size: 18px;
   line-height: 26px;
@@ -53,7 +58,8 @@ export const size10 = css`
  * @description { h1 } font-size: 42px; line-height: 52px;
  * @description { h2 } font-size: 30px; line-height: 40px;
  * @description { h3 } font-size: 24px; line-height: 36px;
- * @description { h4 } font-size: 18px; line-height: 26px;
+ * @description { h4 } font-size: 20px; line-height: 28px;
+ * @description { h5 } font-size: 18px; line-height: 26px;
  * @description { p1 } font-size: 16px; line-height: 24px;
  * @description { p2 } font-size: 15px; line-height: 22px;
  * @description { p3 } font-size: 14px; line-height: 20px;
@@ -84,6 +90,10 @@ export const FontSize: FontSizeTypes = {
     line-height: 36px;
   `,
   h4: css`
+    font-size: 20px;
+    line-height: 28px;
+  `,
+  h5: css`
     font-size: 18px;
     line-height: 26px;
   `,
