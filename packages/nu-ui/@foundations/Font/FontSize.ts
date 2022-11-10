@@ -26,6 +26,11 @@ export const size16 = css`
   line-height: 24px;
 `;
 
+export const size15 = css`
+  font-size: 15px;
+  line-height: 22px;
+`;
+
 export const size14 = css`
   font-size: 14px;
   line-height: 20px;
@@ -50,9 +55,10 @@ export const size10 = css`
  * @description { h3 } font-size: 24px; line-height: 36px;
  * @description { h4 } font-size: 18px; line-height: 26px;
  * @description { p1 } font-size: 16px; line-height: 24px;
- * @description { p2 } font-size: 14px; line-height: 20px;
- * @description { p3 } font-size: 12px; line-height: 18px;
- * @description { p4 } font-size: 10px; line-height: 14px;
+ * @description { p2 } font-size: 15px; line-height: 22px;
+ * @description { p3 } font-size: 14px; line-height: 20px;
+ * @description { p4 } font-size: 12px; line-height: 18px;
+ * @description { p5 } font-size: 10px; line-height: 14px;
  * <hr/>
  * @description { angels-h1 } font-size: 42px; line-height: 140%;
  * @description { angels-h2 } font-size: 30px; line-height: 140%;
@@ -86,14 +92,18 @@ export const FontSize: FontSizeTypes = {
     line-height: 24px;
   `,
   p2: css`
+    font-size: 15px;
+    line-height: 22px;
+  `,
+  p3: css`
     font-size: 14px;
     line-height: 20px;
   `,
-  p3: css`
+  p4: css`
     font-size: 12px;
     line-height: 18px;
   `,
-  p4: css`
+  p5: css`
     font-size: 10px;
     line-height: 14px;
   `,

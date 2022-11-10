@@ -9,6 +9,7 @@ export type FontSizeKey =
   | 'p2'
   | 'p3'
   | 'p4'
+  | 'p5'
   | 'angels-h1'
   | 'angels-h2'
   | 'angels-h3'
