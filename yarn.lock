@@ -2552,7 +2552,19 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@nextunicorn/types@^0.0.9, @nextunicorn/types@workspace:packages/nu-types":
+"@nextunicorn/types@npm:^0.0.9":
+  version: 0.0.9
+  resolution: "@nextunicorn/types@npm:0.0.9"
+  peerDependencies:
+    "@types/react": "*"
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+  checksum: 5b976b66310770d6a184faae168af2e38afe1e56972e64b4c43e93c2a4871c21294a85b99685f9d2ff54ced6bb028d56ffb2263e8659a3531022629a6c8de2d9
+  languageName: node
+  linkType: hard
+
+"@nextunicorn/types@workspace:packages/nu-types":
   version: 0.0.0-use.local
   resolution: "@nextunicorn/types@workspace:packages/nu-types"
   dependencies:
