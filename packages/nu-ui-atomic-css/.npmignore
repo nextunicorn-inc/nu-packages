@@ -1,0 +1,7 @@
+**/.*
+*.iml
+coverage/
+examples/
+node_modules/
+test/
+README.md
