@@ -1,4 +1,4 @@
-import type { IconProps, ReactStandardProps } from '@nextunicorn/types';
+import type { BreakPointKeyTypes, IconProps, ReactStandardProps } from '@nextunicorn/types';
 //
 import type EmotionCSSProps from '../@utils/types';
 
@@ -19,10 +19,13 @@ export type BadgeColor =
   | 'deepGray'
   | 'black';
 
+export type VariantSizes = Partial<Record<Exclude<BreakPointKeyTypes, 'large'>, BadgeSize>>;
+
 interface BadgeOptions {
   text: string;
   kind?: BadgeKind;
   size: BadgeSize;
+  variantSizes?: VariantSizes;
   color: BadgeColor;
 }
 
