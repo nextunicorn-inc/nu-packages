@@ -41,6 +41,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "reference": "workspace:packages/nu-ui"\
       },\
       {\
+        "name": "@nextunicorn/atom-ui",\
+        "reference": "workspace:packages/nu-ui-atomic-css"\
+      },\
+      {\
         "name": "@nextunicorn/utils",\
         "reference": "workspace:packages/nu-utils"\
       }\
@@ -48,6 +52,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
     "enableTopLevelFallback": true,\
     "ignorePatternData": "(^(?:\\\\.yarn\\\\/sdks(?:\\\\/(?!\\\\.{1,2}(?:\\\\/|$))(?:(?:(?!(?:^|\\\\/)\\\\.{1,2}(?:\\\\/|$)).)*?)|$))$)",\
     "fallbackExclusionList": [\
+      ["@nextunicorn/atom-ui", ["workspace:packages/nu-ui-atomic-css"]],\
       ["@nextunicorn/icon-generator", ["workspace:internal/icon-generator"]],\
       ["@nextunicorn/icons", ["virtual:0e4fc2ec7a611c2c68dd1a7af211bd34b48f206f1ff6b49e233dfed1f1c2a99f32e7dde35c65e47e07bed9c7e6e9edb9c1d4a36d6437509f649380f47cb461b7#workspace:packages/nu-icons", "virtual:160a67ca5a623fb82ecfd7d0c227f0db6f43baf2b326861af93bba8ec0cf86437533b293c1878fe91072760e603bb93c0911af1b32785dce9b719c371c5ab926#workspace:packages/nu-icons", "workspace:packages/nu-icons"]],\
       ["@nextunicorn/monorepo", ["workspace:."]],\
@@ -6780,6 +6785,82 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["glob", "npm:7.1.7"]\
           ],\
           "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@nextunicorn/atom-ui", [\
+        ["workspace:packages/nu-ui-atomic-css", {\
+          "packageLocation": "./packages/nu-ui-atomic-css/",\
+          "packageDependencies": [\
+            ["@nextunicorn/atom-ui", "workspace:packages/nu-ui-atomic-css"],\
+            ["@babel/core", "npm:7.19.1"],\
+            ["@babel/plugin-proposal-class-properties", "virtual:0e4fc2ec7a611c2c68dd1a7af211bd34b48f206f1ff6b49e233dfed1f1c2a99f32e7dde35c65e47e07bed9c7e6e9edb9c1d4a36d6437509f649380f47cb461b7#npm:7.18.6"],\
+            ["@babel/plugin-proposal-decorators", "virtual:0e4fc2ec7a611c2c68dd1a7af211bd34b48f206f1ff6b49e233dfed1f1c2a99f32e7dde35c65e47e07bed9c7e6e9edb9c1d4a36d6437509f649380f47cb461b7#npm:7.19.1"],\
+            ["@babel/plugin-transform-runtime", "virtual:0e4fc2ec7a611c2c68dd1a7af211bd34b48f206f1ff6b49e233dfed1f1c2a99f32e7dde35c65e47e07bed9c7e6e9edb9c1d4a36d6437509f649380f47cb461b7#npm:7.19.1"],\
+            ["@babel/preset-env", "virtual:0e4fc2ec7a611c2c68dd1a7af211bd34b48f206f1ff6b49e233dfed1f1c2a99f32e7dde35c65e47e07bed9c7e6e9edb9c1d4a36d6437509f649380f47cb461b7#npm:7.19.1"],\
+            ["@babel/preset-react", "virtual:0e4fc2ec7a611c2c68dd1a7af211bd34b48f206f1ff6b49e233dfed1f1c2a99f32e7dde35c65e47e07bed9c7e6e9edb9c1d4a36d6437509f649380f47cb461b7#npm:7.18.6"],\
+            ["@babel/preset-typescript", "virtual:0e4fc2ec7a611c2c68dd1a7af211bd34b48f206f1ff6b49e233dfed1f1c2a99f32e7dde35c65e47e07bed9c7e6e9edb9c1d4a36d6437509f649380f47cb461b7#npm:7.18.6"],\
+            ["@babel/runtime", "npm:7.19.0"],\
+            ["@babel/runtime-corejs3", "npm:7.19.1"],\
+            ["@emotion/babel-plugin", "virtual:0e4fc2ec7a611c2c68dd1a7af211bd34b48f206f1ff6b49e233dfed1f1c2a99f32e7dde35c65e47e07bed9c7e6e9edb9c1d4a36d6437509f649380f47cb461b7#npm:11.10.2"],\
+            ["@emotion/react", "virtual:0e4fc2ec7a611c2c68dd1a7af211bd34b48f206f1ff6b49e233dfed1f1c2a99f32e7dde35c65e47e07bed9c7e6e9edb9c1d4a36d6437509f649380f47cb461b7#npm:11.10.4"],\
+            ["@emotion/styled", "virtual:0e4fc2ec7a611c2c68dd1a7af211bd34b48f206f1ff6b49e233dfed1f1c2a99f32e7dde35c65e47e07bed9c7e6e9edb9c1d4a36d6437509f649380f47cb461b7#npm:11.10.4"],\
+            ["@nextunicorn/icons", "virtual:0e4fc2ec7a611c2c68dd1a7af211bd34b48f206f1ff6b49e233dfed1f1c2a99f32e7dde35c65e47e07bed9c7e6e9edb9c1d4a36d6437509f649380f47cb461b7#workspace:packages/nu-icons"],\
+            ["@nextunicorn/types", "virtual:0e4fc2ec7a611c2c68dd1a7af211bd34b48f206f1ff6b49e233dfed1f1c2a99f32e7dde35c65e47e07bed9c7e6e9edb9c1d4a36d6437509f649380f47cb461b7#npm:0.0.9"],\
+            ["@storybook/addon-a11y", "virtual:0e4fc2ec7a611c2c68dd1a7af211bd34b48f206f1ff6b49e233dfed1f1c2a99f32e7dde35c65e47e07bed9c7e6e9edb9c1d4a36d6437509f649380f47cb461b7#npm:6.5.12"],\
+            ["@storybook/addon-actions", "virtual:0e4fc2ec7a611c2c68dd1a7af211bd34b48f206f1ff6b49e233dfed1f1c2a99f32e7dde35c65e47e07bed9c7e6e9edb9c1d4a36d6437509f649380f47cb461b7#npm:6.5.12"],\
+            ["@storybook/addon-controls", "virtual:0e4fc2ec7a611c2c68dd1a7af211bd34b48f206f1ff6b49e233dfed1f1c2a99f32e7dde35c65e47e07bed9c7e6e9edb9c1d4a36d6437509f649380f47cb461b7#npm:6.5.12"],\
+            ["@storybook/addon-docs", "virtual:0e4fc2ec7a611c2c68dd1a7af211bd34b48f206f1ff6b49e233dfed1f1c2a99f32e7dde35c65e47e07bed9c7e6e9edb9c1d4a36d6437509f649380f47cb461b7#npm:6.5.12"],\
+            ["@storybook/addon-essentials", "virtual:0e4fc2ec7a611c2c68dd1a7af211bd34b48f206f1ff6b49e233dfed1f1c2a99f32e7dde35c65e47e07bed9c7e6e9edb9c1d4a36d6437509f649380f47cb461b7#npm:6.5.12"],\
+            ["@storybook/addon-interactions", "virtual:0e4fc2ec7a611c2c68dd1a7af211bd34b48f206f1ff6b49e233dfed1f1c2a99f32e7dde35c65e47e07bed9c7e6e9edb9c1d4a36d6437509f649380f47cb461b7#npm:6.5.12"],\
+            ["@storybook/addon-links", "virtual:0e4fc2ec7a611c2c68dd1a7af211bd34b48f206f1ff6b49e233dfed1f1c2a99f32e7dde35c65e47e07bed9c7e6e9edb9c1d4a36d6437509f649380f47cb461b7#npm:6.5.12"],\
+            ["@storybook/addon-viewport", "virtual:0e4fc2ec7a611c2c68dd1a7af211bd34b48f206f1ff6b49e233dfed1f1c2a99f32e7dde35c65e47e07bed9c7e6e9edb9c1d4a36d6437509f649380f47cb461b7#npm:6.5.12"],\
+            ["@storybook/addons", "virtual:0e4fc2ec7a611c2c68dd1a7af211bd34b48f206f1ff6b49e233dfed1f1c2a99f32e7dde35c65e47e07bed9c7e6e9edb9c1d4a36d6437509f649380f47cb461b7#npm:6.5.12"],\
+            ["@storybook/builder-webpack5", "virtual:0e4fc2ec7a611c2c68dd1a7af211bd34b48f206f1ff6b49e233dfed1f1c2a99f32e7dde35c65e47e07bed9c7e6e9edb9c1d4a36d6437509f649380f47cb461b7#npm:6.5.12"],\
+            ["@storybook/core-common", "virtual:0e4fc2ec7a611c2c68dd1a7af211bd34b48f206f1ff6b49e233dfed1f1c2a99f32e7dde35c65e47e07bed9c7e6e9edb9c1d4a36d6437509f649380f47cb461b7#npm:6.5.12"],\
+            ["@storybook/manager-webpack5", "virtual:0e4fc2ec7a611c2c68dd1a7af211bd34b48f206f1ff6b49e233dfed1f1c2a99f32e7dde35c65e47e07bed9c7e6e9edb9c1d4a36d6437509f649380f47cb461b7#npm:6.5.12"],\
+            ["@storybook/react", "virtual:0e4fc2ec7a611c2c68dd1a7af211bd34b48f206f1ff6b49e233dfed1f1c2a99f32e7dde35c65e47e07bed9c7e6e9edb9c1d4a36d6437509f649380f47cb461b7#npm:6.5.12"],\
+            ["@storybook/theming", "virtual:0e4fc2ec7a611c2c68dd1a7af211bd34b48f206f1ff6b49e233dfed1f1c2a99f32e7dde35c65e47e07bed9c7e6e9edb9c1d4a36d6437509f649380f47cb461b7#npm:6.5.12"],\
+            ["@svgr/webpack", "npm:6.3.1"],\
+            ["@types/babel__core", "npm:7.1.19"],\
+            ["@types/case-sensitive-paths-webpack-plugin", "npm:2.1.6"],\
+            ["@types/react", "npm:18.0.21"],\
+            ["@types/react-dom", "npm:18.0.6"],\
+            ["@types/react-window", "npm:1.8.5"],\
+            ["@types/webpack", "npm:5.28.0"],\
+            ["babel-loader", "virtual:0e4fc2ec7a611c2c68dd1a7af211bd34b48f206f1ff6b49e233dfed1f1c2a99f32e7dde35c65e47e07bed9c7e6e9edb9c1d4a36d6437509f649380f47cb461b7#npm:8.2.5"],\
+            ["case-sensitive-paths-webpack-plugin", "npm:2.4.0"],\
+            ["chromatic", "npm:6.10.0"],\
+            ["classnames", "npm:2.3.2"],\
+            ["copyfiles", "npm:2.4.1"],\
+            ["core-js", "npm:3.25.2"],\
+            ["css-loader", "virtual:0e4fc2ec7a611c2c68dd1a7af211bd34b48f206f1ff6b49e233dfed1f1c2a99f32e7dde35c65e47e07bed9c7e6e9edb9c1d4a36d6437509f649380f47cb461b7#npm:6.7.1"],\
+            ["del", "npm:6.0.0"],\
+            ["gulp", "npm:4.0.2"],\
+            ["gulp-babel", "virtual:0e4fc2ec7a611c2c68dd1a7af211bd34b48f206f1ff6b49e233dfed1f1c2a99f32e7dde35c65e47e07bed9c7e6e9edb9c1d4a36d6437509f649380f47cb461b7#npm:8.0.0"],\
+            ["gulp-debug", "virtual:0e4fc2ec7a611c2c68dd1a7af211bd34b48f206f1ff6b49e233dfed1f1c2a99f32e7dde35c65e47e07bed9c7e6e9edb9c1d4a36d6437509f649380f47cb461b7#npm:4.0.0"],\
+            ["gulp-replace", "npm:1.1.3"],\
+            ["gulp-typescript", "virtual:0e4fc2ec7a611c2c68dd1a7af211bd34b48f206f1ff6b49e233dfed1f1c2a99f32e7dde35c65e47e07bed9c7e6e9edb9c1d4a36d6437509f649380f47cb461b7#npm:6.0.0-alpha.1"],\
+            ["merge2", "npm:1.4.1"],\
+            ["rc-checkbox", "virtual:0e4fc2ec7a611c2c68dd1a7af211bd34b48f206f1ff6b49e233dfed1f1c2a99f32e7dde35c65e47e07bed9c7e6e9edb9c1d4a36d6437509f649380f47cb461b7#npm:2.3.2"],\
+            ["react", "npm:18.2.0"],\
+            ["react-dom", "virtual:0e4fc2ec7a611c2c68dd1a7af211bd34b48f206f1ff6b49e233dfed1f1c2a99f32e7dde35c65e47e07bed9c7e6e9edb9c1d4a36d6437509f649380f47cb461b7#npm:18.2.0"],\
+            ["react-infinite-scroller", "virtual:0e4fc2ec7a611c2c68dd1a7af211bd34b48f206f1ff6b49e233dfed1f1c2a99f32e7dde35c65e47e07bed9c7e6e9edb9c1d4a36d6437509f649380f47cb461b7#npm:1.2.6"],\
+            ["react-router-dom", "virtual:0e4fc2ec7a611c2c68dd1a7af211bd34b48f206f1ff6b49e233dfed1f1c2a99f32e7dde35c65e47e07bed9c7e6e9edb9c1d4a36d6437509f649380f47cb461b7#npm:6.4.1"],\
+            ["react-select", "virtual:0e4fc2ec7a611c2c68dd1a7af211bd34b48f206f1ff6b49e233dfed1f1c2a99f32e7dde35c65e47e07bed9c7e6e9edb9c1d4a36d6437509f649380f47cb461b7#npm:5.4.0"],\
+            ["react-storybook-addon-props-combinations", "virtual:0e4fc2ec7a611c2c68dd1a7af211bd34b48f206f1ff6b49e233dfed1f1c2a99f32e7dde35c65e47e07bed9c7e6e9edb9c1d4a36d6437509f649380f47cb461b7#npm:1.1.0"],\
+            ["react-virtualized", "virtual:0e4fc2ec7a611c2c68dd1a7af211bd34b48f206f1ff6b49e233dfed1f1c2a99f32e7dde35c65e47e07bed9c7e6e9edb9c1d4a36d6437509f649380f47cb461b7#npm:9.22.3"],\
+            ["react-window", "virtual:0e4fc2ec7a611c2c68dd1a7af211bd34b48f206f1ff6b49e233dfed1f1c2a99f32e7dde35c65e47e07bed9c7e6e9edb9c1d4a36d6437509f649380f47cb461b7#npm:1.8.7"],\
+            ["regenerator-runtime", "npm:0.13.9"],\
+            ["rimraf", "npm:3.0.2"],\
+            ["style-loader", "virtual:0e4fc2ec7a611c2c68dd1a7af211bd34b48f206f1ff6b49e233dfed1f1c2a99f32e7dde35c65e47e07bed9c7e6e9edb9c1d4a36d6437509f649380f47cb461b7#npm:3.3.1"],\
+            ["terser-webpack-plugin", "virtual:0e4fc2ec7a611c2c68dd1a7af211bd34b48f206f1ff6b49e233dfed1f1c2a99f32e7dde35c65e47e07bed9c7e6e9edb9c1d4a36d6437509f649380f47cb461b7#npm:5.3.6"],\
+            ["through2", "npm:4.0.2"],\
+            ["ts-loader", "virtual:0e4fc2ec7a611c2c68dd1a7af211bd34b48f206f1ff6b49e233dfed1f1c2a99f32e7dde35c65e47e07bed9c7e6e9edb9c1d4a36d6437509f649380f47cb461b7#npm:9.4.1"],\
+            ["typescript", "patch:typescript@npm%3A4.8.3#~builtin<compat/typescript>::version=4.8.3&hash=a1c5e5"],\
+            ["typescript-styled-plugin", "npm:0.18.2"],\
+            ["webpack", "virtual:0dc39cc4ef61d567603f290f8f6843eb6bb61bf7f813e471f2f9de7908c2b1d306c65b6fa7bbd8b0f136e208f43b13693ebd7f95d78e78267b51265185927418#npm:5.74.0"]\
+          ],\
+          "linkType": "SOFT"\
         }]\
       ]],\
       ["@nextunicorn/icon-generator", [\

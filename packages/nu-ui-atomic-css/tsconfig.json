@@ -1,0 +1,62 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "target": "ES2015",
+    "baseUrl": "./",
+    "outDir": "lib",
+    "sourceMap": true,
+    "allowJs": true,
+    "module": "es6",
+    "lib": [
+      "es7",
+      "dom"
+    ],
+    "moduleResolution": "node",
+    "noImplicitAny": false,
+    "jsx": "react-jsx",
+    "jsxImportSource": "@emotion/react",
+    "suppressImplicitAnyIndexErrors": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "noImplicitReturns": false,
+    "noImplicitThis": false,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "declaration": true,
+    "strictNullChecks": false,
+    "strict": true,
+    "isolatedModules": false,
+    "paths": {
+      "@nextunicorn/types": [
+        "../nu-types/src/index"
+      ],
+      "@nextunicorn/icons": [
+        "../nu-icons/src/index"
+      ],
+      "@nextunicorn/utils": [
+        "../nu-utils/src/index"
+      ]
+    },
+    "plugins": [
+      {
+        "name": "typescript-styled-plugin",
+        "tags": [
+          "styled",
+          "css"
+        ]
+      }
+    ],
+    "typeRoots": [
+      "@types"
+    ]
+  },
+  "include": [
+    ".storybook/*",
+    "**/*.ts",
+    "**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
