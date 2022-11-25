@@ -1,7 +1,10 @@
 import styled from '@emotion/styled';
 import { Color } from '../@foundations';
-import { BadgeColor, BadgeKind, BadgeSize } from './Badge.types';
+import { BadgeColor, BadgeKind, BadgeSize, VariantSizes } from './Badge.types';
 import { css, SerializedStyles } from '@emotion/react';
+import { mediaQuery } from '../@styles';
+import { BREAK_POINT } from '../@constants';
+import { BreakPointKeyTypes } from '@nextunicorn/types';
 
 const colorCSS: Record<BadgeColor, SerializedStyles> = {
   lightCoral: css`
@@ -71,10 +74,27 @@ const sizeCSS = {
   `,
 };
 
+const responsiveSize = (bp: BreakPointKeyTypes, size: BadgeSize) => css`
+  ${mediaQuery(BREAK_POINT[bp])} {
+    ${sizeCSS[size]};
+  }
+`;
+
+const getDynamicSize = (vs: VariantSizes) => {
+  return css`
+    ${vs.large1300 ? responsiveSize('large1300', vs.large1300) : ''};
+    ${vs.large1240 ? responsiveSize('large1240', vs.large1240) : ''};
+    ${vs.large1200 ? responsiveSize('large1200', vs.large1200) : ''};
+    ${vs.medium ? responsiveSize('medium', vs.medium) : ''};
+    ${vs.small ? responsiveSize('small', vs.small) : ''};
+  `;
+};
+
 type LayoutProps = {
   $kind?: BadgeKind;
   $size: BadgeSize;
   $color: BadgeColor;
+  $variantSizes?: VariantSizes;
 };
 
 export const DSBadgeWrapper = styled.div<LayoutProps>`
@@ -86,6 +106,7 @@ export const DSBadgeWrapper = styled.div<LayoutProps>`
         `
       : colorCSS[$color]};
   ${({ $size }) => sizeCSS[$size]};
+  ${({ $variantSizes }) => ($variantSizes ? getDynamicSize($variantSizes) : '')};
   width: fit-content;
   border-radius: 5px;
   display: flex;

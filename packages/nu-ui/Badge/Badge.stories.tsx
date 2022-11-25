@@ -65,6 +65,29 @@ const Template: Story<BadgeProps> = (args) => (
           <Badge {...args} text="기본 배지" size="medium" color={color} />
           <Badge {...args} text="기본 배지" size="small" color={color} />
         </Row>
+        <Row>
+          <Badge
+            {...args}
+            text="medium, small"
+            size="large"
+            color={color}
+            variantSizes={{ medium: 'medium', small: 'small' }}
+          />
+          <Badge
+            {...args}
+            text="large, medium"
+            size="medium"
+            color={color}
+            variantSizes={{ medium: 'large', small: 'medium' }}
+          />
+          <Badge
+            {...args}
+            text="large, small"
+            size="small"
+            color={color}
+            variantSizes={{ medium: 'large', small: 'small' }}
+          />
+        </Row>
 
         <Row>
           <Badge
