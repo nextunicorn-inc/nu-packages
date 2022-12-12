@@ -28,7 +28,7 @@ export const DSLinkButtonWrapper = styled.a<{
   padding: 2px;
   ${({ $size }) => sizeCSS[$size]};
 
-  &:hover {
+  &:hover { 
     color: ${Color.unicornBlue7};
     text-decoration: underline;
     cursor: pointer;

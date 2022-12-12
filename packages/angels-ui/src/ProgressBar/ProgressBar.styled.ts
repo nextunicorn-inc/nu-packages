@@ -71,6 +71,7 @@ export const StatusWrapper = styled.div`
   display: flex;
   flex-direction: column;
   height: 28px;
+  width: 100%;
   justify-content: space-between;
 `;
 export const ProgressBar = styled.div<{ $backgroundColor?: string }>`
