@@ -1,16 +1,16 @@
 import Palette  from '../Palette';
-import * as Styled from './ProgressBar.styled';
-import { ProgressBarTypes } from './ProgressBar.types';
+import * as Styled from './ProgressIndicator.styled';
+import { ProgressIndicatorTypes } from './ProgressIndicator.types';
 
 
 
-const ProgressBar = ({
+const ProgressIndicator = ({
   progressList,
   currentState,
   backgroundColor,
   completeColor = Palette.ShineBlue70,
   uncompletedColor = Palette.Gray40,
-}: ProgressBarTypes) => {
+}: ProgressIndicatorTypes) => {
   const currentProgressIdx = progressList.findIndex((progress) => progress === currentState);
   const isCompleted = (idx: number) => idx <= currentProgressIdx;
   return (
@@ -52,4 +52,4 @@ const ProgressBar = ({
   );
 };
 
-export default ProgressBar;
+export default ProgressIndicator;

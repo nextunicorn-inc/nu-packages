@@ -1,4 +1,4 @@
-export type ProgressBarTypes = {
+export type ProgressIndicatorTypes = {
   progressList: string[];
   currentState: string;
   backgroundColor?: string;
