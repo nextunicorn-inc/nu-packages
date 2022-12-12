@@ -99,26 +99,17 @@ const hoverVariantCSS = {
   `,
 };
 
-const heightSizeCss = {
+const sizeCSS = {
   large: `
     height: 48px;
-  `,
-  medium: `
-    height: 40px;
-  `,
-  small: `
-    height: 32px;
-  `,
-};
-
-const paddingSizeCSS = {
-  large: `
     padding: 0 20px;
   `,
   medium: `
+    height: 40px;
     padding: 0 16px;
   `,
   small: `
+    height: 32px;
     padding: 0 12px;
   `,
 };
@@ -169,8 +160,7 @@ export const DSButtonWrapper = styled.button<ButtonProps>`
   justify-content: center;
   align-items: center;
 
-  ${({ $size }) => heightSizeCss[$size]};
-  ${({ $size }) => paddingSizeCSS[$size]};
+  ${({ $size }) => sizeCSS[$size]};
 
   transition: all 0.2s ease-in-out;
 
