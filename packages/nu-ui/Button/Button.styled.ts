@@ -8,7 +8,7 @@ const variantCSS = {
     border-radius: 5px;
 
     color: ${Color.naturalGray0};
-    ${FontSize.p2};
+    ${FontSize.p3};
     ${FontWeight.regular};
 
     background-color: ${Color.unicornBlue6};
@@ -18,7 +18,7 @@ const variantCSS = {
     border: 1px solid ${Color.unicornBlue6};
 
     color: ${Color.unicornBlue6};
-    ${FontSize.p2};
+    ${FontSize.p3};
     ${FontWeight.regular};
 
     background-color: ${Color.naturalGray0};
@@ -27,7 +27,7 @@ const variantCSS = {
     border-radius: 5px;
 
     color: ${Color.naturalGray7};
-    ${FontSize.p2};
+    ${FontSize.p3};
     ${FontWeight.regular};
 
     background-color: ${Color.blueGray0};
@@ -99,15 +99,18 @@ const hoverVariantCSS = {
   `,
 };
 
-const paddingSizeCSS = {
+const sizeCSS = {
   large: `
-    padding: 14px 20px;
+    height: 48px;
+    padding: 0 20px;
   `,
   medium: `
-    padding: 10px 16px;
+    height: 40px;
+    padding: 0 16px;
   `,
   small: `
-    padding: 6px 12px;
+    height: 32px;
+    padding: 0 12px;
   `,
 };
 
@@ -157,7 +160,7 @@ export const DSButtonWrapper = styled.button<ButtonProps>`
   justify-content: center;
   align-items: center;
 
-  ${({ $size }) => paddingSizeCSS[$size]};
+  ${({ $size }) => sizeCSS[$size]};
 
   transition: all 0.2s ease-in-out;
 
