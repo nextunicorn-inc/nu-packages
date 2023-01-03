@@ -1,15 +1,36 @@
 import React from 'react';
 import { convertIcon } from '../component/Icon';
+interface OverrideIconSize40 {
+  size: '40';
+}
 interface OverrideIconSize32 {
   size: '32';
 }
-type OverrideIconSize = OverrideIconSize32;
+type OverrideIconSize = OverrideIconSize40 | OverrideIconSize32;
 
 const SvgComponent = ({
   size,
   color = '#616161',
   ...rest
 }: React.SVGProps<SVGSVGElement> & OverrideIconSize) => {
+  if (size === '40') {
+    return (
+      <svg
+        width="40"
+        height="40"
+        viewBox="0 0 40 40"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          fillRule="evenodd"
+          clipRule="evenodd"
+          d="M2.5 20C2.5 10.335 10.335 2.5 20 2.5C29.665 2.5 37.5 10.335 37.5 20C37.5 29.665 29.665 37.5 20 37.5C10.335 37.5 2.5 29.665 2.5 20ZM22.0684 30V20.6239H24.657L25 17.3928H22.0684L22.0728 15.7757C22.0728 14.933 22.1528 14.4814 23.3634 14.4814H24.9817V11.25H22.3927C19.283 11.25 18.1884 12.8174 18.1884 15.4533V17.3932H16.25V20.6243H18.1884V30H22.0684Z"
+          fill={color}
+        />
+      </svg>
+    );
+  }
   if (size === '32') {
     return (
       <svg
@@ -33,7 +54,7 @@ const SvgComponent = ({
 /**
  * 컬러 주입 가능여부: 가능,
  * 기본컬러:#616161
- * 사용가능한 사이즈는 32 입니다.
+ * 사용가능한 사이즈는 32, 40 입니다.
  * 20(디폴트)사이즈가 없으므로 size prop은 required 입니다.
  */
 const IconComponent = convertIcon<OverrideIconSize>(SvgComponent, 'facebook');
