@@ -73,7 +73,7 @@ export const Page = styled.div<{
   $size: PaginationSize;
   $selected: boolean;
 }>`
-  background-color: ${({ $selected }) => ($selected ? Color.unicornBlue6 : Color.naturalGray0)};
+  ${({ $selected }) => ($selected && `background-color: ${Color.unicornBlue6}`)};
   color: ${({ $selected }) => ($selected ? Color.naturalGray0 : Color.naturalGray7)};
   ${({ $size }) => sizeCSS[$size]}
   border-radius: 25px;
